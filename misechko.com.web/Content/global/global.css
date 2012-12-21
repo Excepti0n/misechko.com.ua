@@ -1,0 +1,142 @@
+﻿@font-face {
+	font-family: 'MyriadPro-LightSemiCn';
+	src: url('fonts/MyriadProLightSemiCond/myriadprolightsemicn.eot');
+	src: url('fonts/MyriadProLightSemiCond/myriadprolightsemicn.eot?#iefix') format('embedded-opentype'),
+				url('fonts/MyriadProLightSemiCond/myriadprolightsemicn.woff') format('woff'),
+				url('fonts/MyriadProLightSemiCond/myriadprolightsemicn.ttf') format('truetype'),
+				url('fonts/MyriadProLightSemiCond/myriadprolightsemicn.svg#myriadprolightsemicn') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MyriadPro-Bold';
+	src: url('fonts/MyriadProBold/myriadprobold.eot');
+	src: url('fonts/MyriadProBold/myriadprobold.eot?#iefix') format('embedded-opentype'),
+				url('fonts/MyriadProBold/myriadprobold.woff') format('woff'),
+				url('fonts/MyriadProBold/myriadprobold.ttf') format('truetype'),
+				url('fonts/MyriadProBold/myriadprobold.svg#myriadprobold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+		}
+
+@font-face {
+	font-family: 'MyriadPro-BoldCond';
+	src: url('fonts/MyriadProBoldCond/myriadproboldcond.eot');
+	src: url('fonts/MyriadProBoldCond/myriadproboldcond.eot?#iefix') format('embedded-opentype'),
+				url('fonts/MyriadProBoldCond/myriadproboldcond.woff') format('woff'),
+				url('fonts/MyriadProBoldCond/myriadproboldcond.ttf') format('truetype'),
+				url('fonts/MyriadProBoldCond/myriadproboldcond.svg#myriadproboldcond') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	overflow-y: auto;
+    background: white;
+}
+
+body 
+{    
+    background-color: white;
+}
+
+#mobile_menu_link {
+    float: right;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    display: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 17px;
+    margin-top: 42px;
+    padding: 0 10px;
+    color: white;
+    cursor: pointer;
+}
+
+#mobile_menu_link span {
+    font-size: 14px;
+    padding-right: 10px;
+    margin-top: 2px;
+    float: left;
+}
+
+#langSelect {
+    float: right;
+}
+
+#lang-block #lang-top-line a {
+    text-decoration: none;
+    color: #7a113f;
+    font-family: 'MyriadPro-LightSemiCn';
+    font-size: 13px;
+}
+
+#lang-block #lang-top-line span{
+    color: #7a113f;
+    font-family: 'MyriadPro-LightSemiCn';
+    font-size: 13px;
+}
+
+#lang-block #lang-contact-line {
+    font-family: 'MyriadPro-BoldCond';
+    font-size: 32px;
+    color: #7a113f;
+}
+
+#logo {
+    float: left;
+    margin: 10px 0% 0 0;
+    width: 12%;
+}
+
+#logo a {
+    text-decoration: none;
+}
+
+#logo img {
+    width: 100%;
+}
+
+.header-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1205px;
+    padding: 0 12px;
+    padding-top: 20px;
+}
+
+menu {
+    float: left;
+    width: 88%;
+    margin-top: 40px;
+}
+
+ul#menu {
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 0px;
+    width: 100%;
+}
+
+ul#menu li {
+    display: inline-table;
+    min-height: 140px;
+    width: 16%;
+}
+
+ul#menu li h2 {
+    font-family: 'MyriadPro-Bold';
+    font-size: 15px;
+    color: #7a113f;
+    cursor: pointer;
+    transition: color .25s ease-in-out;
+    -moz-transition: color .25s ease-in-out;
+    -webkit-transition: color .25s ease-in-out;
+}
+
+ul#menu li h2.selected {
+    color: white;
+}

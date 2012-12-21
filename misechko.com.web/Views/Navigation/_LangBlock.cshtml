@@ -1,0 +1,23 @@
+﻿@using ClientDependency.Core.Mvc
+@model misechko.com.Models.LanguageBlockModel
+@{
+    Html.RequiresCss("global/idd/dd.css", "Content", 101);
+    Html.RequiresJs("global/idd/jquery.dd.min.js", "Content", 20);
+}
+
+@*http://www.marghoobsuleman.com/jquery-image-dropdown*@
+
+<div id="lang-block">
+    <div id="lang-top-line">
+        @*<a href="@Url.Action("Index", "Home")">Головна</a>*@
+        <span>Київ, вул. Володимирська, 76Б, офіс 7</span>
+        <select name="langdrop" id="langdrop" onchange="showValue(this.value)">
+            <option value="uk" data-image="@Url.Content("/Content/global/img/ukr.png")">УКР</option>
+            <option value="ru" data-image="@Url.Content("/Content/global/img/rus.png")">РУС</option>
+            <option value="en" data-image="@Url.Content("/Content/global/img/eng.png")">ENG</option>
+        </select>
+    </div>
+    <div id="lang-contact-line">
+        +380 (44) 279-39-43
+    </div>
+</div>
