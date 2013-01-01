@@ -1,18 +1,27 @@
-﻿var RadaCode = window.RadaCode || {};
+﻿var mp = window.mp || {};
 
-RadaCode.SwitchLanguage = function(lang) {
-    $.cookie('language', lang, { expires: 365, path: '/' });
-    window.location.reload();
-};
+mp.Lang = (function ($) {
+    "use strict";
 
-$(function () {
-    $("#setRus").click(function () {
-        RadaCode.SwitchLanguage('ru');
+    var init = function () {
+        mp.Lang.SwitchLanguage = function (lang) {
+            $.cookie('language', lang, { expires: 365, path: '/' });
+            window.location.reload();
+        };
+
+        var idd = $('#langdrop').msDropDown();
+        idd.on("change", function (res) {
+            mp.Lang.SwitchLanguage(this.value);
+        });
+    };
+
+    return { init: init };
+})($);
+
+mp.GlobalLogic = (function ($) {
+    "use strict";
+
+    var ready = $(function () {
+        mp.Lang.init();
     });
-    $("#setEng").click(function () {
-        RadaCode.SwitchLanguage('en');
-    });
-    $("#setUkr").click(function () {
-        RadaCode.SwitchLanguage('uk');
-    });
-});
+}($));

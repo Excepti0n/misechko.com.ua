@@ -140,3 +140,19 @@ ul#menu li h2 {
 ul#menu li h2.selected {
     color: white;
 }
+
+#lang-block span.ddlabel {
+    display: none;
+} 
+
+#lang-block .dd {
+    border: none;
+}
+
+#lang-block .ddTitle {
+    background: none;
+}
+
+#lang-block .ddTitle .divider {
+    display: none;
+}
