@@ -169,6 +169,8 @@
     <Content Include="Content\global\fonts\MyriadProBoldCond\myriadproboldcond.svg" />
     <Content Include="Content\global\fonts\MyriadProBold\myriadprobold.svg" />
     <Content Include="Content\global\fonts\MyriadProLightSemiCond\myriadprolightsemicn.svg" />
+    <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.svg" />
+    <Content Include="Content\global\global.ie.css" />
     <Content Include="Content\global\idd\dd.css" />
     <Content Include="Scripts\history.js\amplify.store.js" />
     <Content Include="Scripts\history.js\history.adapter.dojo.js" />
@@ -261,6 +263,9 @@
     <Content Include="Content\global\fonts\MyriadProBoldCond\myriadproboldcond.eot" />
     <Content Include="Content\global\fonts\MyriadProBoldCond\myriadproboldcond.ttf" />
     <Content Include="Content\global\fonts\MyriadProBoldCond\myriadproboldcond.woff" />
+    <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.eot" />
+    <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.ttf" />
+    <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.woff" />
     <None Include="Scripts\jquery-1.8.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
     <Content Include="Scripts\jquery-1.8.3.min.js" />

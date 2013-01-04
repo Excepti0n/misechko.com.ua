@@ -232,7 +232,7 @@ ul#menu li#greeting
     color: #fff;
 }
 
-ul#menu li a
+/*ul#menu li a
 {
     padding: 10px 20px;
     font-weight: bold;
@@ -240,7 +240,7 @@ ul#menu li a
     line-height: 2.8em;
     background-color: #e8eef4;
     color: #034af3;
-}
+}*/
 
 ul#menu li a:hover
 {

@@ -1,0 +1,11 @@
+﻿#lang-block .dd.ddcommon.borderRadius {
+    width: 81px!important;
+}
+
+#lang-block .dd.ddcommon.borderRadiusTp {
+    width: 81px!important;
+}
+
+ul#menu li {
+    width: 13%;
+}

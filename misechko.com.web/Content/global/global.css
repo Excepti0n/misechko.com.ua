@@ -1,4 +1,14 @@
 ﻿@font-face {
+				font-family: 'MyriadPro-Regular';
+				src: url('fonts/MyriadProRegular/myriadproregular.eot');
+				src: url('fonts/MyriadProRegular/myriadproregular.eot?#iefix') format('embedded-opentype'),
+						 url('fonts/MyriadProRegular/myriadproregular.woff') format('woff'),
+						 url('fonts/MyriadProRegular/myriadproregular.ttf') format('truetype'),
+						 url('fonts/MyriadProRegular/myriadproregular.svg#myriadproregular') format('svg');
+				font-weight: normal;
+				font-style: normal;
+		}
+@font-face {
 	font-family: 'MyriadPro-LightSemiCn';
 	src: url('fonts/MyriadProLightSemiCond/myriadprolightsemicn.eot');
 	src: url('fonts/MyriadProLightSemiCond/myriadprolightsemicn.eot?#iefix') format('embedded-opentype'),
@@ -84,11 +94,13 @@ body
     font-family: 'MyriadPro-BoldCond';
     font-size: 32px;
     color: #7a113f;
+    text-align: right;
+    padding-right: 15px;
 }
 
 #logo {
     float: left;
-    margin: 10px 0% 0 0;
+    margin: 45px 0% 0 0;
     width: 12%;
 }
 
@@ -98,6 +110,10 @@ body
 
 #logo img {
     width: 100%;
+}
+
+header {
+    border-bottom: solid 20px #7a113f;
 }
 
 .header-container {
@@ -111,7 +127,7 @@ body
 menu {
     float: left;
     width: 88%;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 ul#menu {
@@ -119,12 +135,39 @@ ul#menu {
     list-style-type: none;
     margin-left: 0px;
     width: 100%;
+    border-bottom: none;
+    padding: 0;
 }
 
 ul#menu li {
     display: inline-table;
-    min-height: 140px;
+    height: 140px;
     width: 16%;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 35px;
+}
+
+ul#menu li:hover {
+    background-color: #7a113f;
+} 
+
+ul#menu li:hover h2 {
+    color: white;
+}
+
+ul#menu li a {
+    text-decoration: none;
+}
+
+ul#menu li > a > p {
+    color: #817f84;
+    font-size: 12px;
+    font-family: 'MyriadPro-Regular';
+}
+
+ul#menu li:hover > a > p {
+    color: white;
 }
 
 ul#menu li h2 {
@@ -132,9 +175,6 @@ ul#menu li h2 {
     font-size: 15px;
     color: #7a113f;
     cursor: pointer;
-    transition: color .25s ease-in-out;
-    -moz-transition: color .25s ease-in-out;
-    -webkit-transition: color .25s ease-in-out;
 }
 
 ul#menu li h2.selected {
@@ -142,7 +182,7 @@ ul#menu li h2.selected {
 }
 
 #lang-block span.ddlabel {
-    display: none;
+    display: inline-block;
 } 
 
 #lang-block .dd {
@@ -153,6 +193,18 @@ ul#menu li h2.selected {
     background: none;
 }
 
+#lang-block .ddTitleText img {
+    display: inline-block;
+}
+
 #lang-block .ddTitle .divider {
     display: none;
+}
+
+#lang-block .dd.ddcommon.borderRadius {
+    width: 78px!important;
+}
+
+#lang-block .dd.ddcommon.borderRadiusTp {
+    width: 78px!important;
 }
