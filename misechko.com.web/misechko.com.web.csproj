@@ -172,6 +172,9 @@
     <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.svg" />
     <Content Include="Content\global\global.ie.css" />
     <Content Include="Content\global\idd\dd.css" />
+    <Content Include="Content\home\home.css" />
+    <Content Include="Content\home\img\banner1.jpg" />
+    <Content Include="Content\home\img\bookmark.png" />
     <Content Include="Scripts\history.js\amplify.store.js" />
     <Content Include="Scripts\history.js\history.adapter.dojo.js" />
     <Content Include="Scripts\history.js\history.adapter.jquery.js" />

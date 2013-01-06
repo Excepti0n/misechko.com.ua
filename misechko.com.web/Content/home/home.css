@@ -1,0 +1,43 @@
+﻿#main {
+    padding: 0px;
+}
+
+#main-banner {
+  position:relative;
+  width: 100%;
+  height: 503px;
+  min-width: 360px;
+  float: left;
+  clear: both;
+}
+
+.in-banner-container {
+  width: 360px;
+  height: 320px;
+  margin: 53px auto 0px auto;
+  text-align: left;
+  background-color: white;
+  background-image: url(img/bookmark.png);
+  background-repeat: no-repeat;
+  background-position: -3px 27px;
+}
+
+.bg {
+    position:absolute;
+    left:0px; top:0px;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+html.backgroundsize #main-banner {
+    background:url(img/banner1.jpg) no-repeat center top;
+    background-size:100% auto;
+}
+html.backgroundsize .bg {display:none;}
+
+html.cssgradients #main-banner {
+  background-image: url(img/banner1.jpg);
+  background-size: auto;
+}
+html.cssgradients .bg {display:none;}

@@ -1,5 +1,10 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@using ClientDependency.Core.Mvc
+@{
+    ViewBag.Title = "Юридична Фірма «Місечко та Партнери»";
+    Html.RequiresCss("home/home.css", "Content", 110);
 }
 
-<h2>Index</h2>
+<div id="main-banner">
+    <div class="in-banner-container"></div>
+    <img src="@Url.Content("~/Content/home/img/banner1.jpg")" class="bg" />
+</div>

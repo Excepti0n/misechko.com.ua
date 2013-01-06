@@ -100,7 +100,7 @@ body
 
 #logo {
     float: left;
-    margin: 45px 0% 0 0;
+    margin: 25px -60px 0 0;
     width: 12%;
 }
 
@@ -127,7 +127,7 @@ header {
 menu {
     float: left;
     width: 88%;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 ul#menu {
@@ -140,12 +140,16 @@ ul#menu {
 }
 
 ul#menu li {
-    display: inline-table;
-    height: 140px;
-    width: 16%;
+    display: inline-block;
+    height: 79px;
+    width: 98px;
     text-align: left;
     padding-left: 30px;
+    padding-right: 20px;
     padding-top: 35px;
+    padding-bottom: 26px;
+    vertical-align: top;
+    margin-right: 10px;
 }
 
 ul#menu li:hover {
@@ -202,9 +206,9 @@ ul#menu li h2.selected {
 }
 
 #lang-block .dd.ddcommon.borderRadius {
-    width: 78px!important;
+    width: 81px!important;
 }
 
 #lang-block .dd.ddcommon.borderRadiusTp {
-    width: 78px!important;
+    width: 81px!important;
 }

@@ -9,7 +9,7 @@
 <!--[if IE 7]><html lang="@curlang" class="no-js ie7"><![endif]-->
 <!--[if IE 8]><html lang="@curlang" class="no-js ie8"><![endif]-->
 <!--[if IE 9]><html lang="@curlang" class="no-js ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="@curlang" class="no-js"><!--<![endif]-->
+<![if (gt IE 9)|!(IE)]><html lang="@curlang" class="no-js"><![endif]>
 <head>
 
     <meta charset="UTF-8">
@@ -36,14 +36,14 @@
         Html.RequiresCss("handheld.css?v=2", "Content", 97, new { media = "handheld" });
         Html.RequiresCss("jquery.ui.theme.css", "Base", 96);
     }
-    <!--[if IE]><!--> 
+    <!--[if IE]> 
         <link href="@Url.Content("~/Content/global/global.ie.css")" rel="stylesheet" type="text/css">
-    <!--<![endif]-->
-    <!--[if !IE 7]>
-        <style type="text/css">
-            #wrap {display:table;height:100%}
-        </style>
     <![endif]-->
+    <![if !IE 7]>
+        <style type="text/css">
+            #wrap {display:table;height: 100%;width: 100%}
+        </style>
+    <![endif]>
 </head>
 <body>
     <div id="wrap" class="noselect">
