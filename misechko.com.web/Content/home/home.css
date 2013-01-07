@@ -22,6 +22,23 @@
   background-position: -3px 27px;
 }
 
+.in-banner-container h2 {
+    padding-top: 20px;
+    padding-left: 50px;
+    font-family: 'MyriadPro-Bold';
+    color: #7a113f;
+    font-size: 30px;
+}
+
+.in-banner-container p {
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 40px;
+    font-family: 'MyriadPro-Regular';
+    font-size: 12px;
+    color: #020004;
+}
+
 .bg {
     position:absolute;
     left:0px; top:0px;
@@ -41,3 +58,53 @@ html.cssgradients #main-banner {
   background-size: auto;
 }
 html.cssgradients .bg {display:none;}
+
+#tri-block {
+    width: 1130px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#tri-block > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#tri-block #about-company {
+    width: 420px;
+    background: url(img/K.png) no-repeat 0px 30px;
+    border-right: 1px solid #bab6b8;
+}
+
+#tri-block #about-company > p {
+    color: #020001;
+    font-size: 12px;
+    font-family: 'MyriadPro-Regular';
+    padding-left: 0px;
+    padding-right: 65px;
+}
+
+#tri-block #experience {
+    width: 350px;
+    background: url(img/O.png) no-repeat 35px 30px;
+    border-right: 1px solid #bab6b8;
+}
+
+#tri-block #achievements {
+    width: 340px;
+    background: url(img/H.png) no-repeat 35px 30px;
+}
+
+#tri-block > div >  h2 {
+    color: #020001;
+    font-size: 20px;
+    font-family: 'MyriadPro-Bold';
+    padding-left: 90px;
+    padding-top: 35px;
+    margin-bottom: 30px;
+}
+
+#tri-block > #about-company >  h2 {
+    padding-left: 50px;
+}
