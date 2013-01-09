@@ -172,9 +172,15 @@
     <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.svg" />
     <Content Include="Content\global\global.ie.css" />
     <Content Include="Content\global\idd\dd.css" />
+    <Content Include="Content\global\img\rd-logo.png" />
+    <Content Include="Content\home\eh\jQuery.equalHeights.js" />
     <Content Include="Content\home\home.css" />
+    <Content Include="Content\home\home.js" />
+    <Content Include="Content\home\img\award1.png" />
+    <Content Include="Content\home\img\award2.png" />
     <Content Include="Content\home\img\banner1.jpg" />
     <Content Include="Content\home\img\bookmark.png" />
+    <Content Include="Content\home\img\dot.png" />
     <Content Include="Content\home\img\K.png" />
     <Content Include="Content\home\img\H.png" />
     <Content Include="Content\home\img\O.png" />
@@ -190,7 +196,7 @@
     <Content Include="Scripts\history.js\json2.js" />
     <Content Include="Content\global\idd\jquery.dd.min.js" />
     <Content Include="Content\global\img\eng.png" />
-    <Content Include="Content\global\img\Logo.png" />
+    <Content Include="Content\global\img\logo.png" />
     <Content Include="Content\global\img\rus.png" />
     <Content Include="Content\global\img\ukr.png" />
     <Content Include="Content\handheld.css" />
@@ -343,11 +349,12 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>20237</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:37864/</IISUrl>
+          <IISUrl>
+          </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

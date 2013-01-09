@@ -77,6 +77,10 @@ body
     float: right;
 }
 
+#lang-block #lang-top-line {
+    height: 30px;
+}
+
 #lang-block #lang-top-line a {
     text-decoration: none;
     color: #7a113f;
@@ -84,7 +88,21 @@ body
     font-size: 13px;
 }
 
-#lang-block #lang-top-line span{
+#lang-block #lang-top-line > * {
+    display: inline-block;
+}
+
+.ie7 #lang-block #lang-top-line > * {
+    display: inline!important;
+}
+
+#lang-block #lang-top-line .addr {
+    padding-top: 5px;
+    vertical-align: top;
+    vert-align: top;
+}
+
+#lang-block #lang-top-line span {
     color: #7a113f;
     font-family: 'MyriadPro-LightSemiCn';
     font-size: 13px;
@@ -96,6 +114,22 @@ body
     color: #7a113f;
     text-align: right;
     padding-right: 15px;
+}
+
+.ie8 #lang-block .dd.ddcommon.borderRadius {
+    width: 90px!important;
+}
+
+.ie8 #lang-block .dd.ddcommon.borderRadiusTp {
+    width: 90px!important;
+}
+
+.ie7 #lang-block .dd.ddcommon.borderRadius {
+    width: 90px!important;
+}
+
+.ie7 #lang-block .dd.ddcommon.borderRadiusTp {
+    width: 90px!important;
 }
 
 #logo {
@@ -116,6 +150,13 @@ header {
     border-bottom: solid 20px #7a113f;
 }
 
+.ie7 header {
+    display: block;
+    border-bottom-color: #7a113f;
+    border-bottom-style: solid;
+    border-bottom-width: 20px;
+}
+
 .header-container {
     margin-left: auto;
     margin-right: auto;
@@ -128,6 +169,10 @@ menu {
     float: left;
     width: 88%;
     margin-top: 10px;
+}
+
+.ie7 menu {
+    margin-bottom: -22px;
 }
 
 ul#menu {
@@ -152,6 +197,10 @@ ul#menu li {
     margin-right: 10px;
 }
 
+.ie7 ul#menu li {
+    display: inline;
+}
+
 ul#menu li:hover {
     background-color: #7a113f;
 } 
@@ -163,6 +212,10 @@ ul#menu li:hover h2 {
 ul#menu li a {
     text-decoration: none;
 }
+
+.ie7 ul#menu li:hover a {
+    background-color: #7a113f; 
+} 
 
 ul#menu li > a > p {
     color: #817f84;
@@ -211,4 +264,47 @@ ul#menu li h2.selected {
 
 #lang-block .dd.ddcommon.borderRadiusTp {
     width: 81px!important;
+}
+
+footer {
+    margin-top: -15px;
+}
+
+.made-in-radacode {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.made-in-radacode > .centered {
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    display: inline-block;
+}
+
+.made-in-radacode .rdc-logo {
+    display: inline-block;
+    width: 152px;
+    height: 53px;
+    background: url('img/rd-logo.png') no-repeat;
+    vertical-align: top;
+}
+
+.made-in-radacode .copyright-text {
+    color: #636465;
+    font-family: Verdana;
+    font-size: 12px;
+    display: inline-block;
+    padding-top: 19px;
+    padding-left: 10px;
+}
+
+.ie7 .made-in-radacode .copyright-text
+{
+    display: inline;
+}
+
+.ie7 .made-in-radacode .copyright-text
+{
+    display: inline;
 }

@@ -53,10 +53,17 @@
         </div>
 	
     </div>
-	
-@*	<footer>
-        
-	</footer>*@
+	<script>document.createElement("footer");</script>
+    <footer>
+        <div class="made-in-radacode">
+            <div class="centered">
+                <div class="rdc-logo"></div>
+                <div class="copyright-text">
+                    Зроблено в компанії <a href="radacode.com/ref">РадаКод</a>
+                </div>
+            </div>
+        </div>
+    </footer>
     @{
 		
         @MvcHtmlString.Create(Html.RenderJsHere(new List<IClientDependencyPath>

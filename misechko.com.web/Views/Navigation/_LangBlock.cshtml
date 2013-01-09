@@ -12,7 +12,7 @@
 <div id="lang-block">
     <div id="lang-top-line">
         @*<a href="@Url.Action("Index", "Home")">Головна</a>*@
-        <span>Київ, вул. Володимирська, 76Б, офіс 7</span>
+        <div class="addr"><span>Київ, вул. Володимирська, 76Б, офіс 7</span></div>
         <select name="langdrop" id="langdrop">
             <option value="uk" @(curlang == "uk" ? " selected" : "")  data-image="@Url.Content("/Content/global/img/ukr.png")">УКР</option>
             <option value="ru" @(curlang == "ru" ? " selected" : "") data-image="@Url.Content("/Content/global/img/rus.png")">РУС</option>

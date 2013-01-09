@@ -7,5 +7,9 @@
 }
 
 ul#menu li {
-    width: 13%;
+    width: 10%;
+}
+
+#logo {
+    margin-right: -40px;
 }

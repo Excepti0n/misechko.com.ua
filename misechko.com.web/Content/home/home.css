@@ -22,6 +22,21 @@
   background-position: -3px 27px;
 }
 
+.ie8 .in-banner-container {
+  z-index: 2;
+  position: relative;
+  width: 380px;
+  height: 350px;
+}
+
+.ie7 .in-banner-container {
+  z-index: 2;
+  position: relative;
+  width: 380px;
+  height: 350px;
+}
+ 
+
 .in-banner-container h2 {
     padding-top: 20px;
     padding-left: 50px;
@@ -44,20 +59,22 @@
     left:0px; top:0px;
     width:100%;
     height:100%;
-    z-index:-1;
+    z-index:1;
 }
 
 html.backgroundsize #main-banner {
     background:url(img/banner1.jpg) no-repeat center top;
     background-size:100% auto;
+    background-position: center top;
 }
 html.backgroundsize .bg {display:none;}
 
-html.cssgradients #main-banner {
+/*html.cssgradients #main-banner {
   background-image: url(img/banner1.jpg);
-  background-size: auto;
+  background-size:100% auto;
+  background-position: center top;
 }
-html.cssgradients .bg {display:none;}
+html.cssgradients .bg {display:none;}*/
 
 #tri-block {
     width: 1130px;
@@ -69,6 +86,10 @@ html.cssgradients .bg {display:none;}
 #tri-block > div {
     display: inline-block;
     vertical-align: top;
+}
+
+.ie7 #tri-block > div {
+    display: inline;
 }
 
 #tri-block #about-company {
@@ -107,4 +128,136 @@ html.cssgradients .bg {display:none;}
 
 #tri-block > #about-company >  h2 {
     padding-left: 50px;
+}
+
+.exp-item {
+    margin-bottom: 20px;
+}
+
+.exp-item > div {
+    display: inline-block;
+    display: inline;
+    vertical-align: top;
+}
+
+.exp-item .exp-year {
+    margin-left: 35px;
+    color: #7a113f;
+    font-size: 15px;
+    font-family: 'MyriadPro-Bold';
+}
+
+.exp-item .exp-slug {
+    margin-left: 15px;
+    width: 180px;
+    color: #070003;
+    font-size: 12px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.award-item {
+    margin-bottom: 20px;
+}
+
+.award-item > div {
+    display: inline-block;
+    display: inline;
+    vertical-align: top;
+}
+
+.award-item .award-icon {
+    margin-left: 40px;
+}
+
+.award-item .award-slug {
+    margin-left: 15px;
+    width: 200px;
+    color: #070003;
+    font-size: 12px;
+    font-family: 'MyriadPro-Regular';
+}
+
+#news-panel {
+    background-color: #7a113f;
+    background-image: url(img/dot.png);
+    background-repeat: repeat;
+    min-height: 150px;
+    padding-top: 40px;
+}
+
+#news-panel .centerer {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#news-panel #news-title {
+    float: left;
+    width: 50%;
+    min-height: 100px;
+    overflow: hidden;
+    color: white;
+    font-size: 20px;
+    font-family: 'MyriadPro-Bold';
+    text-align: right;
+}
+
+.ie7 #news-panel #news-title {
+    width: 49%;
+}
+
+#news-panel #news-title span {
+    padding-right: 20%;
+}
+
+#news-panel #news-block {
+    display: block;
+    float: none;
+    min-height: 100px;
+    overflow: hidden;
+    width: 50%;
+}
+
+#news-panel #news-block .news-date {
+    color: #bb5a68;
+    font-size: 15px;
+    font-family: 'MyriadPro-Bold';
+    padding-top: 5px;
+}
+
+#news-panel #news-block .news-text {
+    padding-top: 20px;
+    font-size: 15px;
+    color: white;
+    font-family: 'MyriadPro-Regular';
+    margin-bottom: 40px;
+}
+
+#bottom-menu {
+    height: 50px;
+    text-align: center;
+    color: #7a113f;
+    font-family: 'MyriadPro-Regular';
+    font-size: 15px;
+    border-bottom: 1px solid #bab6b8;
+    padding-top: 25px;
+}
+
+#bottom-menu ul {
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 0px;
+    width: 100%;
+    border-bottom: none;
+    padding: 0;
+}
+
+.ie7 #bottom-menu > ul > li {
+    display: inline;
+}
+
+#bottom-menu > ul > li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
 }
