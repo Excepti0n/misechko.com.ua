@@ -284,6 +284,8 @@ footer {
 
 .made-in-radacode .rdc-logo {
     display: inline-block;
+    zoom: 1;
+    *display: inline;
     width: 152px;
     height: 53px;
     background: url('img/rd-logo.png') no-repeat;
@@ -295,6 +297,8 @@ footer {
     font-family: Verdana;
     font-size: 12px;
     display: inline-block;
+    zoom: 1;
+    *display: inline;
     padding-top: 19px;
     padding-left: 10px;
 }

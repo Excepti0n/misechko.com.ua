@@ -136,7 +136,8 @@ html.cssgradients .bg {display:none;}*/
 
 .exp-item > div {
     display: inline-block;
-    display: inline;
+    zoom: 1;
+    *display: inline;
     vertical-align: top;
 }
 
@@ -161,7 +162,8 @@ html.cssgradients .bg {display:none;}*/
 
 .award-item > div {
     display: inline-block;
-    display: inline;
+    zoom: 1;
+    *display: inline;
     vertical-align: top;
 }
 
