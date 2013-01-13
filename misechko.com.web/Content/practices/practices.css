@@ -1,0 +1,82 @@
+﻿#main {
+    margin: 0px;
+    margin-bottom: 15px;
+    padding: 0px;
+}
+
+#practices-triplet {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#practices-triplet > div {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+}
+
+#practices-triplet > #support-materials {
+    width: 270px;
+    border-right: 1px solid #bab6b8;
+}
+
+#practices-triplet > #practice-main {
+    width: 560px;
+    border-right: 1px solid #bab6b8;
+    padding-right: 70px;
+}
+
+#practices-triplet > #practice-main > div.practice-headline {
+    padding-top: 50px;
+    padding-left: 65px;
+}
+
+#practices-triplet > #practice-main > div.practice-headline h1 {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    color: #020001;
+    font-size: 30px;
+    font-family: 'MyriadPro-Bold';
+    padding-left: 15px;
+}
+
+#practices-triplet > #practice-main p {
+    color: #070003;
+    font-family: Arial;
+    font-size: 14px;
+    padding-left: 65px;
+}
+
+#practices-triplet > #practice-main p:last-child {
+    padding-bottom: 30px;
+}
+
+#practices-triplet > #practice-main div.practice-headline + p {
+    padding-top: 30px;
+}
+
+#practices-triplet > #practice-main.extended {
+    width: 830px;
+}
+
+#practices-triplet > #practices-submenu {
+    width: 300px;
+}
+
+#practices-triplet > #practices-submenu > #practices-selector {
+    background-color: #7a113f;
+}
+
+#practices-triplet > #practices-submenu > #practices-selector > .practice-item {
+    display: block;
+    width: 100%;
+    height: 70px;
+}
+
+#practices-triplet > #practices-submenu > #practices-selector > .practice-item > div {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}

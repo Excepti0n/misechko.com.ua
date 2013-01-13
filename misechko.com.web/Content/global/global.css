@@ -44,11 +44,13 @@
 html {
 	overflow-y: auto;
     background: white;
+    height: 100%;
 }
 
 body 
 {    
     background-color: white;
+    height: 100%;
 }
 
 #mobile_menu_link {
@@ -209,6 +211,19 @@ ul#menu li:hover h2 {
     color: white;
 }
 
+ul#menu li.selected {
+    background-color: #7a113f;
+} 
+
+ul#menu li.selected h2 {
+    color: white;
+}
+
+ul#menu li.selected p {
+    color: white;
+}
+
+
 ul#menu li a {
     text-decoration: none;
 }
@@ -272,7 +287,8 @@ footer {
 
 .made-in-radacode {
     text-align: center;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
 }
 
 .made-in-radacode > .centered {
@@ -311,4 +327,59 @@ footer {
 .ie7 .made-in-radacode .copyright-text
 {
     display: inline;
+}
+
+#bottom-menu {
+    height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #bab6b8;
+    border-top: 1px solid #bab6b8;
+    padding-top: 25px;
+}
+
+#bottom-menu a {
+    color: #7a113f;
+    font-family: 'MyriadPro-Regular';
+    font-size: 15px;
+    text-decoration: none;
+}
+
+#bottom-menu a:hover {
+    text-decoration: underline;
+}
+
+#bottom-menu ul {
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 0px;
+    width: 100%;
+    border-bottom: none;
+    padding: 0;
+}
+
+.ie7 #bottom-menu > ul > li {
+    display: inline;
+}
+
+#bottom-menu > ul > li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#main {
+    margin-bottom: 15px;
+}
+
+.dark-ltr {
+    background-color: #7a113f;
+    width: 38px;
+    height: 37px;
+    font-family: 'MyriadPro-Bold';
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
 }

@@ -146,18 +146,28 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Content\Practices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Practices.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BrochuresController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndustriesController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Controllers\PracticiesController.cs" />
     <Compile Include="Controllers\PressCenterController.cs" />
+    <Compile Include="Controllers\PricesController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LanguageBlockModel.cs" />
+    <Compile Include="Models\PracticeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +194,7 @@
     <Content Include="Content\home\img\K.png" />
     <Content Include="Content\home\img\H.png" />
     <Content Include="Content\home\img\O.png" />
+    <Content Include="Content\practices\practices.css" />
     <Content Include="Scripts\history.js\amplify.store.js" />
     <Content Include="Scripts\history.js\history.adapter.dojo.js" />
     <Content Include="Scripts\history.js\history.adapter.jquery.js" />
@@ -320,10 +331,10 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Navigation\_TopMenu.cshtml" />
     <Content Include="Views\Navigation\_LangBlock.cshtml" />
+    <Content Include="Views\Practicies\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Practicies\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -337,6 +348,12 @@
       <Project>{4a65a222-0ca5-4ccb-aa00-594efbb7370a}</Project>
       <Name>misechko.com.data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Practices.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Practices.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
