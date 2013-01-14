@@ -61,7 +61,27 @@ namespace misechko.com.Content {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;А&lt;/div&gt;
+        ///            &lt;h1&gt;Абонентське юридичне обслуговування підприємства&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;h2&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/h2&gt;
+        ///        &lt;p&gt;
+        ///            Сучасні економічні та правові реалії нерозривно пов&apos;язують успішне ведення бізнесу з необхідністю якісної юридичної підтримки. Це пов&apos;язано як з зайвим «завзяттям» державних органів на предмет перевірки підприємств, так і з деякими контрагентами, які не [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string abon {
+            get {
+                return ResourceManager.GetString("abon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;П&lt;/div&gt;
+        ///            &lt;h1&gt;Практики&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;p&gt;
+        ///            Sayenko Kharenko користується відмінною репутацією серед клієнтів за бездоганну якість юридичного супроводу всіх аспектів ведення бізнесу в Україні. Ми забезпечуємо високий рівень консультацій у сферах банківського та фінансового права, конкурентного права, корпоративного права та M&amp;A, міжнародного арбітражу, міжнародної торгівлі, нерухомості, реструктуризації з [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DefaultText {
             get {

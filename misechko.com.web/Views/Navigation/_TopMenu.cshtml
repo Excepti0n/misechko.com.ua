@@ -20,8 +20,10 @@
     if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Practicies")
         {
             <li class="selected">
-                <h2 class="selected">Практики</h2>
-                <p>Юридичні практики компанії</p>
+                <a href="@Url.Action("Index", "Practicies", new { practice = "" })">
+                    <h2 class="selected">Практики</h2>
+                    <p>Юридичні практики компанії</p>
+                 </a>
             </li>
         } else
         {

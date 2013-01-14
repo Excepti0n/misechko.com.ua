@@ -4,5 +4,6 @@
     {
         public bool HasSupportMaterials { get; set; }
         public string PracticeMarkup { get; set; }
+        public string CurrentPracticeName { get; set; }
     }
 }

@@ -382,4 +382,37 @@ footer {
     display: inline-block;
     zoom: 1;
     *display: inline;
+    vertical-align: top;
+}
+
+@media screen and (max-width: 1160px) {
+	#logo {
+	    bottom: 100px;
+        position: relative;
+	}
+}
+
+/* iPad */
+
+@media screen and (max-width: 768px)
+{
+
+    menu {
+        float: left;
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    ul#menu li {
+        height: 116px;
+        width: 135px;
+    }
+
+    #logo {
+        width: 20%;
+    }
+
+    ul#menu li > a > p {
+        padding-top: 15px;
+    }
 }

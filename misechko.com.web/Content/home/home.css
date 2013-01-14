@@ -234,3 +234,28 @@ html.cssgradients .bg {display:none;}*/
     font-family: 'MyriadPro-Regular';
     margin-bottom: 40px;
 }
+
+@media screen and (max-width: 768px)
+{
+    #tri-block {
+        width: auto;
+    }
+
+    #tri-block #about-company {
+        width: 100%;
+        display: block;
+    }
+
+    #main-banner {
+        height: 315px;
+    }
+
+    .in-banner-container {
+        margin: 0px auto 0px auto;
+    }
+
+    html.backgroundsize #main-banner
+    {
+        background-size: 100% 100%;
+    }
+}
