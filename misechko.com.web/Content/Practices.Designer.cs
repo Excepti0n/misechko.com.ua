@@ -76,6 +76,31 @@ namespace misechko.com.Content {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;subblock-headline&quot;&gt;
+        ///                &lt;div class=&quot;light-ltr&quot;&gt;П&lt;/div&gt;
+        ///                &lt;h1&gt;Публікації&lt;/h1&gt;
+        ///            &lt;/div&gt;.
+        /// </summary>
+        internal static string abon_side {
+            get {
+                return ResourceManager.GetString("abon_side", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;Б&lt;/div&gt;
+        ///            &lt;h1&gt;Банкрутство&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span&gt;&lt;strong&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;br&gt;&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;Українська дійсність нерідко призводить до того, що, незважаючи на позитивне рішення суду про стягнення з боржника, в останнього просто може не вистачити коштів для повного погашення боргу. У таких випадках, в українській, так само як і в загальносвітовій практиці, пошире [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string bancrupt {
+            get {
+                return ResourceManager.GetString("bancrupt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
         ///            &lt;div class=&quot;dark-ltr&quot;&gt;П&lt;/div&gt;
         ///            &lt;h1&gt;Практики&lt;/h1&gt;
@@ -86,6 +111,79 @@ namespace misechko.com.Content {
         internal static string DefaultText {
             get {
                 return ResourceManager.GetString("DefaultText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;D&lt;/div&gt;
+        ///            &lt;h1&gt;Due Diligence&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///&lt;p style=&quot;text-align: justify;&quot;&gt;Due Diligence - це процедура комплексних юридичних перевірок з метою формування об&apos;єктивного уявлення про об&apos;єкт інвестування, що включає в себе оцінку інвестиційних ризиків, незалежну оцінку об&apos;єкта інвестування, наявних договірних зобов’язань і великої кількості інших факторів.&lt;/p&gt;
+        ///&lt;p&gt;&lt;span&gt;Мета процедури Due Diligence - уникнення або максимальне  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string diligence {
+            get {
+                return ResourceManager.GetString("diligence", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;З&lt;/div&gt;
+        ///            &lt;h1&gt;Земля/нерухомість&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///&lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span &gt;&lt;strong&gt;&lt;span style=&quot;&quot;&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;Дана практика є однією з ключових напрямків діяльності&amp;nbsp;фірми «Місечко та Партнери», тому ми активно розвиваємо практичний досвід у сфері правового супроводу операцій з землею та&amp;nbsp; нерухомістю в процесі купівлі-продажу,&amp; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string esate {
+            get {
+                return ResourceManager.GetString("esate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;Б&lt;/div&gt;
+        ///            &lt;h1&gt;Банківське та фінансове право&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///&lt;div class=&quot;tabulator&quot;&gt;&lt;/div&gt;
+        ///&lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;&quot;&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+        ///&lt;p style=&quot;text-align: justify;&quot;&gt;Практика у сфері банківського та фінансового права складає досить визначний сектор діяльності фірми «Місечко та Партнери».&lt;/p&gt;
+        ///&lt;p style=&quot;text-alig [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string finances {
+            get {
+                return ResourceManager.GetString("finances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h2&gt;&lt;/h2&gt;
+        ///&lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;Ц&lt;/div&gt;
+        ///            &lt;h1&gt;Цінні папери&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///&lt;p align=&quot;justify&quot;&gt;&lt;strong&gt;&lt;span &gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+        ///&lt;p align=&quot;justify&quot;&gt;Юристи, які входять до нашої практики корпоративного права та цінних паперів, консультують як міжнародних, так і місцевих клієнтів по справах, що стосуються зовнішньоекономічних трансакцій та корпоративних і регуляторних питань, надають консультац [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string papers {
+            get {
+                return ResourceManager.GetString("papers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;П&lt;/div&gt;
+        ///            &lt;h1&gt;Податкова практика&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///&lt;div class=&quot;tabulator&quot;&gt;&lt;/div&gt;
+        ///&lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;&lt;span &gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+        ///&lt;p style=&quot;text-align: justify;&quot;&gt;Податкова практика є провідним напрямком діяльності юридичної фірми «Місечко та Партнери». Даною практикою займаються висококласні фахівці в даній галузі, що мають значний успішний досвід  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string taxes {
+            get {
+                return ResourceManager.GetString("taxes", resourceCulture);
             }
         }
     }

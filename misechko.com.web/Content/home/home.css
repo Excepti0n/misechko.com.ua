@@ -130,55 +130,6 @@ html.cssgradients .bg {display:none;}*/
     padding-left: 50px;
 }
 
-.exp-item {
-    margin-bottom: 20px;
-}
-
-.exp-item > div {
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-    vertical-align: top;
-}
-
-.exp-item .exp-year {
-    margin-left: 35px;
-    color: #7a113f;
-    font-size: 15px;
-    font-family: 'MyriadPro-Bold';
-}
-
-.exp-item .exp-slug {
-    margin-left: 15px;
-    width: 180px;
-    color: #070003;
-    font-size: 12px;
-    font-family: 'MyriadPro-Regular';
-}
-
-.award-item {
-    margin-bottom: 20px;
-}
-
-.award-item > div {
-    display: inline-block;
-    zoom: 1;
-    *display: inline;
-    vertical-align: top;
-}
-
-.award-item .award-icon {
-    margin-left: 40px;
-}
-
-.award-item .award-slug {
-    margin-left: 15px;
-    width: 200px;
-    color: #070003;
-    font-size: 12px;
-    font-family: 'MyriadPro-Regular';
-}
-
 #news-panel {
     background-color: #7a113f;
     background-image: url(img/dot.png);

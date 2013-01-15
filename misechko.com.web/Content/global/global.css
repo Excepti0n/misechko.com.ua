@@ -1,12 +1,12 @@
 ﻿@font-face {
-				font-family: 'MyriadPro-Regular';
-				src: url('fonts/MyriadProRegular/myriadproregular.eot');
-				src: url('fonts/MyriadProRegular/myriadproregular.eot?#iefix') format('embedded-opentype'),
-						 url('fonts/MyriadProRegular/myriadproregular.woff') format('woff'),
-						 url('fonts/MyriadProRegular/myriadproregular.ttf') format('truetype'),
-						 url('fonts/MyriadProRegular/myriadproregular.svg#myriadproregular') format('svg');
-				font-weight: normal;
-				font-style: normal;
+	font-family: 'MyriadPro-Regular';
+	src: url('fonts/MyriadProRegular/myriadproregular.eot');
+	src: url('fonts/MyriadProRegular/myriadproregular.eot?#iefix') format('embedded-opentype'),
+				url('fonts/MyriadProRegular/myriadproregular.woff') format('woff'),
+				url('fonts/MyriadProRegular/myriadproregular.ttf') format('truetype'),
+				url('fonts/MyriadProRegular/myriadproregular.svg#myriadproregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 		}
 @font-face {
 	font-family: 'MyriadPro-LightSemiCn';
@@ -39,6 +39,41 @@
 				url('fonts/MyriadProBoldCond/myriadproboldcond.svg#myriadproboldcond') format('svg');
 	font-weight: normal;
 	font-style: normal;
+}
+
+@font-face {
+    font-family: 'vegurbold';
+    src: url('fonts/VegurBold/vegur-bold-webfont.eot');
+    src: url('fonts/VegurBold/vegur-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/VegurBold/vegur-bold-webfont.woff') format('woff'),
+         url('fonts/VegurBold/vegur-bold-webfont.ttf') format('truetype'),
+         url('fonts/VegurBold/vegur-bold-webfont.svg#vegurbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'vegur_lightregular';
+    src: url('fonts/VegurLight/vegur-light-webfont.eot');
+    src: url('fonts/VegurLight/vegur-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/VegurLight/vegur-light-webfont.woff') format('woff'),
+         url('fonts/VegurLight/vegur-light-webfont.ttf') format('truetype'),
+         url('fonts/VegurLight/vegur-light-webfont.svg#vegur_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'vegurregular';
+    src: url('fonts/VegurRegular/vegur-regular-webfont.eot');
+    src: url('fonts/VegurRegular/vegur-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/VegurRegular/vegur-regular-webfont.woff') format('woff'),
+         url('fonts/VegurRegular/vegur-regular-webfont.ttf') format('truetype'),
+         url('fonts/VegurRegular/vegur-regular-webfont.svg#vegurregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 html {
@@ -99,14 +134,14 @@ body
 }
 
 #lang-block #lang-top-line .addr {
-    padding-top: 5px;
+    padding-top: 6px;
     vertical-align: top;
     vert-align: top;
 }
 
 #lang-block #lang-top-line span {
     color: #7a113f;
-    font-family: 'MyriadPro-LightSemiCn';
+    font-family: 'vegur_lightregular';
     font-size: 13px;
 }
 
@@ -116,6 +151,34 @@ body
     color: #7a113f;
     text-align: right;
     padding-right: 15px;
+}
+
+#lang-block span.ddlabel {
+    display: inline-block;
+} 
+
+#lang-block .dd {
+    border: none;
+}
+
+#lang-block .ddTitle {
+    background: none;
+}
+
+#lang-block .ddTitleText img {
+    display: inline-block;
+}
+
+#lang-block .ddTitle .divider {
+    display: none;
+}
+
+#lang-block .dd.ddcommon.borderRadius {
+    width: 85px!important;
+}
+
+#lang-block .dd.ddcommon.borderRadiusTp {
+    width: 85px!important;
 }
 
 .ie8 #lang-block .dd.ddcommon.borderRadius {
@@ -253,33 +316,7 @@ ul#menu li h2.selected {
     color: white;
 }
 
-#lang-block span.ddlabel {
-    display: inline-block;
-} 
 
-#lang-block .dd {
-    border: none;
-}
-
-#lang-block .ddTitle {
-    background: none;
-}
-
-#lang-block .ddTitleText img {
-    display: inline-block;
-}
-
-#lang-block .ddTitle .divider {
-    display: none;
-}
-
-#lang-block .dd.ddcommon.borderRadius {
-    width: 81px!important;
-}
-
-#lang-block .dd.ddcommon.borderRadiusTp {
-    width: 81px!important;
-}
 
 footer {
     margin-top: -15px;
@@ -371,6 +408,18 @@ footer {
     margin-bottom: 15px;
 }
 
+.subblock-headline {
+    padding-top: 50px;
+    display: block;
+}
+
+.subblock-headline > h1 {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 30px;
+    font-family: 'MyriadPro-Bold';    
+}
+
 .dark-ltr {
     background-color: #7a113f;
     width: 38px;
@@ -383,6 +432,111 @@ footer {
     zoom: 1;
     *display: inline;
     vertical-align: top;
+} 
+
+.light-ltr {
+    background-color: #99182a;
+    width: 38px;
+    height: 37px;
+    font-family: 'MyriadPro-Bold';
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+#publications-items-container {
+    padding-top: 25px;
+}
+
+.pub-item {
+    padding-left: 25px;
+    background-image: url(img/publication-icon.png);
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+}
+
+.pub-item .pub-slug {
+    margin-left: 15px;
+    width: 180px;
+    color: #070003;
+    font-size: 12px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.pub-item a {
+    text-decoration: none;
+}
+
+.exp-item {
+    margin-bottom: 20px;
+}
+
+.exp-item > div {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+.exp-item .exp-year {
+    margin-left: 35px;
+    color: #7a113f;
+    font-size: 15px;
+    font-family: 'MyriadPro-Bold';
+}
+
+.exp-item .exp-slug {
+    margin-left: 15px;
+    width: 180px;
+    color: #070003;
+    font-size: 12px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.award-item {
+    margin-bottom: 20px;
+}
+
+.award-item > div {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
+.award-item .award-icon {
+    margin-left: 40px;
+}
+
+.award-item .award-slug {
+    margin-left: 15px;
+    width: 200px;
+    color: #070003;
+    font-size: 12px;
+    font-family: 'MyriadPro-Regular';
+}
+
+#singler {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1145px;
+}
+
+.global-headline {
+    padding-top: 10px;
+}
+
+div.global-headline h1 {
+    display: inline;
+    zoom: 1;
+    color: #020001;
+    font-size: 30px;
+    font-family: 'MyriadPro-Bold';
+    padding-left: 15px;
 }
 
 @media screen and (max-width: 1160px) {

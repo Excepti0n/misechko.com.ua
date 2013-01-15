@@ -29,6 +29,15 @@ namespace misechko.com.Controllers
                 PracticeMarkup = Practices.ResourceManager.GetString(practice),
                 CurrentPracticeName = practice
             };
+
+            var supportMarkup = Practices.ResourceManager.GetString(practice + "_side");
+
+            if(!string.IsNullOrEmpty(supportMarkup))
+            {
+                model.HasSupportMaterials = true;
+                model.SupportMaterialsMarkup = supportMarkup;
+            }
+
             return View(model);
         }
 

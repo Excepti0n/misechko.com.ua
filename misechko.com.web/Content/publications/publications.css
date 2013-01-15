@@ -1,0 +1,57 @@
+﻿#main {
+    margin: 0px;
+    margin-bottom: 15px;
+    padding: 0px;
+}
+
+#publications-duo {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1145px;
+}
+
+#publications-duo > div {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+}
+
+#publications-duo > #pub-side {
+    width: 270px;
+    border-right: 1px solid #BAB6B8;
+}
+
+#publications-duo > #pub-content {
+    width: 790px;
+}
+
+#publications-duo > #pub-content {
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 50px;
+}
+
+#publications-duo > #pub-content > div.publication-headline h1 {
+    display: inline;
+    zoom: 1;
+    color: #020001;
+    font-size: 30px;
+    font-family: 'MyriadPro-Bold';
+    padding-left: 15px;
+    max-width: 585px;
+}
+
+#publications-duo > #pub-content h2 {
+    color: #4C4C4C;
+    font-family: 'MyriadPro-Bold';
+    margin-top: 20px;
+}
+
+#publications-duo > #pub-content p {
+    color: #070003;
+    font-family: Arial;
+    font-size: 14px;
+    padding-left: 65px;
+}

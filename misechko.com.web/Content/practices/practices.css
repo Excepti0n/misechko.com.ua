@@ -7,7 +7,7 @@
 #practices-triplet {
     margin-right: auto;
     margin-left: auto;
-    width: 1140px;
+    width: 1145px;
 }
 
 #practices-triplet > div {
@@ -30,7 +30,7 @@
 
 #practices-triplet > #practice-main > div.practice-headline {
     padding-top: 50px;
-    padding-left: 65px;
+    padding-left: 40px;
 }
 
 #practices-triplet > #practice-main > div.practice-headline h1 {
@@ -40,7 +40,7 @@
     color: #020001;
     font-size: 30px;
     font-family: 'MyriadPro-Bold';
-    padding-left: 15px;
+    padding-left: 10px;
     max-width: 585px;
 }
 
@@ -55,14 +55,14 @@
 #practices-triplet > #practice-main h2 {
     color: #4C4C4C;
     font-family: 'MyriadPro-Bold';
-    padding-left: 65px;
+    padding-left: 40px;
     margin-top: 20px;
 }
 
 #practices-triplet > #practice-main h3 {
     color: #4C4C4C;
     font-family: 'MyriadPro-Regular';
-    padding-left: 65px;
+    padding-left: 40px;
     margin-top: 20px;
 }
 
@@ -70,7 +70,7 @@
     color: #070003;
     font-family: Arial;
     font-size: 14px;
-    padding-left: 65px;
+    padding-left: 40px;
 }
 
 #practices-triplet > #practice-main p:last-child {

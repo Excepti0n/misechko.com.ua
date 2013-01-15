@@ -151,6 +151,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Practices.resx</DependentUpon>
     </Compile>
+    <Compile Include="Content\Publications.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Publications.resx</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\BrochuresController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
@@ -161,6 +166,7 @@
     <Compile Include="Controllers\PracticiesController.cs" />
     <Compile Include="Controllers\PressCenterController.cs" />
     <Compile Include="Controllers\PricesController.cs" />
+    <Compile Include="Controllers\PublicationsController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -168,6 +174,7 @@
     </Compile>
     <Compile Include="Models\LanguageBlockModel.cs" />
     <Compile Include="Models\PracticeViewModel.cs" />
+    <Compile Include="Models\PublicationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -180,10 +187,14 @@
     <Content Include="Content\global\fonts\MyriadProBold\myriadprobold.svg" />
     <Content Include="Content\global\fonts\MyriadProLightSemiCond\myriadprolightsemicn.svg" />
     <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.svg" />
+    <Content Include="Content\global\fonts\VegurBold\vegur-bold-webfont.svg" />
+    <Content Include="Content\global\fonts\VegurLight\vegur-light-webfont.svg" />
+    <Content Include="Content\global\fonts\VegurRegular\vegur-regular-webfont.svg" />
     <Content Include="Content\global\global.ie.css" />
     <Content Include="Content\global\idd\dd.css" />
+    <Content Include="Content\global\img\publication-icon.png" />
     <Content Include="Content\global\img\rd-logo.png" />
-    <Content Include="Content\home\eh\jQuery.equalHeights.js" />
+    <Content Include="Content\global\eh\jQuery.equalHeights.js" />
     <Content Include="Content\home\home.css" />
     <Content Include="Content\home\home.js" />
     <Content Include="Content\home\img\award1.png" />
@@ -201,7 +212,10 @@
     <Content Include="Content\practices\img\practices-bankrupcy.png" />
     <Content Include="Content\practices\img\practices-special-papers.png" />
     <Content Include="Content\practices\img\practices-taxes.png" />
+    <Content Include="Content\practices\practices.js" />
     <Content Include="Content\practices\practices.css" />
+    <Content Include="Content\publications\publications.css" />
+    <Content Include="Content\publications\publications.js" />
     <Content Include="Scripts\history.js\amplify.store.js" />
     <Content Include="Scripts\history.js\history.adapter.dojo.js" />
     <Content Include="Scripts\history.js\history.adapter.jquery.js" />
@@ -296,6 +310,15 @@
     <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.eot" />
     <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.ttf" />
     <Content Include="Content\global\fonts\MyriadProRegular\myriadproregular.woff" />
+    <Content Include="Content\global\fonts\VegurRegular\vegur-regular-webfont.eot" />
+    <Content Include="Content\global\fonts\VegurRegular\vegur-regular-webfont.ttf" />
+    <Content Include="Content\global\fonts\VegurRegular\vegur-regular-webfont.woff" />
+    <Content Include="Content\global\fonts\VegurLight\vegur-light-webfont.eot" />
+    <Content Include="Content\global\fonts\VegurLight\vegur-light-webfont.ttf" />
+    <Content Include="Content\global\fonts\VegurLight\vegur-light-webfont.woff" />
+    <Content Include="Content\global\fonts\VegurBold\vegur-bold-webfont.eot" />
+    <Content Include="Content\global\fonts\VegurBold\vegur-bold-webfont.ttf" />
+    <Content Include="Content\global\fonts\VegurBold\vegur-bold-webfont.woff" />
     <None Include="Properties\PublishProfiles\LocalPublish.pubxml" />
     <None Include="Scripts\jquery-1.8.3.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
@@ -339,6 +362,9 @@
     <Content Include="Views\Navigation\_TopMenu.cshtml" />
     <Content Include="Views\Navigation\_LangBlock.cshtml" />
     <Content Include="Views\Practicies\Index.cshtml" />
+    <Content Include="Views\Publications\Index.cshtml" />
+    <Content Include="Views\Shared\_Publications.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -360,6 +386,10 @@
     <EmbeddedResource Include="Content\Practices.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Practices.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\Publications.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Publications.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

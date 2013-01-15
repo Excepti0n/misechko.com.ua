@@ -1,0 +1,17 @@
+﻿@model misechko.com.Models.PublicationViewModel 
+@using ClientDependency.Core.Mvc
+@{
+    ViewBag.Title = "Юридична Фірма «Місечко та Партнери»";
+    Html.RequiresCss("publications/publications.css", "Content", 110);
+    Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
+    Html.RequiresJs("publications/publications.js", "Content", 25);
+}
+
+<div id="publications-duo">
+    <div id="pub-side">
+        @Html.Partial("_Publications")
+    </div>
+    <div id="pub-content">
+        @Html.Raw(Model.PublicationMarkUp)
+    </div>
+</div>
