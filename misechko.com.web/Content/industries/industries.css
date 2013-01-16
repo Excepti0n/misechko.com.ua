@@ -1,38 +1,39 @@
 ﻿#main {
+    margin: 0px;
     margin-bottom: 15px;
     padding: 0px;
 }
 
-#practices-triplet {
+#industries-triplet {
     margin-right: auto;
     margin-left: auto;
     width: 1145px;
 }
 
-#practices-triplet > div {
+#industries-triplet > div {
     display: inline-block;
     vertical-align: top;
     zoom: 1;
     *display: inline;
 }
 
-#practices-triplet > #support-materials {
+#industries-triplet > #support-materials {
     width: 270px;
     border-right: 1px solid #bab6b8;
 }
 
-#practices-triplet > #practice-main {
+#industries-triplet > #industry-main {
     width: 490px;
     border-right: 1px solid #bab6b8;
     padding-right: 70px;
 }
 
-#practices-triplet > #practice-main > div.practice-headline {
+#industries-triplet > #industry-main > div.industry-headline {
     padding-top: 50px;
     padding-left: 40px;
 }
 
-#practices-triplet > #practice-main > div.practice-headline h1 {
+#industries-triplet > #industry-main > div.industry-headline h1 {
     display: inline;
     zoom: 1;
     *display: inline;
@@ -43,88 +44,88 @@
     max-width: 585px;
 }
 
-#practices-triplet > #practice-main > * {
+#industries-triplet > #industry-main > * {
     padding-left: 24px;
 }
 
-#practices-triplet > #practice-main ul {
+#industries-triplet > #industry-main ul {
     padding-left: 60px;
 }
 
-#practices-triplet > #practice-main h2 {
+#industries-triplet > #industry-main h2 {
     color: #4C4C4C;
     font-family: 'MyriadPro-Bold';
     padding-left: 40px;
     margin-top: 20px;
 }
 
-#practices-triplet > #practice-main h3 {
+#industries-triplet > #industry-main h3 {
     color: #4C4C4C;
     font-family: 'MyriadPro-Regular';
     padding-left: 40px;
     margin-top: 20px;
 }
 
-#practices-triplet > #practice-main p {
+#industries-triplet > #industry-main p {
     color: #070003;
     font-family: Arial;
     font-size: 14px;
     padding-left: 40px;
 }
 
-#practices-triplet > #practice-main li {
+#industries-triplet > #industry-main li {
     color: #070003;
 }
 
-#practices-triplet > #practice-main p:last-child {
+#industries-triplet > #industry-main p:last-child {
     padding-bottom: 30px;
 }
 
-#practices-triplet > #practice-main div.practice-headline + p {
+#industries-triplet > #industry-main div.industry-headline + p {
     padding-top: 30px;
 }
 
-#practices-triplet > #practice-main.extended {
+#industries-triplet > #industry-main.extended {
     width: 760px;
 }
 
-#practices-triplet > #practices-submenu {
+#industries-triplet > #industries-submenu {
     width: 300px;
     left: -5px;
     position: relative;
 }
 
-#practices-triplet > #practices-submenu > #practices-selector {
+#industries-triplet > #industries-submenu > #industries-selector {
     background-color: #7a113f;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-#practices-triplet > #practices-submenu > #practices-selector > .practice-item {
+#industries-triplet > #industries-submenu > #industries-selector > .industry-item {
     display: block;
     width: 100%;
     height: 70px;
 }
 
-#practices-triplet > #practices-submenu > #practices-selector > .practice-item a {
+#industries-triplet > #industries-submenu > #industries-selector > .industry-item a {
     text-decoration: none;
 }
 
-#practices-triplet > #practices-submenu > #practices-selector > .practice-item.selected {
+#industries-triplet > #industries-submenu > #industries-selector > .industry-item.selected {
     background-color: #99182a;    
 }
 
-#practices-triplet > #practices-submenu > #practices-selector > .practice-item:hover {
+#industries-triplet > #industries-submenu > #industries-selector > .industry-item:hover {
     background-color: #99182a;    
 }    
 
-#practices-triplet > #practices-submenu > #practices-selector > .practice-item div {
+#industries-triplet > #industries-submenu > #industries-selector > .industry-item div {
     display: inline-block;
     zoom: 1;
     *display: inline;
 }
 
-#practices-triplet > #practices-submenu > #practices-selector > .practice-item .practice-icon {
+#industries-triplet > #industries-submenu > #industries-selector > .industry-item .industry-icon {
     width: 40px;
     padding-left: 20px;
     padding-top: 20px;
@@ -132,7 +133,7 @@
     vertical-align: middle;
 }
 
-#practices-triplet > #practices-submenu > #practices-selector > .practice-item .practice-submenu-text {
+#industries-triplet > #industries-submenu > #industries-selector > .industry-item .industry-submenu-text {
     color: #E9E4E4;
     font-size: 15px;
     font-family: 'MyriadPro-Regular';
@@ -145,20 +146,20 @@
     margin-top: 0px;
 }
 
-.ie7 #practices-triplet > #practices-submenu {
+.ie7 #industries-triplet > #industries-submenu {
     width: 305px;
     left: 0px;
 }
 
 @media screen and (max-width: 768px)
 {
-    #practices-triplet
+    #industries-triplet
     {
         width: auto;
         position: relative;
     }
 
-    #practices-triplet > #practices-submenu
+    #industries-triplet > #industries-submenu
     {
         width: 300px;
         left: 0px;
@@ -166,7 +167,7 @@
         top: 0px;
     }
 
-    #practices-triplet > #practice-main.extended {
+    #industries-triplet > #industry-main.extended {
         width: auto;
         margin-left: 300px;
     }

@@ -108,9 +108,9 @@ namespace misechko.com.Content {
         ///        &lt;p&gt;
         ///            Sayenko Kharenko користується відмінною репутацією серед клієнтів за бездоганну якість юридичного супроводу всіх аспектів ведення бізнесу в Україні. Ми забезпечуємо високий рівень консультацій у сферах банківського та фінансового права, конкурентного права, корпоративного права та M&amp;A, міжнародного арбітражу, міжнародної торгівлі, нерухомості, реструктуризації з [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string DefaultText {
+        internal static string defaultText {
             get {
-                return ResourceManager.GetString("DefaultText", resourceCulture);
+                return ResourceManager.GetString("defaultText", resourceCulture);
             }
         }
         
@@ -133,7 +133,7 @@ namespace misechko.com.Content {
         ///            &lt;div class=&quot;dark-ltr&quot;&gt;З&lt;/div&gt;
         ///            &lt;h1&gt;Земля/нерухомість&lt;/h1&gt;
         ///        &lt;/div&gt;
-        ///&lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span &gt;&lt;strong&gt;&lt;span style=&quot;&quot;&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;Дана практика є однією з ключових напрямків діяльності&amp;nbsp;фірми «Місечко та Партнери», тому ми активно розвиваємо практичний досвід у сфері правового супроводу операцій з землею та&amp;nbsp; нерухомістю в процесі купівлі-продажу,&amp; [rest of string was truncated]&quot;;.
+        ///&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span &gt;&lt;strong&gt;&lt;span style=&quot;&quot;&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;Дана практика є однією з ключових напрямків діяльності&amp;nbsp;фірми «Місечко та Партнери», тому ми активно розвиваємо практичний досвід у сфері правового супроводу операцій з землею та&amp;nbsp; нерухомістю в процесі купівлі-продажу,&amp;nbsp;ор [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string esate {
             get {
@@ -146,10 +146,9 @@ namespace misechko.com.Content {
         ///            &lt;div class=&quot;dark-ltr&quot;&gt;Б&lt;/div&gt;
         ///            &lt;h1&gt;Банківське та фінансове право&lt;/h1&gt;
         ///        &lt;/div&gt;
-        ///&lt;div class=&quot;tabulator&quot;&gt;&lt;/div&gt;
-        ///&lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;&quot;&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+        ///&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;&quot;&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
         ///&lt;p style=&quot;text-align: justify;&quot;&gt;Практика у сфері банківського та фінансового права складає досить визначний сектор діяльності фірми «Місечко та Партнери».&lt;/p&gt;
-        ///&lt;p style=&quot;text-alig [rest of string was truncated]&quot;;.
+        ///&lt;p style=&quot;text-align: justify;&quot;&gt;Юристи компанії постійно  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string finances {
             get {
@@ -158,13 +157,26 @@ namespace misechko.com.Content {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h2&gt;&lt;/h2&gt;
-        ///&lt;div class=&quot;practice-headline&quot;&gt;
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;І&lt;/div&gt;
+        ///            &lt;h1&gt;Право інтелектуальної власності&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///&lt;p&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;&lt;span &gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;br&gt;&lt;/span&gt;&lt;/strong&gt;&lt;br&gt;В Україні права інтелектуальної власності поступово, але впевнено стають одним з найбільш вартісних елементів суспільного продукту, а відтак потребують дедалі досконалішого та професійного захисту.&lt;/p&gt;
+        ///&lt;p style=&quot;text-align: justify;&quot;&gt;В [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string intellect {
+            get {
+                return ResourceManager.GetString("intellect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;practice-headline&quot;&gt;
         ///            &lt;div class=&quot;dark-ltr&quot;&gt;Ц&lt;/div&gt;
         ///            &lt;h1&gt;Цінні папери&lt;/h1&gt;
         ///        &lt;/div&gt;
         ///&lt;p align=&quot;justify&quot;&gt;&lt;strong&gt;&lt;span &gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
-        ///&lt;p align=&quot;justify&quot;&gt;Юристи, які входять до нашої практики корпоративного права та цінних паперів, консультують як міжнародних, так і місцевих клієнтів по справах, що стосуються зовнішньоекономічних трансакцій та корпоративних і регуляторних питань, надають консультац [rest of string was truncated]&quot;;.
+        ///&lt;p align=&quot;justify&quot;&gt;Юристи, які входять до нашої практики корпоративного права та цінних паперів, консультують як міжнародних, так і місцевих клієнтів по справах, що стосуються зовнішньоекономічних трансакцій та корпоративних і регуляторних питань, надають консультації щодо заг [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string papers {
             get {

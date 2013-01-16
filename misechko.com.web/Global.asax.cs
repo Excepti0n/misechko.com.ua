@@ -19,6 +19,7 @@ namespace misechko.com
         {
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RadaCodeViewEngine());
+            ControllerBuilder.Current.SetControllerFactory(new RadaCodeControllerFactory());
 
             AreaRegistration.RegisterAllAreas();
 

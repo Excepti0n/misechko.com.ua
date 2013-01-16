@@ -5,7 +5,7 @@
 #main-banner {
   position:relative;
   width: 100%;
-  height: 503px;
+  height: 430px;
   min-width: 360px;
   float: left;
   clear: both;
@@ -94,8 +94,8 @@ html.cssgradients .bg {display:none;}*/
 
 #tri-block #about-company {
     width: 420px;
-    background: url(img/K.png) no-repeat 0px 30px;
     border-right: 1px solid #bab6b8;
+
 }
 
 #tri-block #about-company > p {
@@ -106,15 +106,53 @@ html.cssgradients .bg {display:none;}*/
     padding-right: 65px;
 }
 
+#tri-block .dark-ltr {
+    background-color: #7a113f;
+    width: 38px;
+    height: 34px;
+    font-family: 'MyriadPro-Bold';
+    font-size: 26px;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+}
+
+#tri-block .light-ltr {
+    background-color: #99182a;
+    width: 38px;
+    height: 34px;
+    font-family: 'MyriadPro-Bold';
+    font-size: 26px;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+}
+
 #tri-block #experience {
-    width: 350px;
-    background: url(img/O.png) no-repeat 35px 30px;
+    width: 320px;
+    padding-left: 35px;
     border-right: 1px solid #bab6b8;
 }
 
+#tri-block .subblock-headline {
+    padding-top: 35px;
+}
+
+#tri-block .subblock-headline h1 {
+    color: #020001;
+    font-size: 20px;
+    font-family: 'MyriadPro-Bold';
+    margin-bottom: 30px;
+    padding-top: 4px;
+}
+
 #tri-block #achievements {
-    width: 340px;
-    background: url(img/H.png) no-repeat 35px 30px;
+    width: 300px;
+    padding-left: 40px;
 }
 
 #tri-block > div >  h2 {
@@ -136,6 +174,7 @@ html.cssgradients .bg {display:none;}*/
     background-repeat: repeat;
     min-height: 150px;
     padding-top: 40px;
+    display: none;
 }
 
 #news-panel .centerer {

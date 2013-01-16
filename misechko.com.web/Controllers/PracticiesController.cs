@@ -18,7 +18,7 @@ namespace misechko.com.Controllers
                 model = new PracticeViewModel
                 {
                     HasSupportMaterials = false,
-                    PracticeMarkup = Practices.DefaultText
+                    PracticeMarkup = Practices.defaultText
                 };
                 return View(model);
             }

@@ -1,0 +1,76 @@
+﻿@using ClientDependency.Core.Mvc
+@model misechko.com.Models.IndustryViewModel
+
+@{
+    ViewBag.Title = "Індустрії | «Місечко та Партнери»";
+    Html.RequiresCss("industries/industries.css", "Content", 110);
+    Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
+    Html.RequiresJs("industries/idustries.js", "Content", 25);
+    var extended = !Model.HasSupportMaterials ? "extended" : null;
+    var industry = Model.CurrentIndustryName;
+}
+
+<div id="industries-triplet">
+    @if(Model.HasSupportMaterials)
+    {
+        <div id="support-materials">
+           @Html.Partial("_Publications")
+        </div>
+    }
+    <div id="industry-main" class="@extended">
+        @Html.Raw(Model.IndustryMarkup)
+    </div>
+    <div id="industries-submenu">
+        <div id="industries-selector">
+            <div class="industry-item @(industry == "abon" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/abon")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-abon.png")"/></div>*@
+                    <div class="industry-submenu-text">Абонентське обслуговування</div>
+                </a>
+            </div>
+            
+            <div class="industry-item @(industry == "diligence" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/diligence")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-due-diligence.png")"/></div>*@
+                    <div class="industry-submenu-text">Due Diligence</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "bancrupt" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/bancrupt")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industries-bankrupcy.png")"/></div>*@
+                    <div class="industry-submenu-text">Банкрутство</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "papers" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/papers")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industries-special-papers.png")"/></div>*@
+                    <div class="industry-submenu-text">Цінні папери</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "taxes" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/taxes")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industries-taxes.png")"/></div>*@
+                    <div class="industry-submenu-text">Податки</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "esate" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/esate")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-land.png")"/></div>*@
+                    <div class="industry-submenu-text">Земля та нерухомість</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "finances" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/finances")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-financial-right.png")"/></div>*@
+                    <div class="industry-submenu-text">Фінансове право</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "intellect" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/intellect")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-intellect.png")"/></div>*@
+                    <div class="industry-submenu-text">Право інтелектуальної власності</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

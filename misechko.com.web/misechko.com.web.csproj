@@ -139,6 +139,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\MVC\RadaCodeControllerFactory.cs" />
     <Compile Include="Application\MVC\RadaCodeBaseController.cs" />
     <Compile Include="Application\MVC\RadaCodeViewEngine.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -146,6 +147,11 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Content\Industries.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Industries.resx</DependentUpon>
+    </Compile>
     <Compile Include="Content\Practices.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,6 +166,7 @@
     <Compile Include="Controllers\BrochuresController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\ContactsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndustriesController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
@@ -172,6 +179,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\IndustryViewModel.cs" />
     <Compile Include="Models\LanguageBlockModel.cs" />
     <Compile Include="Models\PracticeViewModel.cs" />
     <Compile Include="Models\PublicationViewModel.cs" />
@@ -205,9 +213,12 @@
     <Content Include="Content\home\img\K.png" />
     <Content Include="Content\home\img\H.png" />
     <Content Include="Content\home\img\O.png" />
+    <Content Include="Content\industries\industries.css" />
+    <Content Include="Content\industries\industries.js" />
     <Content Include="Content\practices\img\practice-abon.png" />
     <Content Include="Content\practices\img\practice-due-diligence.png" />
     <Content Include="Content\practices\img\practice-financial-right.png" />
+    <Content Include="Content\practices\img\practice-intellect.png" />
     <Content Include="Content\practices\img\practice-land.png" />
     <Content Include="Content\practices\img\practices-bankrupcy.png" />
     <Content Include="Content\practices\img\practices-special-papers.png" />
@@ -365,6 +376,8 @@
     <Content Include="Views\Publications\Index.cshtml" />
     <Content Include="Views\Shared\_Publications.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Industries\Index.cshtml" />
+    <Content Include="Views\Error\NotFound.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -383,6 +396,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Content\Industries.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Industries.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Content\Practices.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Practices.Designer.cs</LastGenOutput>

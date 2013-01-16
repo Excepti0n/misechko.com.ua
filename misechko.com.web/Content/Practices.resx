@@ -149,7 +149,7 @@
             &lt;li style="text-align: justify;"&gt;складення інших правових документів.&lt;/li&gt;
         &lt;/ul&gt;</value>
   </data>
-  <data name="DefaultText" xml:space="preserve">
+  <data name="defaultText" xml:space="preserve">
     <value>&lt;div class="practice-headline"&gt;
             &lt;div class="dark-ltr"&gt;П&lt;/div&gt;
             &lt;h1&gt;Практики&lt;/h1&gt;
@@ -237,7 +237,7 @@
             &lt;div class="dark-ltr"&gt;З&lt;/div&gt;
             &lt;h1&gt;Земля/нерухомість&lt;/h1&gt;
         &lt;/div&gt;
-&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;&lt;span &gt;&lt;strong&gt;&lt;span style=""&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;Дана практика є однією з ключових напрямків діяльності&amp;nbsp;фірми «Місечко та Партнери», тому ми активно розвиваємо практичний досвід у сфері правового супроводу операцій з землею та&amp;nbsp; нерухомістю в процесі купівлі-продажу,&amp;nbsp;оренди нерухомості та земельних ділянок.&lt;/p&gt;
+&lt;p style="text-align: justify;"&gt;&lt;span &gt;&lt;strong&gt;&lt;span style=""&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;Дана практика є однією з ключових напрямків діяльності&amp;nbsp;фірми «Місечко та Партнери», тому ми активно розвиваємо практичний досвід у сфері правового супроводу операцій з землею та&amp;nbsp; нерухомістю в процесі купівлі-продажу,&amp;nbsp;оренди нерухомості та земельних ділянок.&lt;/p&gt;
 &lt;p style="text-align: justify;"&gt;Слід відзначити, що правове поле, необхідне для належної діяльності та розвитку даного ринку, перебуває на стадії становлення.&lt;/p&gt;
 &lt;p style="text-align: justify;"&gt;Саме через це будь-які операції з нерухомістю потребують ґрунтовного вивчення та аналізу, в першу чергу, з правової точки зору, оскільки, враховуючи існування великої кількості колізій та прогалин у нормах чинного українського законодавства в даній сфері, під час здійснення таких операцій мають бути враховані всі нюанси, які можуть мати значення для клієнтів Компанії.&lt;/p&gt;
 &lt;p style="text-align: justify;"&gt;&lt;strong&gt;&lt;span style=""&gt;&lt;span &gt;Наші&amp;nbsp;послуги:&lt;/span&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -280,8 +280,7 @@
             &lt;div class="dark-ltr"&gt;Б&lt;/div&gt;
             &lt;h1&gt;Банківське та фінансове право&lt;/h1&gt;
         &lt;/div&gt;
-&lt;div class="tabulator"&gt;&lt;/div&gt;
-&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;&lt;span style=""&gt;&lt;strong&gt;&lt;span style=""&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style="text-align: justify;"&gt;&lt;span style=""&gt;&lt;strong&gt;&lt;span style=""&gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style="text-align: justify;"&gt;Практика у сфері банківського та фінансового права складає досить визначний сектор діяльності фірми «Місечко та Партнери».&lt;/p&gt;
 &lt;p style="text-align: justify;"&gt;Юристи компанії постійно вдосконалюють свої знання та практичний досвід у цій сфері, тому мають змогу ефективно надавати широкий спектр юридичних та консультативних послуг в залежності від потреб та побажань клієнтів.&lt;/p&gt;
 &lt;p style="text-align: justify;"&gt;«Місечко та Партнери» має досвід у представлені інтересів як банків, під час супроводження операцій з надання кредитів та позик, так і фізичних&amp;nbsp; та юридичних осіб у спорах, що виникають з укладених кредитних та депозитних договорів.&lt;/p&gt;
@@ -310,8 +309,7 @@
 &lt;/ul&gt;</value>
   </data>
   <data name="papers" xml:space="preserve">
-    <value>&lt;h2&gt;&lt;/h2&gt;
-&lt;div class="practice-headline"&gt;
+    <value>&lt;div class="practice-headline"&gt;
             &lt;div class="dark-ltr"&gt;Ц&lt;/div&gt;
             &lt;h1&gt;Цінні папери&lt;/h1&gt;
         &lt;/div&gt;
@@ -391,6 +389,38 @@
 &lt;li style="text-align: justify;"&gt;адміністративне оскарження рішень податкових органів, в тому числі підготовка всіх необхідних документів (заперечень на акт податкової перевірки, пояснень, скарги на чинне рішення податкового органу);&lt;/li&gt;
 &lt;li style="text-align: justify;"&gt;судове оскарження податкових повідомлень рішень, підготовка всіх необхідних з боку платника податків документів;&lt;/li&gt;
 &lt;li style="text-align: justify;"&gt;ведення податкових спорів в судах всіх інстанцій.&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="intellect" xml:space="preserve">
+    <value>&lt;div class="practice-headline"&gt;
+            &lt;div class="dark-ltr"&gt;І&lt;/div&gt;
+            &lt;h1&gt;Право інтелектуальної власності&lt;/h1&gt;
+        &lt;/div&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p style="text-align: justify;"&gt;&lt;strong&gt;&lt;span &gt;Місечко та Партнери - Повний спектр юридичних послуг&lt;br&gt;&lt;/span&gt;&lt;/strong&gt;&lt;br&gt;В Україні права інтелектуальної власності поступово, але впевнено стають одним з найбільш вартісних елементів суспільного продукту, а відтак потребують дедалі досконалішого та професійного захисту.&lt;/p&gt;
+&lt;p style="text-align: justify;"&gt;Відповідно до українського законодавства, право інтелектуальної власності - це право фізичних та юридичних осіб на результати інтелектуальної діяльності або на інші об'єкти права інтелектуальної власності.&lt;/p&gt;
+&lt;p style="text-align: justify;"&gt;Право інтелектуальної власності є непорушним. Ніхто не може бути позбавлений права інтелектуальної власності чи обмежений у його здійсненні, крім випадків, передбачених законом.&lt;/p&gt;
+&lt;p style="text-align: justify;"&gt;&lt;span &gt;&lt;strong&gt;Наші послуги:&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style="text-align: justify;"&gt;&lt;span &gt;Правовий консалтинг:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li style="text-align: justify;"&gt;консультування з питань реєстрації об'єктів інтелектуальної власності;&lt;/li&gt;
+&lt;li style="text-align: justify;"&gt;консультування з питань захисту від недобросовісної конкуренції;&lt;/li&gt;
+&lt;li style="text-align: justify;"&gt;консультування з питань ліцензування або відчуження прав на об'єкти інтелектуальної власності.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style="text-align: justify;"&gt;&lt;span &gt;Державна реєстрація прав інтелектуальної власності:&lt;br&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li style="text-align: justify;"&gt;підготовка та подання на реєстрацію до ДП «Український інститут промислової власності» (Укрпатент) заявок і отримання охоронних документів на винаходи,&amp;nbsp; корисні моделі, промислові зразки, торговельні марки, сорти рослин, компонування інтегральних мікросхем, зазначення походження товарів;&lt;/li&gt;
+&lt;li style="text-align: justify;"&gt;супроводження процедури реєстрації об’єктів промислової власності в Україні;&lt;/li&gt;
+&lt;li style="text-align: justify;"&gt;реєстрація авторських прав.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style="text-align: justify;"&gt;&lt;span &gt;Супроводження угод щодо об’єктів інтелектуальної власності:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li style="text-align: justify;"&gt;підготовка проектів ліцензійних договорів щодо придбання/відчуження об'єктів інтелектуальної власності;&lt;/li&gt;
+&lt;li style="text-align: justify;"&gt;реєстрація ліцензійних договорів.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style="text-align: justify;"&gt;&lt;span &gt;Захист прав інтелектуальної власності:&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;представництво інтересів клієнтів в переговорах, пов'язаних з порушенням їх прав на об'єкти інтелектуальної власності;&lt;/li&gt;
+&lt;li&gt;представництво інтересів клієнтів в судах з питань захисту прав інтелектуальної власності.&lt;/li&gt;
 &lt;/ul&gt;</value>
   </data>
 </root>

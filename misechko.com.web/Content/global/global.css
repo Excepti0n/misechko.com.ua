@@ -301,6 +301,12 @@ ul#menu li > a > p {
     font-family: 'MyriadPro-Regular';
 }
 
+ul#menu li >  p {
+    color: #817F84;
+    font-size: 12px;
+    font-family: 'MyriadPro-Regular';
+}
+
 ul#menu li:hover > a > p {
     color: white;
 }
@@ -406,6 +412,9 @@ footer {
 
 #main {
     margin-bottom: 15px;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .subblock-headline {
@@ -483,7 +492,6 @@ footer {
 }
 
 .exp-item .exp-year {
-    margin-left: 35px;
     color: #7a113f;
     font-size: 15px;
     font-family: 'MyriadPro-Bold';
@@ -509,7 +517,7 @@ footer {
 }
 
 .award-item .award-icon {
-    margin-left: 40px;
+    
 }
 
 .award-item .award-slug {
@@ -528,6 +536,16 @@ footer {
 
 .global-headline {
     padding-top: 10px;
+}
+
+#singler p {
+    color: #070003;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#singler li {
+    color: #070003;
 }
 
 div.global-headline h1 {
