@@ -227,6 +227,7 @@
     <Content Include="Content\practices\practices.css" />
     <Content Include="Content\publications\publications.css" />
     <Content Include="Content\publications\publications.js" />
+    <Content Include="Content\team\team.css" />
     <Content Include="Scripts\history.js\amplify.store.js" />
     <Content Include="Scripts\history.js\history.adapter.dojo.js" />
     <Content Include="Scripts\history.js\history.adapter.jquery.js" />
@@ -378,6 +379,7 @@
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Industries\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Team\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

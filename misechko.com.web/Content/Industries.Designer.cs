@@ -59,5 +59,195 @@ namespace misechko.com.Content {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;А&lt;/div&gt;
+        ///    &lt;h1&gt;Аграрний сектор&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Sayenko Kharenko сприяє динамічному розвитку агропромислового сектору України, супроводжуючи найскладніші інноваційні проекти за участю українських агрокомпаній. Наша команда супроводжувала найбільші фінансові трансакції в аграрному секторі України, а також виступала юридичним радником іноземних інвесторів з питань створення аграрного бізнесу та придбання землі в Україні.&lt;/p&gt;
+        ///
+        ///&lt;p&gt;Наші юристи маю [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string agrar {
+            get {
+                return ResourceManager.GetString("agrar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;Х&lt;/div&gt;
+        ///    &lt;h1&gt;Хімічна промисловість та фармацевтика&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Ми супроводжуємо проекти за участю найбільших хімічних і фармацевтичних компаній, приділяючи особливу увагу проектам пов&apos;язаним із залученням фінансування українськими підприємствами.&lt;/p&gt;
+        ///
+        ///&lt;p&gt;Фірма супроводжувала, включаючи з питань конкурентного права, найбільші та знакові для ринку транскордонні проекти у цій галузі, наприклад продаж фармацевтичної компанії Zentiva NV, пр [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string chem {
+            get {
+                return ResourceManager.GetString("chem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;Б&lt;/div&gt;
+        ///    &lt;h1&gt;Будівництво&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///
+        ///&lt;p&gt;Ми надаємо юридичні консультації девелоперам та власникам торговельних приміщень, приватним інвесторам та інвестиційним фондам, банкам, архітектурно-проектним і консалтинговим компаніям з усіх питань, пов&apos;язаних з будівництвом в Україні, зокрема будівництвом торговельних центрів, готелів, офісів, інфраструктурних об&apos;єктів (ДПП) та інших проектів.&lt;/p&gt;
+        ///
+        ///&lt;p&gt;Ми тісно співпрацюємо з клієнтами на всіх е [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string constructions {
+            get {
+                return ResourceManager.GetString("constructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///            &lt;div class=&quot;dark-ltr&quot;&gt;І&lt;/div&gt;
+        ///            &lt;h1&gt;Індустрії&lt;/h1&gt;
+        ///        &lt;/div&gt;
+        ///        &lt;p&gt;
+        ///            Місечко та Партнери поєднує глибокі вузькоспеціалізовані юридичні знання з досконалим розумінням галузевої специфіки бізнесу наших клієнтів. Ми формуємо сильні галузеві команди, залучаючи юристів різних спеціалізацій. Галузевий досвід фірми визнаний всіма провідними національними та міжнародними рейтингами.
+        ///        &lt;/p&gt;.
+        /// </summary>
+        internal static string defaultText {
+            get {
+                return ResourceManager.GetString("defaultText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;Е&lt;/div&gt;
+        ///    &lt;h1&gt;Енергетика та природні ресурси&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Внесок фірми у розвиток галузі, а також багаторічний досвід успішного супроводу проектів за участю провідних галузевих компаній отримали високі оцінки та визнання на ринку України.&lt;/p&gt;
+        ///
+        ///&lt;p&gt;Ми набули виняткового досвіду консультування компаній у галузі енергетики та природних ресурсів з усіх питань корпоративного права, зокрема M&amp;A трансакцій (придбання та продаж нафтогазових, енер [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string energy {
+            get {
+                return ResourceManager.GetString("energy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;Ф&lt;/div&gt;
+        ///    &lt;h1&gt;Фінансові установи&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Sayenko Kharenko - лідер юридичного ринку України з супроводу проектів у фінансовому секторі. Ми супроводжували більшість складних інноваційних трансакцій за участю українських фінансових установ, зокрема першу українську сек&apos;юритизацію, перше розміщення на ринках капіталу з гривневими інструментами, перші MTN програми українських банків, а також перші індексні фінансування.&lt;/p&gt;
+        ///
+        ///&lt;p&gt;Ми виступ [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string fin {
+            get {
+                return ResourceManager.GetString("fin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;Д&lt;/div&gt;
+        ///    &lt;h1&gt;Державний сектор&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Sayenko Kharenko успішно співпрацює з іноземними інвесторами і кредиторами, супроводжуючи складні транскордонні операції за участю Уряду України, державних підприємств та органів місцевого самоврядування. Супровід подібних проектів в Україні вимагає спеціальних знань та відповідного досвіду у зв&apos;язку з необхідністю дотримання всіх технічних вимог до здійснення державних закупівель і бюджетного за [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string govern {
+            get {
+                return ResourceManager.GetString("govern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;С&lt;/div&gt;
+        ///    &lt;h1&gt;Страхування&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Галузева команда Sayenko Kharenko складається з юристів, що спеціалізуються у сфері страхового права. Ми надаємо юридичні консультації міжнародним та українським компаніям у сфері майнового страхування, страхування життя і страхування від нещасних випадків, а також перестрахування; страховим і перестрахувальним брокерам; агентствам з андерайтингу та консалтинговим агентствам у сфері страхування. Досві [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string insurance {
+            get {
+                return ResourceManager.GetString("insurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;М&lt;/div&gt;
+        ///    &lt;h1&gt;Медіа та реклама&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Sayenko Kharenko консультує як медіа компанії - провідних телевізійних та інтернет-провайдерів, друковані ЗМІ та он-лайн контент-провайдерів, так і рекламні агентства з широкого кола трансакційних і регуляторних питань, а також проектів у сфері вирішення спорів.&lt;/p&gt;
+        ///
+        ///&lt;p&gt;Наша галузева команда у сфері медіа та реклами надає юридичні консультації у таких напрямках:&lt;/p&gt;
+        ///&lt;ul&gt;
+        ///&lt;li&gt;
+        ///		фінансові асп [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string media {
+            get {
+                return ResourceManager.GetString("media", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;М&lt;/div&gt;
+        ///    &lt;h1&gt;Металургійна та гірничодобувна промисловість&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Sayenko Kharenko працювала з більшістю металургійних компаній України та міжнародних металургійних холдингів, що дає нам відмінне розуміння комерційних та юридичних аспектів діяльності гірничо-металургійного сектору. Репутацію нашої команди підтверджує її участь у супроводі найбільшої M&amp;A трансакції з продажу українських гірничо-металургійних активів, а також супровід  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string metal {
+            get {
+                return ResourceManager.GetString("metal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;С&lt;/div&gt;
+        ///    &lt;h1&gt;Спорт&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Sayenko Kharenko - одна з небагатьох юридичних фірм в Україні, що пропонує послуги у галузі спортивного права. Ми консультуємо діючих та колишніх спортсменів, спортивні організації та асоціації, федерації та клуби. Юристи нашої практики спортивного права, у минулому спортсмени, володіють глибоким розумінням галузевої специфіки та консультують з різних питань спортивного права - від дискримінації до громадян [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string sport {
+            get {
+                return ResourceManager.GetString("sport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;div class=&quot;industry-headline&quot;&gt;
+        ///    &lt;div class=&quot;light-ltr&quot;&gt;Т&lt;/div&gt;
+        ///    &lt;h1&gt;Телекомунікації та інформаційні технології&lt;/h1&gt;
+        ///&lt;/div&gt;
+        ///
+        ///&lt;p&gt;Sayenko Kharenko працює з великою диверсифікованої базою клієнтів у сфері телекомунікацій та інформаційних технологій у рамках найбільш складних фінансових та M&amp;A трансакцій, проектів у сфері вирішення спорів, а також з регуляторних питань та питань конкурентного права.&lt;/p&gt;
+        ///
+        ///&lt;p&gt;У рамках галузі ми надаємо юридичні консультації з питань:&lt;/p&gt;
+        ///&lt;ul&gt;
+        ///&lt;li&gt;
+        ///		конкурентного  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string telecom {
+            get {
+                return ResourceManager.GetString("telecom", resourceCulture);
+            }
+        }
     }
 }

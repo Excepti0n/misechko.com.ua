@@ -9,7 +9,6 @@ namespace RadaCode.Web.Application.MVC
 
     public class RadaCodeViewEngine: RazorViewEngine
     {
-
         protected override IView CreatePartialView(ControllerContext controllerContext, string partialPath)
         {
             partialPath = LocalizeViewPath(controllerContext, partialPath);

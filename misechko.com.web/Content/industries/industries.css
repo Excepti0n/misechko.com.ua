@@ -1,5 +1,4 @@
 ﻿#main {
-    margin: 0px;
     margin-bottom: 15px;
     padding: 0px;
 }
@@ -139,7 +138,8 @@
     font-family: 'MyriadPro-Regular';
     padding-top: 25px;
     vertical-align: middle;
-    padding-left: 5px;
+    padding-left: 35px;
+    padding-right: 10px;
 }
 
 .ie7 footer {

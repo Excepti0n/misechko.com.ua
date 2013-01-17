@@ -20,6 +20,12 @@ namespace misechko.com
             );
 
             routes.MapRoute(
+                name: "Industries",
+                url: "Industries/{industry}",
+                defaults: new { controller = "Industries", action = "Index", industry = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

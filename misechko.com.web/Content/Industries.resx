@@ -1,101 +1,358 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
-		Microsoft ResX Schema
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
 
-		Version 1.3
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="agrar" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;А&lt;/div&gt;
+    &lt;h1&gt;Аграрний сектор&lt;/h1&gt;
+&lt;/div&gt;
 
-		The primary goals of this format is to allow a simple XML format 
-		that is mostly human readable. The generation and parsing of the 
-		various data types are done through the TypeConverter classes 
-		associated with the data types.
+&lt;p&gt;Sayenko Kharenko сприяє динамічному розвитку агропромислового сектору України, супроводжуючи найскладніші інноваційні проекти за участю українських агрокомпаній. Наша команда супроводжувала найбільші фінансові трансакції в аграрному секторі України, а також виступала юридичним радником іноземних інвесторів з питань створення аграрного бізнесу та придбання землі в Україні.&lt;/p&gt;
 
-		Example:
+&lt;p&gt;Наші юристи мають винятковий досвід представництва інтересів компаній агропромислового сектору в міжнародних арбітражних провадженнях за регламентами ГАФТА, ФОСФА, МКАС при ТПП України, МКАС при ТПП РФ.&lt;/p&gt;
 
-		... ado.net/XML headers & schema ...
-		<resheader name="resmimetype">text/microsoft-resx</resheader>
-		<resheader name="version">1.3</resheader>
-		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-		<data name="Name1">this is my long string</data>
-		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-			[base64 mime encoded serialized .NET Framework object]
-		</data>
-		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-			[base64 mime encoded string representing a byte array form of the .NET Framework object]
-		</data>
+&lt;p&gt;Ми консультуємо клієнтів в аграрному секторі з наступних питань:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+		конкурентні аспекти (супровід розслідувань Антимонопольного комітету України стосовно звинувачення у зловживанні монопольним становищем та недобросовісній конкуренції, отримання дозволів на концентрацію у ході M&amp;amp;A проектів в аграрному секторі);&lt;/li&gt;
+&lt;li&gt;
+		корпоративні аспекти (консультування українських та іноземних інвесторів з питань створення агрокомпаній, а також придбання та реструктуризації присутніх на ринку компаній; враховуючи складність корпоративної структури українських аграрних компаній, ми часто консультуємо клієнтів з питань корпоративного управління, розробляємо угоди акціонерів, проводимо юридичні перевірки корпоративних документів усіх дочірніх підприємств на предмет відповідності вимогам іноземних фондових бірж та українського законодавства);&lt;/li&gt;
+&lt;li&gt;
+		акціонерне та боргове фінансування (ми консультували провідні компанії аграрного сектору (Кернел, Креатив Груп, Миронівський Хлібопродукт, Мрія, Райз, Укррос) з питань залучення фінансування, IPO, приватних розміщень);&lt;/li&gt;
+&lt;li&gt;
+		нормативно-правове регулювання та галузеве законодавство (консультування щодо обмеження права власності на землю в Україні, а також використання землі в якості застави, зонування земель, обмеження експорту-імпорту сільськогосподарської продукції, оподаткування агробізнесу, а також дотримання законодавства у сфері АПК).&lt;/li&gt;
+&lt;/ul&gt;
 
-		There are any number of "resheader" rows that contain simple 
-		name/value pairs.
+&lt;p&gt;Команди всіх практик Sayenko Kharenko включають юристів зі спеціалізованим досвідом в аграрному секторі, що дозволяє нам формувати сильні галузеві команди для кожного проекту.&lt;/p&gt;</value>
+  </data>
+  <data name="chem" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;Х&lt;/div&gt;
+    &lt;h1&gt;Хімічна промисловість та фармацевтика&lt;/h1&gt;
+&lt;/div&gt;
 
-		Each data row contains a name, and value. The row also contains a 
-		type or mimetype. Type corresponds to a .NET class that support 
-		text/value conversion through the TypeConverter architecture. 
-		Classes that don't support this are serialized and stored with the 
-		mimetype set.
+&lt;p&gt;Ми супроводжуємо проекти за участю найбільших хімічних і фармацевтичних компаній, приділяючи особливу увагу проектам пов'язаним із залученням фінансування українськими підприємствами.&lt;/p&gt;
 
-		The mimetype is used for serialized objects, and tells the 
-		ResXResourceReader how to depersist the object. This is currently not 
-		extensible. For a given mimetype the value must be set accordingly:
+&lt;p&gt;Фірма супроводжувала, включаючи з питань конкурентного права, найбільші та знакові для ринку транскордонні проекти у цій галузі, наприклад продаж фармацевтичної компанії Zentiva NV, придбання Solvay Pharmaceuticals компанією Abbot, придбання CIBA Holdings AG компанією BASF і багато інших.&lt;/p&gt;
 
-		Note - application/x-microsoft.net.object.binary.base64 is the format 
-		that the ResXResourceWriter will generate, however the reader can 
-		read any of the formats listed below.
+&lt;p&gt;Наша галузева команда включає провідних юристів фірми різної спеціалізації (корпоративне право та M&amp;A, банківське та фінансове право, конкурентне право та ринки капіталу, вирішення спорів та оподаткування). Юристи практики інтелектуальної власності надають консультації фармацевтичним торговельним компаніям та компаніям-виробникам як з питань інтелектуальної власності у рамках трансграничних угод, так і з поточних питань, пов'язаних з об'єктами інтелектуальної власності. Наша команда регулярно представляє інтереси хімічних і фармацевтичних компаній у судових та арбітражних провадженнях.&lt;/p&gt;
 
-		mimetype: application/x-microsoft.net.object.binary.base64
-		value   : The object must be serialized with 
-			: System.Serialization.Formatters.Binary.BinaryFormatter
-			: and then encoded with base64 encoding.
+&lt;p&gt;Наш досвід включає роботу над проектами за участю найбільших компаній галузі: Азот, Альба Україна, Кримський Титан, Стирол, Сумихімпром, ТНК-ВР, а також інших виробників і дистриб'юторів хімічної продукції.&lt;/p&gt;</value>
+  </data>
+  <data name="constructions" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;Б&lt;/div&gt;
+    &lt;h1&gt;Будівництво&lt;/h1&gt;
+&lt;/div&gt;
 
-		mimetype: application/x-microsoft.net.object.soap.base64
-		value   : The object must be serialized with 
-			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-			: and then encoded with base64 encoding.
 
-		mimetype: application/x-microsoft.net.object.bytearray.base64
-		value   : The object must be serialized into a byte array 
-			: using a System.ComponentModel.TypeConverter
-			: and then encoded with base64 encoding.
-	-->
-	
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" />
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<resheader name="resmimetype">
-		<value>text/microsoft-resx</value>
-	</resheader>
-	<resheader name="version">
-		<value>1.3</value>
-	</resheader>
-	<resheader name="reader">
-		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
-	<resheader name="writer">
-		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-	</resheader>
+&lt;p&gt;Ми надаємо юридичні консультації девелоперам та власникам торговельних приміщень, приватним інвесторам та інвестиційним фондам, банкам, архітектурно-проектним і консалтинговим компаніям з усіх питань, пов'язаних з будівництвом в Україні, зокрема будівництвом торговельних центрів, готелів, офісів, інфраструктурних об'єктів (ДПП) та інших проектів.&lt;/p&gt;
+
+&lt;p&gt;Ми тісно співпрацюємо з клієнтами на всіх етапах супроводу проектів у сфері будівництва, включаючи планування, залучення фінансування, розробку договорів та іншої документації, отримання дозволів та погоджень, участь у переговорах і вирішення спорів.&lt;/p&gt;
+
+&lt;p&gt;Галузева команда фірми у сфері будівництва об'єднує фахівців провідних практик (корпоративного і фінансового права, вирішення спорів та оподаткування).&lt;/p&gt;</value>
+  </data>
+  <data name="defaultText" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+            &lt;div class="dark-ltr"&gt;І&lt;/div&gt;
+            &lt;h1&gt;Індустрії&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;p&gt;
+            Місечко та Партнери поєднує глибокі вузькоспеціалізовані юридичні знання з досконалим розумінням галузевої специфіки бізнесу наших клієнтів. Ми формуємо сильні галузеві команди, залучаючи юристів різних спеціалізацій. Галузевий досвід фірми визнаний всіма провідними національними та міжнародними рейтингами.
+        &lt;/p&gt;</value>
+  </data>
+  <data name="energy" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;Е&lt;/div&gt;
+    &lt;h1&gt;Енергетика та природні ресурси&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Внесок фірми у розвиток галузі, а також багаторічний досвід успішного супроводу проектів за участю провідних галузевих компаній отримали високі оцінки та визнання на ринку України.&lt;/p&gt;
+
+&lt;p&gt;Ми набули виняткового досвіду консультування компаній у галузі енергетики та природних ресурсів з усіх питань корпоративного права, зокрема M&amp;A трансакцій (придбання та продаж нафтогазових, енергопостачальних та енергогенеруючих компаній), будівництва електростанцій, лізингових угод і договорів про розподіл продукції (переважно для компаній, що здійснюють розвідку і розробку родовищ нафти та газу), корпоративних реструктуризацій, а також з регуляторних аспектів і питань дотримання законодавства. У 1990-х роках наші юристи супроводжували створення перших спільних підприємств, що здійснюють розробку і видобуток нафти та газу, брали участь у приватизації обласних енергопостачальних компаній (обленерго), приватизації та реконструкції теплоелектроцентралей (ТЕЦ).&lt;/p&gt;
+
+&lt;p&gt;Практичний досвід фірми також включає консультування клієнтів з питань корпоративних фінансів, зокрема реструктуризації заборгованості, публічного та приватного розміщення боргових і акціонерних фінансових інструментів, оподаткування. Наші юристи регулярно консультують компанії нафтогазового і енергетичного секторів з питань отримання дозволів на концентрацію та інших аспектів конкурентного законодавства, супроводжують проекти зі стягнення заборгованості, вирішення спорів акціонерів тощо.&lt;/p&gt;
+
+&lt;p&gt;Команда у галузі енергетики та природних ресурсів об'єднує вузькоспеціалізовані галузеві знання, а також досвід у сферах корпоративного і фінансового права, ринків капіталу, вирішення спорів та оподаткування.&lt;/p&gt;
+
+&lt;p&gt;Sayenko Kharenko працювала над проектами за участю найбільших українських і міжнародних компаній в енергетичному і нафтогазовому секторах: ДТЕК, Лукойл, Нафтогаз, ТНК-ВР, Укртранснафта, Cadogan Petroleum, Contour Global, JKX Oil &amp; Gas, Mercuria Energy Group, MND Exploration and Production, Regal Petroleum, Shelton Petroleum.&lt;/p&gt;</value>
+  </data>
+  <data name="fin" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;Ф&lt;/div&gt;
+    &lt;h1&gt;Фінансові установи&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sayenko Kharenko - лідер юридичного ринку України з супроводу проектів у фінансовому секторі. Ми супроводжували більшість складних інноваційних трансакцій за участю українських фінансових установ, зокрема першу українську сек'юритизацію, перше розміщення на ринках капіталу з гривневими інструментами, перші MTN програми українських банків, а також перші індексні фінансування.&lt;/p&gt;
+
+&lt;p&gt;Ми виступаємо юридичним консультантом найбільших міжнародних та українських комерційних банків, інвестиційних банків, інвестиційних фондів, фондових бірж, компаній з управління активами, трейдерів цінними паперами, інвестиційних консультантів і страхових компаній: ВТБ, Сбербанк Росії, Bank of America Merrill Lynch, Barclays Capital, BNP Paribas, Citigroup, Commerzbank, Credit Suisse, Deutsche Bank, EBRD, Goldman Sachs, HSBC, IFC, ING, JP Morgan, Morgan Stanley, RBS, Renaissance Capital, Standard Bank, UBS.&lt;/p&gt;
+
+&lt;p&gt;Фірма супроводжувала більшість трансакцій за участю провідних банків, що входять до ТОП-20 банків України (згідно з рейтингом Асоціації українських банків): Альфа-Банк, Банк «Фінанси та Кредит», Банк Форум, ВТБ Банк, Кредитпромбанк, Ощадбанк, ПриватБанк, ПУМБ, Райффайзен Банк Аваль, Укрексімбанк, УкрСиббанк, Укрсоцбанк.&lt;/p&gt;
+
+&lt;p&gt;Наш унікальний галузевий досвід дозволяє консультувати фінансові установи з наступних питань:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+		M&amp;amp;A (придбання та продаж банків, страхових компаній та інвестиційних фондів);&lt;/li&gt;
+&lt;li&gt;
+		спільних підприємств та корпоративних реструктуризацій;&lt;/li&gt;
+&lt;li&gt;
+		корпоративного управління;&lt;/li&gt;
+&lt;li&gt;
+		публічних та приватних розміщень акціонерних та боргових фінансових інструментів;&lt;/li&gt;
+&lt;li&gt;
+		усіх типів фінансування;&lt;/li&gt;
+&lt;li&gt;
+		стягнення та реструктуризації заборгованості; а також&lt;/li&gt;
+&lt;li&gt;
+		з усіх регуляторних аспектів і питань дотримання законодавства.&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="govern" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;Д&lt;/div&gt;
+    &lt;h1&gt;Державний сектор&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sayenko Kharenko успішно співпрацює з іноземними інвесторами і кредиторами, супроводжуючи складні транскордонні операції за участю Уряду України, державних підприємств та органів місцевого самоврядування. Супровід подібних проектів в Україні вимагає спеціальних знань та відповідного досвіду у зв'язку з необхідністю дотримання всіх технічних вимог до здійснення державних закупівель і бюджетного законодавства.&lt;/p&gt;
+
+&lt;p&gt;Для вирішення різних питань, що виникають при супроводі проектів за участю компаній державного сектору, наша команда залучає юристів практик банківського та фінансового права, конкурентного права, корпоративного права та M&amp;A, а також експертів з вузькоспеціалізованим досвідом супроводу проектів у сферах державно-приватного партнерства (ДПП), приватизації та комунального господарства.&lt;/p&gt;
+
+&lt;p&gt;Наша галузева команда консультує клієнтів з питань:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+		антикорупційного законодавства та державних закупівель як у розрізі окремих проектів, так і в цілому, при здійсненні підприємницької діяльності в Україні;&lt;/li&gt;
+&lt;li&gt;
+		фінансування Уряду України, державних органів та компаній, а також органів місцевого самоврядування, включаючи під державні гарантії. Структурування таких трансакцій ускладнено необхідністю враховувати наявність державного імунітету, а також обмежень щодо звернення стягнення на забезпечення;&lt;/li&gt;
+&lt;li&gt;
+		розробки нового законодавства у складі робочих груп при державних органах, консультування регуляторних органів України, а також міжнародних організацій з питань правової реформи в Україні;&lt;/li&gt;
+&lt;li&gt;
+		ДПП та інфраструктурних проектів, включаючи проекти у рамках Чемпіонату Європи з футболу 2012 (реконструкція українських залізничних вокзалів, будівництво нового міжнародного терміналу аеропорту в м. Київ);&lt;/li&gt;
+&lt;li&gt;
+		приватизації та M&amp;amp;A проектів за участю компаній державного сектору, що вимагають проведення більш ретельного юридичного аудиту активів та переговорів з відповідними державними органами;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Протягом останніх декількох років фірма представляла інтереси лід-менеджерів, кредиторів та інвесторів у найбільших трансакціях за участю Уряду України, міст Києва, Донецька, Харкова і Одеси, Фонду державного майна, в якості акціонера Криворіжсталі та КГЗКОР, Державної адміністрації залізничного транспорту України, Державного агентства автомобільних доріг України (Укравтодор), НАК «Нафтогаз України», Укртранснафти, Укртелекому, Укрексімбанку, Ощадбанку та інших компаній державного сектору.&lt;/p&gt;
+
+&lt;p&gt;Sayenko Kharenko підтримує тісні ділові відносини з Антимонопольним комітетом України, Національним банком України, Державною комісією з цінних паперів та фондового ринку, Фондом державного майна та іншими державними органами, що дає нам можливість інформувати клієнтів про останні тенденції правозастосовної практики на всіх рівнях.&lt;/p&gt;</value>
+  </data>
+  <data name="insurance" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;С&lt;/div&gt;
+    &lt;h1&gt;Страхування&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Галузева команда Sayenko Kharenko складається з юристів, що спеціалізуються у сфері страхового права. Ми надаємо юридичні консультації міжнародним та українським компаніям у сфері майнового страхування, страхування життя і страхування від нещасних випадків, а також перестрахування; страховим і перестрахувальним брокерам; агентствам з андерайтингу та консалтинговим агентствам у сфері страхування. Досвід юристів фірми у страховому секторі включає супровід M&amp;A трансакцій, корпоративних реструктуризацій та отримання дозволів на концентрацію за участю провідних українських та міжнародних страхових компаній: Вексель, Веско, Догмат, Інвестсервіс, ТАС, Фортіс Страхування Життя Україна, Generali та інших.&lt;/p&gt;
+
+&lt;p&gt;Загальні напрямки практики:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+		M&amp;amp;A проекти у страховому секторі, корпоративні реорганізації, спільні підприємства та створення нових підприємств;&lt;/li&gt;
+&lt;li&gt;
+		ліцензування та регуляторні питання;&lt;/li&gt;
+&lt;li&gt;
+		вирішення спорів, пов'язаних зі страхуванням і перестрахуванням;&lt;/li&gt;
+&lt;li&gt;
+		банкрутство та реструктуризація заборгованості.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Наші юристи надають консультації з широкого кола регуляторних та операційних питань. Нещодавній досвід фірми включає: розробку договорів між одним з найбільших українських банків та пов'язаної з ним страхової компанії; представлення інтересів Generali Garant і PZU Ukraine з питань трудового права. Крім того, ми консультували AIG Ukraine щодо виставлених страхових вимог. Юристи фірми мають досвід роботи у страхових компаніях, що дає їм більш глибоке розуміння специфіки галузі.&lt;/p&gt;</value>
+  </data>
+  <data name="media" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;М&lt;/div&gt;
+    &lt;h1&gt;Медіа та реклама&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sayenko Kharenko консультує як медіа компанії - провідних телевізійних та інтернет-провайдерів, друковані ЗМІ та он-лайн контент-провайдерів, так і рекламні агентства з широкого кола трансакційних і регуляторних питань, а також проектів у сфері вирішення спорів.&lt;/p&gt;
+
+&lt;p&gt;Наша галузева команда у сфері медіа та реклами надає юридичні консультації у таких напрямках:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+		фінансові аспекти (кредити, реструктуризація заборгованості та цінні папери). Зокрема, фірма представляла інтереси компанії Gallery - другого за кількістю поверхонь оператора зовнішньої реклами в Росії та Україні;&lt;/li&gt;
+&lt;li&gt;
+		корпоративні аспекти (придбання та продаж компаній, корпоративна реструктуризація складних бізнес-структур), наприклад, за участю медіа компанії Central Media Partnership;&lt;/li&gt;
+&lt;li&gt;
+		&lt;span id="result_box" lang="uk"&gt;&lt;span class="hps"&gt;вирішення спорів&lt;/span&gt; &lt;span class="hps"&gt;у державних&lt;/span&gt; &lt;span class="hps"&gt;судах&lt;/span&gt; &lt;span class="hps"&gt;та міжнародних&lt;/span&gt; &lt;span class="hps"&gt;арбітражах&lt;/span&gt;&lt;span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;
+		регуляторні питання та дотримання законодавства;&lt;/li&gt;
+&lt;li&gt;
+		конкурентні аспекти, консультуючи, зокрема Time Warner.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Команда у сфері медіа та реклами включає вузькопрофільних фахівців і юристів провідних практик фірми.&lt;/p&gt;</value>
+  </data>
+  <data name="metal" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;М&lt;/div&gt;
+    &lt;h1&gt;Металургійна та гірничодобувна промисловість&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sayenko Kharenko працювала з більшістю металургійних компаній України та міжнародних металургійних холдингів, що дає нам відмінне розуміння комерційних та юридичних аспектів діяльності гірничо-металургійного сектору. Репутацію нашої команди підтверджує її участь у супроводі найбільшої M&amp;A трансакції з продажу українських гірничо-металургійних активів, а також супровід найбільшої в історії України приватизації металургійного заводу.&lt;/p&gt;
+
+&lt;p&gt;Ми консультуємо клієнтів гірничо-металургійної галузі з наступних питань:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+		фінансових (ми консультували з питань лізингу, експортного фінансування, торгового і синдикованого фінансування, а також з питань випуску єврооблігацій, включаючи проведення комплексного юридичного аудиту активів відповідно до Правила 144 А, за участю провідних галузевих компаній: Азовсталь, ДTЕK, Індустріальний Союз Донбасу, Інтерпайп, Метінвест, Ferrexpo);&lt;/li&gt;
+&lt;li&gt;
+		M&amp;amp;A (наш досвід включає проведення комплексного юридичного аудиту активів, отримання дозволів на концентрацію, участь у переговорах у рамках найскладніших трансакцій. Зокрема, ми супроводжували плановане злиття Металоінвесту та Індустріального Союзу Донбасу, придбання групою Євраз п'яти металургійних заводів в Україні загальною вартістю 3 млрд. доларів США, плановане злиття групи компаній Северсталь та Arcelor, проведення юридичного аудиту КГЗКОР, заводу окислених руд у Кривому Розі);&lt;/li&gt;
+&lt;li&gt;
+		спільних підприємств (ми надаємо юридичні консультації клієнтам з різних регуляторних питань, а також з питань антимонопольного законодавства у рамках створення спільних підприємств в Україні, зокрема створення спільного підприємства Газметалу зі Смарт-Груп, провідною металургійною групою України);&lt;/li&gt;
+&lt;li&gt;
+		вирішення спорів (наші юристи &lt;span id="result_box" lang="uk"&gt;&lt;span class="hps"&gt;регулярно&lt;/span&gt; &lt;span class="hps"&gt;представляють&lt;/span&gt; &lt;span class="hps"&gt;інтереси&lt;/span&gt; &lt;span class="hps"&gt;клієнтів як&lt;/span&gt; &lt;span class="hps"&gt;у&lt;/span&gt; &lt;span class="hps"&gt;судових,&lt;/span&gt; &lt;span class="hps"&gt;так&lt;/span&gt; &lt;span class="hps"&gt;і у міжнародних&lt;/span&gt; &lt;span class="hps"&gt;арбітражних&lt;/span&gt; провадженнях&lt;span&gt;, зокрема&lt;/span&gt;&lt;span&gt; наша&lt;/span&gt; &lt;span class="hps"&gt;команда&lt;/span&gt; &lt;span class="hps"&gt;представляла&lt;/span&gt; &lt;span class="hps"&gt;інтереси&lt;/span&gt; &lt;span class="hps"&gt;одного&lt;/span&gt; &lt;span class="hps"&gt;з найбільших&lt;/span&gt; &lt;span class="hps"&gt;металургійних&lt;/span&gt; &lt;span class="hps"&gt;комбінатів&lt;/span&gt; &lt;span class="hps"&gt;України&lt;/span&gt; &lt;span class="hps"&gt;в&lt;/span&gt; &lt;span class="hps"&gt;арбітражах&lt;/span&gt; &lt;span class="hps"&gt;в&lt;/span&gt; &lt;span class="hps"&gt;Україні&lt;/span&gt; та &lt;span class="hps"&gt;Швейцарії);&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;
+		регуляторні питання та дотримання законодавства (наші юристи регулярно консультують з питань розробки залізорудних родовищ, отримання та продовження ліцензій, експортних угод, участі у державних тендерах, страхування, вирішення трудових спорів тощо).&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="sport" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;С&lt;/div&gt;
+    &lt;h1&gt;Спорт&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sayenko Kharenko - одна з небагатьох юридичних фірм в Україні, що пропонує послуги у галузі спортивного права. Ми консультуємо діючих та колишніх спортсменів, спортивні організації та асоціації, федерації та клуби. Юристи нашої практики спортивного права, у минулому спортсмени, володіють глибоким розумінням галузевої специфіки та консультують з різних питань спортивного права - від дискримінації до громадянства, від трудових контрактів до питань оподаткування. Дмитро Івануса, головний експерт фірми у галузі спортивного права, є членом Юридичної комісії Національного Олімпійського Комітету України, а також засновником і головою Асоціації спортивного права і права індустрії розваг - української громадської організації, створеної для обміну практичними знаннями у галузях спортивного права і права індустрії розваг, поліпшення українського законодавства у цих галузях, а також надання нових можливостей для спілкування та освіти фахівців, які практикують у цих галузях права.&lt;/p&gt;
+
+&lt;p&gt;Наші послуги включають:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+		надання консультацій з питань спортивного права;&lt;/li&gt;
+&lt;li&gt;
+		консультування клієнтів, чия діяльність пов'язана зі спортом, з різних правових питань (корпоративного, комерційного, трудового, податкового права, права інтелектуальної власності, захисту інформації, сімейного права, ліцензування тощо);&lt;/li&gt;
+&lt;li&gt;
+		представлення інтересів спортсменів і спортивних організацій у різних спорах, включаючи судові розгляди, арбітражні провадження та процеси медіації.&lt;/li&gt;
+&lt;/ul&gt;</value>
+  </data>
+  <data name="telecom" xml:space="preserve">
+    <value>&lt;div class="industry-headline"&gt;
+    &lt;div class="light-ltr"&gt;Т&lt;/div&gt;
+    &lt;h1&gt;Телекомунікації та інформаційні технології&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Sayenko Kharenko працює з великою диверсифікованої базою клієнтів у сфері телекомунікацій та інформаційних технологій у рамках найбільш складних фінансових та M&amp;A трансакцій, проектів у сфері вирішення спорів, а також з регуляторних питань та питань конкурентного права.&lt;/p&gt;
+
+&lt;p&gt;У рамках галузі ми надаємо юридичні консультації з питань:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+		конкурентного права (ми забезпечували отримання дозволів на концентрацію для M&amp;amp;A проектів за участю: Воля Кабель, CME, Comcast/NBC, Cosmote, PPF-CATV та багатьох інших);&lt;/li&gt;
+&lt;li&gt;
+		корпоративного права (придбання та продаж компаній, зокрема супровід продажу Воля Кабель компанії Sigma Bleyzer, найбільшого M&amp;amp;A проекту в українському телекомунікаційному секторі; корпоративна реструктуризація, розробка структур корпоративного управління відповідно до міжнародної практики і стандартів);&lt;/li&gt;
+&lt;li&gt;
+		фінансового права (ми супроводжували найбільші та найскладніші фінансові проекти у сфері телекомунікацій та інформаційних технологій, включаючи реструктуризацію єврооблігацій, за участю: Астеліт (Life), Київстар, Українські радіосистеми (ТМ Beeline) та багатьох інших);&lt;/li&gt;
+&lt;li&gt;
+		регуляторні питання і дотримання законодавства (ми консультуємо клієнтів з різних питань законодавчого регулювання у сфері телекомунікацій та інформаційних технологій, зокрема ліцензійних умов здійснення діяльності у сфері телекомунікацій з надання послуг; захисту даних і підтримки баз даних; впровадження нових комунікаційних технологій, таких як WiMAX та 3G; інтерконекту, роумінгу, ліцензійних договорів і угод про передачу технологій; дотримання вимог НКРЗ).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Наша команда телекомунікацій та інформаційних технологій включає юристів провідних практик фірми, які володіють вузькоспеціалізованими галузевими знаннями, що дозволяє нам ефективно супроводжувати проекти будь-якого рівня складності та успішно відстоювати інтереси клієнтів у судових і арбітражних провадженнях.&lt;/p&gt;</value>
+  </data>
 </root>
