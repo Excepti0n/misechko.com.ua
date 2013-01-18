@@ -410,6 +410,10 @@ footer {
     margin-right: 5px;
 }
 
+#exp-lines-container {
+    padding-top: 25px;
+}
+
 #main {
     margin-bottom: 15px;
     width: 1200px;
@@ -418,7 +422,7 @@ footer {
 }
 
 .subblock-headline {
-    padding-top: 50px;
+    padding-top: 30px;
     display: block;
 }
 

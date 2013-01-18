@@ -227,6 +227,12 @@
     <Content Include="Content\practices\practices.css" />
     <Content Include="Content\publications\publications.css" />
     <Content Include="Content\publications\publications.js" />
+    <Content Include="Content\team\img\333333333.jpg" />
+    <Content Include="Content\team\img\567.jpg" />
+    <Content Include="Content\team\img\Deynega_Natalia.jpg" />
+    <Content Include="Content\team\img\Malezhyk.jpg" />
+    <Content Include="Content\team\img\Misechko_Volodymyr.jpg" />
+    <Content Include="Content\team\img\Zhukov.jpg" />
     <Content Include="Content\team\team.css" />
     <Content Include="Scripts\history.js\amplify.store.js" />
     <Content Include="Scripts\history.js\history.adapter.dojo.js" />
@@ -380,6 +386,9 @@
     <Content Include="Views\Industries\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Shared\_Experience.cshtml" />
+    <Content Include="Views\Shared\_Awards.cshtml" />
+    <Content Include="Views\Contacts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

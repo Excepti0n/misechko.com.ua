@@ -4,68 +4,41 @@
     Html.RequiresCss("team/team.css", "Content", 110);
 }
 
-<div id="practices-triplet">
-    @if(Model.HasSupportMaterials)
-    {
-        <div id="support-materials">
+<div id="team-triplet">
+    <div id="support-materials">
            @Html.Partial("_Publications")
-        </div>
-    }
-    <div id="practice-main" class="@extended">
-        @Html.Raw(Model.PracticeMarkup)
+           @Html.Partial("_Experience")
     </div>
-    <div id="practices-submenu">
-        <div id="practices-selector">
-            <div class="practice-item @(practice == "abon" ? "selected" : "")">
-                <a href="@Url.Content("~/practicies/abon")">
-                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-abon.png")"/></div>
-                    <div class="practice-submenu-text">Абонентське обслуговування</div>
-                </a>
-            </div>
-            
-            <div class="practice-item @(practice == "diligence" ? "selected" : "")">
-                <a href="@Url.Content("~/practicies/diligence")">
-                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-due-diligence.png")"/></div>
-                    <div class="practice-submenu-text">Due Diligence</div>
-                </a>
-            </div>
-            <div class="practice-item @(practice == "bancrupt" ? "selected" : "")">
-                <a href="@Url.Content("~/practicies/bancrupt")">
-                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practices-bankrupcy.png")"/></div>
-                    <div class="practice-submenu-text">Банкрутство</div>
-                </a>
-            </div>
-            <div class="practice-item @(practice == "papers" ? "selected" : "")">
-                <a href="@Url.Content("~/practicies/papers")">
-                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practices-special-papers.png")"/></div>
-                    <div class="practice-submenu-text">Цінні папери</div>
-                </a>
-            </div>
-            <div class="practice-item @(practice == "taxes" ? "selected" : "")">
-                <a href="@Url.Content("~/practicies/taxes")">
-                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practices-taxes.png")"/></div>
-                    <div class="practice-submenu-text">Податки</div>
-                </a>
-            </div>
-            <div class="practice-item @(practice == "esate" ? "selected" : "")">
-                <a href="@Url.Content("~/practicies/esate")">
-                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-land.png")"/></div>
-                    <div class="practice-submenu-text">Земля та нерухомість</div>
-                </a>
-            </div>
-            <div class="practice-item @(practice == "finances" ? "selected" : "")">
-                <a href="@Url.Content("~/practicies/finances")">
-                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-financial-right.png")"/></div>
-                    <div class="practice-submenu-text">Фінансове право</div>
-                </a>
-            </div>
-            <div class="practice-item @(practice == "intellect" ? "selected" : "")">
-                <a href="@Url.Content("~/practicies/intellect")">
-                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-intellect.png")"/></div>
-                    <div class="practice-submenu-text">Право інтелектуальної власності</div>
-                </a>
+    
+    <div id="team-main">
+        <div class="team-headline">
+            <div class="dark-ltr">К</div>
+            <h1>Команда</h1>
+        </div>
+        <div id="team-members-container">
+            <div class="team-member-block">
+                <div class="memeber-photo"><img src="@Url.Content("~/Content/team/img/Misechko_Volodymyr.jpg")"/></div>
+                <div class="memeber-data">
+                    <h1>Володимир Місечко</h1>
+                    <h2>Керуючий партнер, адвокат</h2>
+                    <h3>Освіта:</h3>
+                    <p>Національна юридична академія України ім. Ярослава Мудрого, диплом з відзнакою</p>
+                    <h3>Спеціалізація:</h3>
+                    <p>Антимонопольне та конкурентне право, банківське та фінансове право, земля/нерухомість, судова практика</p>
+                    <h3>Досвід:</h3>
+                    <p>Провідні компанії та юридичні фірми України</p>
+                    <h3>Членство:</h3>
+                    <p>Асоціація правників України (АПУ), Асоціація адвокатів України (ААУ)</p>
+                    <h3>Робочі мови:</h3>
+                    <p>Українська, російська та англійська/p>
+                    <h3>Email:</h3>
+                    <p>vm@misechko.com.ua</p>
+                </div>
             </div>
         </div>
+    </div>
+    <div id="team-right">
+        @Html.Partial("_Awards")
     </div>
 </div>
 
