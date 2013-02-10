@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using misechko.com.Models;
 
 namespace misechko.com.Controllers
 {
@@ -11,8 +12,13 @@ namespace misechko.com.Controllers
         //
         // GET: /About/
 
-        public ActionResult Index()
+        public ActionResult Index(string submenu)
         {
+            var model = new AboutViewModel
+                            {
+                                CurrentMenuItemName = submenu,
+
+                            };
             return View();
         }
 

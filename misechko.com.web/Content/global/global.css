@@ -127,13 +127,61 @@ body
 
 #lang-block #lang-top-line > * {
     display: inline-block;
+    vertical-align: top;
+
 }
 
 .ie7 #lang-block #lang-top-line > * {
     display: inline!important;
+    vert-align: top;
 }
 
-#lang-block #lang-top-line .addr {
+#lang-block > #lang-top-line > .lang-button {
+    border: solid 1px rgb(233, 229, 238);
+    width: 30px;
+    height: 20px;
+}
+
+#lang-block > #lang-top-line > .lang-button:hover {
+    border: solid 1px #7a113f;
+    cursor: pointer;
+}
+
+#lang-block > #lang-top-line > .lang-button.selected:hover {
+    cursor: default;
+}
+
+#lang-block > #lang-top-line > .lang-button.selected {
+    border: solid 1px rgb(99, 104, 218);
+}
+
+#bottom-contacts .addr {
+    padding-top: 6px;
+    vertical-align: top;
+    color: #7a113f;
+    font-family: 'vegur_lightregular';
+    font-size: 15px;
+    padding-right: 15px;
+}
+
+#bottom-contacts #lang-contact-line {
+    font-family: 'MyriadPro-BoldCond';
+    font-size: 32px;
+    color: #7a113f;
+    text-align: right;
+    padding-right: 15px;
+}
+
+#bottom-contacts {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: right;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*#lang-block #lang-top-line .addr {
     padding-top: 6px;
     vertical-align: top;
     vert-align: top;
@@ -144,6 +192,8 @@ body
     font-family: 'vegur_lightregular';
     font-size: 13px;
 }
+
+
 
 #lang-block #lang-contact-line {
     font-family: 'MyriadPro-BoldCond';
@@ -195,7 +245,7 @@ body
 
 .ie7 #lang-block .dd.ddcommon.borderRadiusTp {
     width: 90px!important;
-}
+}*/
 
 #logo {
     float: left;
@@ -232,7 +282,7 @@ header {
 
 menu {
     float: left;
-    width: 88%;
+    width: 90%;
     margin-top: 10px;
 }
 
@@ -251,12 +301,12 @@ ul#menu {
 
 ul#menu li {
     display: inline-block;
-    height: 79px;
-    width: 98px;
+    height: 50px;
+    width: 82px;
     text-align: left;
     padding-left: 30px;
     padding-right: 20px;
-    padding-top: 35px;
+    padding-top: 50px;
     padding-bottom: 26px;
     vertical-align: top;
     margin-right: 10px;
@@ -331,7 +381,8 @@ footer {
 .made-in-radacode {
     text-align: center;
     padding-bottom: 20px;
-    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #bab6b8;
 }
 
 .made-in-radacode > .centered {
@@ -372,12 +423,13 @@ footer {
     display: inline;
 }
 
+
 #bottom-menu {
     height: 50px;
     text-align: center;
     border-bottom: 1px solid #bab6b8;
-    border-top: 1px solid #bab6b8;
     padding-top: 25px;
+    display: none;
 }
 
 #bottom-menu a {

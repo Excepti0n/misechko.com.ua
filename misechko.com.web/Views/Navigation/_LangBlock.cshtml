@@ -11,7 +11,18 @@
 
 <div id="lang-block">
     <div id="lang-top-line">
-        @*<a href="@Url.Action("Index", "Home")">Головна</a>*@
+        <div id="uk" class="lang-button @(curlang == "uk" ? " selected" : "")">
+            <img src="@Url.Content("/Content/global/img/ukr.png")" alt="УКР"/>
+        </div>
+        <div id="ru" class="lang-button @(curlang == "ru" ? " selected" : "")">
+            <img src="@Url.Content("/Content/global/img/rus.png")" alt="РУС"/>
+        </div>
+        <div id="en" class="lang-button @(curlang == "en" ? " selected" : "")">
+            <img src="@Url.Content("/Content/global/img/eng.png")" alt="ENG"/>
+        </div>
+
+    @*<div id="lang-top-line">
+        <a href="@Url.Action("Index", "Home")">Головна</a>
         <div class="addr"><span>Київ, вул. Володимирська, 76Б, офіс 7</span></div>
         <select name="langdrop" id="langdrop">
             <option value="uk" @(curlang == "uk" ? " selected" : "")  data-image="@Url.Content("/Content/global/img/ukr.png")">УКР</option>
@@ -21,5 +32,6 @@
     </div>
     <div id="lang-contact-line">
         +380 (44) 279-39-43
+    </div>*@
     </div>
 </div>

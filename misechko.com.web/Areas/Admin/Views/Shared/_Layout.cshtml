@@ -1,0 +1,76 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="text/html; charset=windows-1251" http-equiv="content-type" />
+	<title>@ViewBag.Title</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" href="@Url.Content("~/favicon.ico")">
+	<link rel="apple-touch-icon" href="@Url.Content("~/apple-touch-icon.png")">
+	
+	@{
+		@RenderSection("ViewHead", false)
+		
+		@MvcHtmlString.Create(Html.RenderCssHere(new List<IClientDependencyPath>
+														   {
+															   new BasicPath("Theme", "~/Content/themes/smoothness"),
+															   new BasicPath("googleCDN", "https://ajax.googleapis.com/ajax/libs/"),
+															   new BasicPath("Content", "~/Content"),
+															   new BasicPath("AreaContent", "~/Areas/Admin/Content/")
+														   }))
+
+		@MvcHtmlString.Create(Html.RenderJsHere(new List<IClientDependencyPath>
+														  {
+															  new BasicPath("Scripts", "~/Scripts"),
+															  new BasicPath("googleCDN", "https://ajax.googleapis.com/ajax/libs/"),
+															  new BasicPath("Content", "~/Content"),
+															  new BasicPath("AreaContent", "~/Areas/Admin/Content/"),
+                                                              new BasicPath("ViewScripts", "~/Areas/Admin/Content/ViewScripts")
+                                                              
+														  })) 
+		
+		Html.RequiresCss("jquery.ui.theme.css", "Theme", 96);
+        Html.RequiresCss("Bootstrap/css/bootstrap.css", "AreaContent", 97);
+        Html.RequiresCss("Bootstrap/css/docs.css", "AreaContent", 97);
+        Html.RequiresCss("Bootstrap/css/prettify.css", "AreaContent", 97);
+        Html.RequiresCss("Bootstrap/css/bootstrap-responsive.css", "AreaContent", 98);
+		Html.RequiresCss("layout.css", "AreaContent", 99);
+
+        Html.RequiresJs("http://code.jquery.com/jquery-1.8.0.js", 1);
+        Html.RequiresJs("knockout-2.2.1.js", "Scripts", 2);
+        Html.RequiresJs("RadaCode.KOBindings.js", "Scripts", 3);
+        Html.RequiresJs("knockout.validation.js", "Scripts", 3);
+        
+
+		Html.RequiresJs("jqueryui/1.9.2/jquery-ui.min.js", "googleCDN", 2);
+		Html.RequiresJs("modernizr-2.6.2.js", "Scripts", 5);
+		Html.RequiresJs("jquery.cookie.js", "Scripts", 9);
+		
+		
+		@RenderSection("ViewScripts", false)
+		}
+
+</head>
+<body>
+    <div id="top-controls">
+        @{
+            if (User.Identity.IsAuthenticated)
+            {
+                @Html.ActionLink("Завершити сессію", "LogOff", "Authorization")
+                ;
+            }
+            else
+            {
+                @Html.Raw("Будь-ласка авторизуйтесь")
+            }
+        }
+        |
+        @Html.ActionLink("На misechko.com.ua", "Index", "Home", new { area = "" }, null)
+    </div>
+
+	<div id="content">
+		@RenderBody()
+	</div>
+</body>
+</html>

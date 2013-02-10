@@ -1,0 +1,94 @@
+﻿@using ClientDependency.Core.Mvc
+@model misechko.com.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "Проекти | «Місечко та Партнери»";
+    Html.RequiresCss("projects/projects.css", "Content", 110);
+    Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
+    Html.RequiresJs("projects/projects.js", "Content", 25);
+    var extended = !Model.HasSupportMaterials ? "extended" : null;
+    var industry = Model.CurrentIndustryName;
+}
+
+<div id="industries-triplet">
+    @if(Model.HasSupportMaterials)
+    {
+        <div id="support-materials">
+           @Html.Partial("_Publications")
+        </div>
+    }
+    <div id="industry-main" class="@extended">
+        @Html.Raw(Model.IndustryMarkup)
+    </div>
+    <div id="industries-submenu">
+        <div id="industries-selector">
+            <div class="industry-item @(industry == "agrar" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/agrar")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-abon.png")"/></div>*@
+                    <div class="industry-submenu-text">Аграрний сектор</div>
+                </a>
+            </div>
+            
+            <div class="industry-item @(industry == "constructions" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/constructions")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-due-diligence.png")"/></div>*@
+                    <div class="industry-submenu-text">Будівництво</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "govern" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/govern")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industries-bankrupcy.png")"/></div>*@
+                    <div class="industry-submenu-text">Державний сектор</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "energy" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/energy")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industries-special-papers.png")"/></div>*@
+                    <div class="industry-submenu-text">Енергетика та природні ресурси</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "media" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/media")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industries-taxes.png")"/></div>*@
+                    <div class="industry-submenu-text">Медіа та реклама</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "metal" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/metal")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-land.png")"/></div>*@
+                    <div class="industry-submenu-text">Металургійна та гірничодобувна промисловість</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "sport" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/sport")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-financial-right.png")"/></div>*@
+                    <div class="industry-submenu-text">Спорт</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "insurance" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/insurance")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-intellect.png")"/></div>*@
+                    <div class="industry-submenu-text">Страхування</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "telecom" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/telecom")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-intellect.png")"/></div>*@
+                    <div class="industry-submenu-text">Телекомунікації та інформаційні технології</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "fin" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/fin")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-intellect.png")"/></div>*@
+                    <div class="industry-submenu-text">Фінансові установи</div>
+                </a>
+            </div>
+            <div class="industry-item @(industry == "chem" ? "selected" : "")">
+                <a href="@Url.Content("~/industries/chem")">
+                    @*<div class="industry-icon"><img src="@Url.Content("~/Content/industries/img/industry-intellect.png")"/></div>*@
+                    <div class="industry-submenu-text">Хімічна промисловість та фармацевтика</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

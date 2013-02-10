@@ -9,9 +9,13 @@ mp.Lang = (function ($) {
             window.location.reload();
         };
 
-        var idd = $('#langdrop').msDropDown();
-        idd.on("change", function (res) {
-            mp.Lang.SwitchLanguage(this.value);
+        //var idd = $('#langdrop').msDropDown();
+        //idd.on("change", function (res) {
+        //    mp.Lang.SwitchLanguage(this.value);
+        //});
+
+        $('#lang-block > #lang-top-line > .lang-button').on("click", function(e) {
+            mp.Lang.SwitchLanguage($(this).closest('.lang-button').attr('id'));
         });
     };
 

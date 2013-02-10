@@ -1,0 +1,129 @@
+﻿@{
+    ViewBag.Title = "Путатопульт";
+
+    //jQuery
+    Html.RequiresJs("http://ajax.microsoft.com/ajax/jQuery.Validate/1.6/jQuery.Validate.min.js", 9);
+    Html.RequiresJs("Bootstrap/js/bootstrap.js", "AreaContent", 6);
+
+    Html.RequiresJs("jquery.corner.js", "AreaContent", 90);
+
+    //FileUpload Dependencies
+    Html.RequiresCss("FileUpload/jquery.fileupload-ui.css", "AreaContent", 5);
+    Html.RequiresJs("FileUpload/tmpl.min.js", "AreaContent", 5);
+    Html.RequiresJs("FileUpload/canvas-to-blob.min.js", "AreaContent", 5);
+    Html.RequiresJs("FileUpload/load-image.min.js", "AreaContent", 5);
+    Html.RequiresJs("FileUpload/jquery.iframe-transport.js", "AreaContent", 10);
+    Html.RequiresJs("FileUpload/jquery.fileupload.js", "AreaContent", 10);
+    Html.RequiresJs("FileUpload/jquery.fileupload-ip.js", "AreaContent", 20);
+    Html.RequiresJs("FileUpload/jquery.fileupload-ui.js", "AreaContent", 30);
+    Html.RequiresJs("FileUpload/locale.js", "AreaContent", 90);
+
+    //Chosen
+    Html.RequiresCss("Chosen/chosen.css", "AreaContent", 98);
+    //Html.RequiresJs("Chosen/chosen.jquery.min.js", "AreaContent", 10);
+    Html.RequiresJs("Chosen/chosen.jquery.optgroup.min.js", "AreaContent", 10);
+
+    //CKEDITOR
+    Html.RequiresJs("ckeditor/ckeditor.js", "AreaContent", 10);
+    Html.RequiresJs("ckeditor/adapters/jquery.js", "AreaContent", 11);
+
+    //Tooltip
+    //Html.RequiresJs("jQueryTools/Tooltip/tooltip.js", "AreaContent", 12);
+    //Html.RequiresJs("jQueryTools/Tooltip/tooltip.slide.js", "AreaContent", 13);
+    Html.RequiresJs("Bootstrap/js/bootstrap-popover.js", "AreaContent", 12);
+    Html.RequiresJs("content-browser-logic.js", "AreaContent", 13);
+    Html.RequiresJs("control-init-logic.js", "AreaContent", 13);
+}
+
+@Html.Hidden("FileHandlerUrl", "/Areas/SuperUser/FileHandler/Handler.ashx")
+<h1 style="text-align: center">Путатопульт приветствует тебя!</h1>
+<div id="management-area">
+    <div id="control-area">
+        <ul>
+            <li><a href="#content-control">Управление публикациями, проектами и новостями</a></li>
+            <li><a href="#users-control">Управление пользователями</a></li>
+        </ul>
+        <div id="content-control">
+            
+        </div>
+        <div id="users-control">
+            @Html.Action("GetUsersControl", "MPManagement")
+        </div>
+        </div>
+    <div id="content-browser-area" class="collapsed clearfix">
+	<div id="browser-content">
+			<form class="fileupload" id="content-fileupload" method="POST" enctype="multipart/form-data">
+				<div class="fileupload-buttonbar">
+					<span class="btn btn-success fileinput-button">
+						<i class="icon-plus icon-white"></i>
+						<span>Загрузить файлы</span>
+						<input type="file" name="files[]" multiple>
+					</span>
+					<div class="fileupload-progressbar"></div>
+				</div>
+				<table><tbody class="files"></tbody></table>
+			</form>
+		</div>
+        <div id="enabler"></div>
+   </div>
+</div>
+
+
+
+<!-- The template to display files available for upload -->
+<script id="template-upload-empty" type="text/x-tmpl">
+{</script>
+<!-- The template to display files available for download -->
+<script id="template-download-empty" type="text/x-tmpl">
+</script>
+<!-- The template to display files available for upload -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-upload fade">
+		<td class="name"><span>{%=file.name%}</span></td>
+		{% if (file.error) { %}
+			<td class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+		{% } else if (o.files.valid && !i) { %}
+			<td>
+				<div class="progress progress-success progress-striped active"><div class="bar" style="width:0%;"></div></div>
+			</td>
+			<td class="start">{% if (!o.options.autoUpload) { %}
+				<button class="btn btn-primary">
+					<i class="icon-upload icon-white"></i>
+					<span>{%=locale.fileupload.start%}</span>
+				</button>
+			{% } %}</td>
+		{% } else { %}
+		{% } %}
+		<td class="cancel">{% if (!i) { %}
+			<button class="btn btn-warning">
+				<i class="icon-ban-circle icon-white"></i>
+				<span>{%=locale.fileupload.cancel%}</span>
+			</button>
+		{% } %}</td>
+	</tr>
+{% } %}
+</script>
+<!-- The template to display files available for download -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+	<tr class="template-download fade">
+		{% if (file.error) { %}
+			<td></td>
+			<td class="name"><span>{%=file.name%}</span></td>
+			<td class="size"><span>{%=o.formatFileSize(file.size)%}</span></td>
+			<td class="error" colspan="2"><span class="label label-important">{%=locale.fileupload.error%}</span> {%=locale.fileupload.errors[file.error] || file.error%}</td>
+		{% } else { %}
+			<td class="name">
+				<a href="{%=file.url%}" title="{%=file.name%}" rel="{%=file.thumbnail_url&&'gallery'%}" download="{%=file.name%}">{%=file.name%}</a>
+			</td>
+		{% } %}
+		<td class="delete">
+			<button type="button" class="btn btn-danger" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}">
+				<i class="icon-trash icon-white"></i>
+				<span>Удалить</span>
+			</button>
+		</td>
+	</tr>
+{% } %}
+</script>

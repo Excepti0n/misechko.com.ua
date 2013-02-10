@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace misechko.com.core
 {
-    public class Class1
+    public class IMPSettings
     {
     }
 }

@@ -11,6 +11,10 @@
   clear: both;
 }
 
+#exp-lines-container {
+    padding-top: 0px;
+}
+
 .in-banner-container {
   width: 360px;
   height: 320px;
@@ -174,7 +178,6 @@ html.cssgradients .bg {display:none;}*/
     background-repeat: repeat;
     min-height: 150px;
     padding-top: 40px;
-    display: none;
 }
 
 #news-panel .centerer {

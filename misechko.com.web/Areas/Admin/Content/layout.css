@@ -1,0 +1,315 @@
+﻿body {
+	margin-top: 15px;
+	padding:0px;
+}
+
+#top-controls {
+    width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+}
+	
+#content {
+	width:1500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+
+#content h1 {
+    margin-bottom: 15px;
+}
+
+#login-block {
+	text-align: center;
+	border: 1px dashed #333;
+	background-color: #EEE;
+	padding-bottom: 30px;
+}
+
+.display-name input {
+    width: 250px;
+    text-align: center;
+}
+
+#login-form {
+	display: none;
+}
+
+#pazz {
+	text-align: center;
+}
+
+#username {
+	text-align: center;
+}
+
+#divStatus {
+	display: inline;
+}
+
+#content-browser-area {
+	border:1px dashed #333;
+	background-color:#eee;
+	display: inline-block;
+	margin-top: 60px;
+	margin-left: -1px;
+	position: absolute;
+	overflow: hidden;
+}
+
+#content-browser-area.collapsed {
+	width: 20px;
+	height: 80px;
+}
+
+#content-browser-area.expanded {
+	width: 320px;
+	height: auto;
+}
+
+#content-browser-area #enabler {
+	background-color: red;
+	width: 20px;
+	height: auto;
+	min-height: 80px;	
+	right: 0px;
+	position: absolute;
+	float: right;
+	top: 0;
+	bottom: 0;
+}
+
+#browser-content {
+	min-height: 80px;
+	float: left;
+	padding: 10px;
+}
+
+#control-area 
+{
+	text-align:left;
+    width: 1350px;
+    min-height: 300px;
+	/*padding:15px;	
+	border:1px dashed #333;
+	background-color:#eee;*/
+	display: inline-block;
+}
+
+.fileupload-buttonbar {
+	padding: 10px;
+	margin-bottom: 35px;
+}
+
+#new-project-block .fileupload-buttonbar {
+	padding: 0px;
+}
+
+.preview img {
+	max-width: 40px;
+}
+
+.files tr {
+	border:1px dashed #333;
+}
+
+.files .name {
+	max-width: 190px;
+	overflow: hidden;
+	margin-right: 15px;
+}
+
+.files .preview {
+	overflow: hidden;
+	margin-right: 5px;
+	display: none;    
+}
+
+.files .size {
+	display: none;
+}
+
+.files .delete input[type=checkbox] {
+	display: none;
+}
+
+.ui-dialog .ui-dialog-content {
+	text-align: center;
+}
+
+.deputy-block {
+    width: 380px;
+    height: 350px;
+    margin-left: 20px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: 1px dashed black;
+    padding: 5px;
+    overflow: auto;
+}
+
+.deputy-block .save-changes {
+    margin-left: 11px;
+    height: 30px;
+    width: 130px;
+    position: absolute;
+}
+
+#parties-management-view {
+    margin-top: 20px;
+}
+
+#deputies-management-view {
+    margin-top: 10px;
+}
+
+.deputy-image {
+    float: left;
+    max-height: 125px;
+}
+
+.deputy-image .fileupload {
+    width: 115px;
+    height: 30px;
+}
+
+.deputy-image img {
+    width: 125px;
+    height: 125px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.deputy-name {
+    float: right;
+    width: 240px;
+}
+
+.deputy-bio-block {
+    clear: both;
+}
+
+.deputy-bio-block textarea {
+    margin-top: 15px;
+    margin-left: 5px;
+    width: 360px;
+    height: 150px;
+}
+
+.deputy-block input {
+    margin-left: 10px;
+}
+
+.add-image-block {
+    border: 1px dashed blue;
+    margin-top: 45px;
+    margin-left: 5px;
+    width: 125px;
+}
+
+.add-permission-block {
+    height: 55px;
+}
+
+.add-role-block {
+    height: 55px;
+}
+
+.add-permission-block .chzn-single {
+    height: 28px !important;
+}
+
+.add-permission-block .chzn-container {
+    font-size: 15px;
+}
+
+.btn.add-type {
+    width: 125px;
+}
+
+.btn.add-permission {
+    width: 220px;
+}
+
+#deputies-management-view h1{
+    margin-bottom: 10px;
+}
+
+#deputies-management-view .full-name {
+    margin-left: 10px;
+}
+
+.change-image-btn {
+    width: 100px;
+    height: 47px;
+    background-image: url('images/change.png');
+    z-index: 2;
+    position: relative;
+    bottom: 89px;
+    left: 33px;
+}
+
+#parties-list li.selected {
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+input.party-name {
+    width: 300px;
+}
+
+.load-deputies {
+    float: right;
+}
+
+.outlined {
+    position: relative;
+    background-color: white;
+    border: 1px solid #DDD;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    padding: 39px 19px 14px;
+    margin-top: 20px;
+}
+
+.outlined::after {
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: whiteSmoke;
+    border: 1px solid #DDD;
+    color: #9DA0A4;
+    -webkit-border-radius: 4px 0 4px 0;
+    -moz-border-radius: 4px 0 4px 0;
+    border-radius: 4px 0 4px 0;
+}
+
+#permissions-block-wrapper.outlined::after {
+    content: "Управление особыми правами доступа";
+}
+
+#party-edit-block-wrapper.outlined::after {
+    content: "Управление данными партии";
+}
+
+#parties-list-wrapper.outlined::after {
+    content: "Текущие партии";
+}
+
+#roles-list-wrapper.outlined::after {
+    content: "Роли пользователей";
+}
+
+#user-list-wrapper.outlined::after {
+    content: "Пользователи выбранной роли";
+}
+
+#add-user-button {
+    margin-top: 15px;
+}

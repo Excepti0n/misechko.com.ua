@@ -1,0 +1,174 @@
+﻿#main {
+    margin-bottom: 15px;
+    padding: 0px;
+}
+
+#about-triplet {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1145px;
+}
+
+#about-triplet > div {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+}
+
+#about-triplet > #support-materials {
+    width: 270px;
+    border-right: 1px solid #bab6b8;
+}
+
+#about-triplet > #about-main {
+    width: 490px;
+    border-right: 1px solid #bab6b8;
+    padding-right: 70px;
+}
+
+#about-triplet > #about-main > div.about-headline {
+    padding-top: 50px;
+    padding-left: 40px;
+}
+
+#about-triplet > #about-main > div.about-headline h1 {
+    display: inline;
+    zoom: 1;
+    *display: inline;
+    color: #020001;
+    font-size: 30px;
+    font-family: 'MyriadPro-Bold';
+    padding-left: 10px;
+    max-width: 585px;
+}
+
+#about-triplet > #about-main > * {
+    padding-left: 24px;
+}
+
+#about-triplet > #about-main ul {
+    padding-left: 60px;
+}
+
+#about-triplet > #about-main h2 {
+    color: #4C4C4C;
+    font-family: 'MyriadPro-Bold';
+    padding-left: 40px;
+    margin-top: 20px;
+}
+
+#about-triplet > #about-main h3 {
+    color: #4C4C4C;
+    font-family: 'MyriadPro-Regular';
+    padding-left: 40px;
+    margin-top: 20px;
+}
+
+#about-triplet > #about-main p {
+    color: #070003;
+    font-family: Arial;
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+#about-triplet > #about-main li {
+    color: #070003;
+}
+
+#about-triplet > #about-main p:last-child {
+    padding-bottom: 30px;
+}
+
+#about-triplet > #about-main div.about-headline + p {
+    padding-top: 30px;
+}
+
+#about-triplet > #about-main.extended {
+    width: 760px;
+}
+
+#about-triplet > #about-submenu {
+    width: 300px;
+    left: -5px;
+    position: relative;
+}
+
+#about-triplet > #about-submenu > #about-selector {
+    background-color: #7a113f;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#about-triplet > #about-submenu > #about-selector > .about-item {
+    display: block;
+    width: 100%;
+    height: 70px;
+}
+
+#about-triplet > #about-submenu > #about-selector > .about-item a {
+    text-decoration: none;
+}
+
+#about-triplet > #about-submenu > #about-selector > .about-item.selected {
+    background-color: #99182a;    
+}
+
+#about-triplet > #about-submenu > #about-selector > .about-item:hover {
+    background-color: #99182a;    
+}    
+
+#about-triplet > #about-submenu > #about-selector > .about-item div {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+#about-triplet > #about-submenu > #about-selector > .about-item .about-icon {
+    width: 40px;
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#about-triplet > #about-submenu > #about-selector > .about-item .about-submenu-text {
+    color: #E9E4E4;
+    font-size: 15px;
+    font-family: 'MyriadPro-Regular';
+    padding-top: 25px;
+    vertical-align: middle;
+    padding-left: 35px;
+    padding-right: 10px;
+}
+
+.ie7 footer {
+    margin-top: 0px;
+}
+
+.ie7 #about-triplet > #about-submenu {
+    width: 305px;
+    left: 0px;
+}
+
+@media screen and (max-width: 768px)
+{
+    #about-triplet
+    {
+        width: auto;
+        position: relative;
+    }
+
+    #about-triplet > #about-submenu
+    {
+        width: 300px;
+        left: 0px;
+        position: absolute;
+        top: 0px;
+    }
+
+    #about-triplet > #about-main.extended {
+        width: auto;
+        margin-left: 300px;
+    }
+}

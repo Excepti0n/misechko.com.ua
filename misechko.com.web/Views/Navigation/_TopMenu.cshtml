@@ -4,14 +4,14 @@
         {
             <li class="selected">
                 <h2 class="selected">Про фірму</h2>
-                <p>Історія компанії, досягнення, плани</p>
+                @*<p>Історія компанії, досягнення, плани</p>*@
             </li>
         } else
         {
             <li>
             <a href="@Url.Action("Index", "About")">
                 <h2>Про фірму</h2>
-                <p>Історія компанії, досягнення, плани</p>
+                @*<p>Історія компанії, досягнення, плани</p>*@
             </a>
             </li>
         }
@@ -22,7 +22,7 @@
             <li class="selected">
                 <a href="@Url.Action("Index", "Practicies", new { practice = "" })">
                     <h2 class="selected">Практики</h2>
-                    <p>Юридичні практики компанії</p>
+                    @*<p>Юридичні практики компанії</p>*@
                  </a>
             </li>
         } else
@@ -30,7 +30,7 @@
             <li>
                 <a href="@Url.Action("Index", "Practicies")">
                     <h2>Практики</h2>
-                    <p>Юридичні практики компанії</p>
+                    @*<p>Юридичні практики компанії</p>*@
                 </a>
             </li>
         }
@@ -40,14 +40,29 @@
         {
             <li class="selected">
                 <h2 class="selected">Індустрії</h2>
-                <p>Клієнти та історії успіху за індустріями</p>
+                @*<p>Клієнти та історії успіху за індустріями</p>*@
             </li>
         } else
         {
             <li>
                 <a href="@Url.Action("Index", "Industries")">
                     <h2>Індустрії</h2>
-                    <p>Клієнти та історії успіху за індустріями</p>
+                    @*<p>Клієнти та історії успіху за індустріями</p>*@
+                </a>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Projects")
+        {
+            <li class="selected">
+                <h2 class="selected">Проекти</h2>
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "Projects")">
+                    <h2>Проекти</h2>
                 </a>
             </li>
         }
@@ -57,14 +72,14 @@
         {
             <li class="selected">
                 <h2 class="selected">Команда</h2>
-                <p>Наші професійні юристи</p>
+                @*<p>Наші професійні юристи</p>*@
             </li>
         } else
         {
             <li>
                 <a href="@Url.Action("Index", "Team")">
                     <h2>Команда</h2>
-                    <p>Наші професійні юристи</p>
+                    @*<p>Наші професійні юристи</p>*@
                 </a>
             </li>
         }
@@ -74,14 +89,14 @@
         {
             <li class="selected">
                 <h2 class="selected">Прес-центр</h2>
-                <p>Публікації, матеріали, прес-релізи</p>
+                @*<p>Публікації, матеріали, прес-релізи</p>*@
             </li>
         } else
         {
             <li>
                 <a href="@Url.Action("Index", "PressCenter")">
                     <h2>Прес-центр</h2>
-                    <p>Публікації, матеріали, прес-релізи</p>
+                    @*<p>Публікації, матеріали, прес-релізи</p>*@
                 </a>
             </li>
         }
@@ -91,14 +106,14 @@
         {
             <li class="selected">
                 <h2 class="selected">Контакти</h2>
-                <p>Як з нами зв'язатися</p>
+                @*<p>Як з нами зв'язатися</p>*@
             </li>
         } else
         {
             <li>
                 <a href="@Url.Action("Index", "Contacts")">
                     <h2>Контакти</h2>
-                    <p>Як з нами зв'язатися</p>
+                    @*<p>Як з нами зв'язатися</p>*@
                 </a>
             </li>
         }
