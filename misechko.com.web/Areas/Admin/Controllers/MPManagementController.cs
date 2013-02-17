@@ -6,12 +6,12 @@ using System.Reflection;
 using System.Web.Compilation;
 using System.Web.Mvc;
 using System.Web.Security;
+using MP.web.Application.Membership;
 using Newtonsoft.Json;
 using RadaCode.Web.Application.MVC;
 using misechko.com.Application.Membership;
 using misechko.com.Areas.Admin.Models;
 using misechko.com.data.EF;
-using putaty.web.Application.Membership;
 
 namespace misechko.com.Areas.Admin.Controllers
 {
@@ -65,6 +65,29 @@ namespace misechko.com.Areas.Admin.Controllers
         }
 
         #region Roles
+
+        [HttpPost]
+        public ActionResult AddUserToRoles(string userName, string newRoles)
+        {
+            try
+            {
+                if (newRoles == null) return Json("SPCD: NORLPROVIDED");
+
+                _roleProvider.ClearUserRoles(userName);
+
+                var rolesList = JsonConvert.DeserializeObject<List<string>>(newRoles);
+                foreach (var roleName in rolesList)
+                {
+                    _roleProvider.AddUserToRole(userName, roleName);
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json("SPCD: ERR - " + ex.Message);
+            }
+
+            return Json("SPCD: OK");
+        }
 
         [HttpPost]
         public ActionResult AddNewRole(string roleName)
@@ -255,19 +278,13 @@ namespace misechko.com.Areas.Admin.Controllers
                 typesSoFar = typesSoFar.Concat(typesInAsm);
             }
             return typesSoFar.Where(type =>
-                type != null &&
-                type.IsPublic &&
-                type.IsClass &&
-                !type.IsAbstract &&
-                typeof(RadaCodeBaseController).IsAssignableFrom(type)
+                                    type != null &&
+                                    type.IsPublic &&
+                                    type.IsClass &&
+                                    !type.IsAbstract &&
+                                    typeof (RadaCodeBaseController).IsAssignableFrom(type)
                 //typeof(IController).IsAssignableFrom(type)
-            );
-        }
-
-        private bool DoesDeputyHaveAnImage(string id)
-        {
-            var path = Server.MapPath("~/Content/party-view/images/deputies/") + id + ".png";
-            return System.IO.File.Exists(path);
+                );
         }
 
         private string RenderRazorViewToString(string viewName, object model)

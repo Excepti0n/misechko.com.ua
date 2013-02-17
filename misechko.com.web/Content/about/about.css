@@ -24,7 +24,7 @@
 #about-triplet > #about-main {
     width: 490px;
     border-right: 1px solid #bab6b8;
-    padding-right: 70px;
+    padding-right: 50px;
 }
 
 #about-triplet > #about-main > div.about-headline {
@@ -44,7 +44,7 @@
 }
 
 #about-triplet > #about-main > * {
-    padding-left: 24px;
+    /*padding-left: 24px;*/
 }
 
 #about-triplet > #about-main ul {
@@ -74,6 +74,8 @@
 
 #about-triplet > #about-main li {
     color: #070003;
+    font-family: Arial;
+    font-size: 14px;
 }
 
 #about-triplet > #about-main p:last-child {
@@ -133,7 +135,8 @@
 }
 
 #about-triplet > #about-submenu > #about-selector > .about-item .about-submenu-text {
-    color: #E9E4E4;
+    /*color: #E9E4E4;*/
+    color: white;
     font-size: 15px;
     font-family: 'MyriadPro-Regular';
     padding-top: 25px;

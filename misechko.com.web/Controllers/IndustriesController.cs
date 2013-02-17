@@ -1,15 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
+using System.Threading;
 using System.Web.Mvc;
 using misechko.com.Content;
 using misechko.com.Models;
+using misechko.com.data.EF;
 
 namespace misechko.com.Controllers
 {
     public class IndustriesController : Controller
     {
+        private readonly MPDataContext _context;
+
+        public IndustriesController(MPDataContext context)
+        {
+            _context = context;
+        }
         //
         // GET: /Industries/
 
@@ -17,29 +22,24 @@ namespace misechko.com.Controllers
         {
             IndustryViewModel model;
 
-            if (string.IsNullOrEmpty(industry))
+            var key = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName + "/Industries";
+
+            if (!string.IsNullOrEmpty(industry))
             {
-                model = new IndustryViewModel
-                {
-                    HasSupportMaterials = false,
-                    IndustryMarkup = Industries.defaultText
-                };
-                return View(model);
+                key += "/" + industry;
             }
+
+            key += "#industry-main";
 
             model = new IndustryViewModel
             {
-                HasSupportMaterials = false,
-                IndustryMarkup = Industries.ResourceManager.GetString(industry),
                 CurrentIndustryName = industry
             };
 
-            var supportMarkup = Industries.ResourceManager.GetString(industry + "_side");
-
-            if (!string.IsNullOrEmpty(supportMarkup))
+            var firstOrDefault = _context.ContentElements.FirstOrDefault(c => c.ContentKey == key);
+            if (firstOrDefault != null)
             {
-                model.HasSupportMaterials = true;
-                model.SupportMaterialsMarkup = supportMarkup;
+                model.IndustryMarkup = firstOrDefault.ContentMarkup;
             }
 
             return View(model);

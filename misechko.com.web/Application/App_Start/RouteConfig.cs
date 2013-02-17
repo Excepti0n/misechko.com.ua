@@ -14,6 +14,12 @@ namespace misechko.com
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: "About",
+               url: "About/{submenu}",
+               defaults: new { controller = "About", action = "Index", submenu = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
                 name: "Practicies",
                 url: "Practicies/{practice}",
                 defaults: new { controller = "Practicies", action = "Index", practice = UrlParameter.Optional }

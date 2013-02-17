@@ -133,12 +133,12 @@
 }
 
 #practices-triplet > #practices-submenu > #practices-selector > .practice-item .practice-submenu-text {
-    color: #E9E4E4;
+    color: white;
     font-size: 15px;
     font-family: 'MyriadPro-Regular';
     padding-top: 25px;
     vertical-align: middle;
-    padding-left: 5px;
+    padding-left: 35px;
 }
 
 .ie7 footer {

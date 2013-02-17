@@ -1,3 +1,6 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@using System.Threading
+@{
+    var localizedLayoutPath = string.Format("~/Views/Shared/_Layout.{0}.cshtml", Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName);
+
+    Layout = File.Exists(Request.MapPath(localizedLayoutPath)) ? localizedLayoutPath : "~/Views/Shared/_Layout.cshtml";
 }

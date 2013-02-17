@@ -1,11 +1,21 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Threading;
+using System.Web.Mvc;
+using RadaCode.Web.Application.MVC;
 using misechko.com.Content;
 using misechko.com.Models;
+using misechko.com.data.EF;
 
 namespace misechko.com.Controllers
 {
-    public class PracticiesController : Controller
+    public class PracticiesController : RadaCodeBaseController
     {
+        private readonly MPDataContext _context;
+
+        public PracticiesController(MPDataContext context)
+        {
+            _context = context;
+        }
         //
         // GET: /Practicies/
 
@@ -13,29 +23,24 @@ namespace misechko.com.Controllers
         {
             PracticeViewModel model;
 
-            if(string.IsNullOrEmpty(practice))
+            var key = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName + "/Practicies";
+
+            if (!string.IsNullOrEmpty(practice))
             {
-                model = new PracticeViewModel
-                {
-                    HasSupportMaterials = false,
-                    PracticeMarkup = Practices.defaultText
-                };
-                return View(model);
+                key += "/" + practice;
             }
+
+            key += "#practice-main";
 
             model = new PracticeViewModel
             {
-                HasSupportMaterials = false,
-                PracticeMarkup = Practices.ResourceManager.GetString(practice),
                 CurrentPracticeName = practice
             };
 
-            var supportMarkup = Practices.ResourceManager.GetString(practice + "_side");
-
-            if(!string.IsNullOrEmpty(supportMarkup))
+            var firstOrDefault = _context.ContentElements.FirstOrDefault(c => c.ContentKey == key);
+            if (firstOrDefault != null)
             {
-                model.HasSupportMaterials = true;
-                model.SupportMaterialsMarkup = supportMarkup;
+                model.PracticeMarkup = firstOrDefault.ContentMarkup;
             }
 
             return View(model);

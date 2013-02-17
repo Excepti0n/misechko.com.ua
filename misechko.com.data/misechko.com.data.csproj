@@ -52,7 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Entities\SinglePageInformationEntity.cs" />
+    <Compile Include="Migrations\AutomaticMigrationConfiguration.cs" />
     <Compile Include="MPDataModule.cs" />
     <Compile Include="EF\MPDataContext.cs" />
     <Compile Include="EF\MPDataContextInitializer.cs" />

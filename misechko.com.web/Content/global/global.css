@@ -110,6 +110,10 @@ body
     float: left;
 }
 
+#admin-links {
+    float: left;
+}
+
 #langSelect {
     float: right;
 }
@@ -263,6 +267,9 @@ body
 
 header {
     border-bottom: solid 20px #7a113f;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ie7 header {
@@ -282,7 +289,7 @@ header {
 
 menu {
     float: left;
-    width: 90%;
+    width: 93%;
     margin-top: 10px;
 }
 
@@ -471,6 +478,20 @@ footer {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.block-headline {
+    padding-top: 40px;
+    padding-left: 40px;
+    display: block;
+    padding-bottom: 40px;
+}
+
+.block-headline > h1 {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 30px;
+    font-family: 'MyriadPro-Bold';    
 }
 
 .subblock-headline {

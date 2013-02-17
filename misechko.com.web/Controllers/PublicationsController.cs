@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using RadaCode.Web.Application.MVC;
 using misechko.com.Content;
 using misechko.com.Models;
 
 namespace misechko.com.Controllers
 {
-    public class PublicationsController : Controller
+    public class PublicationsController : RadaCodeBaseController
     {
         //
         // GET: /Publications/

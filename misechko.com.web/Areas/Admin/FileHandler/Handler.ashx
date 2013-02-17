@@ -1,1 +1,1 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="Handler.ashx.cs" Class="putaty.web.Areas.SuperUser.FileHandler.Handler" %>
+﻿<%@ WebHandler Language="C#" CodeBehind="Handler.ashx.cs" Class="misechko.com.Areas.Admin.FileHandler.Handler" %>

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace putaty.web.Application.Membership
+namespace MP.web.Application.Membership
 {
     public class UrlAuthorizeAttribute : System.Web.Mvc.AuthorizeAttribute
     {

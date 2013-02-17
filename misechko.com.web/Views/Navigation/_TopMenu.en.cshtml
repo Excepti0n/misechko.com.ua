@@ -1,0 +1,121 @@
+﻿<ul id="menu">
+    @{
+        if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "About")
+        {
+            <li class="selected">
+                <h2 class="selected">About firm</h2>
+                @*<p>Історія компанії, досягнення, плани</p>*@
+            </li>
+        } else
+        {
+            <li>
+            <a href="@Url.Action("Index", "About")">
+                <h2>About firm</h2>
+                @*<p>Історія компанії, досягнення, плани</p>*@
+            </a>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Practicies")
+        {
+            <li class="selected">
+                <a href="@Url.Action("Index", "Practicies", new { practice = "" })">
+                    <h2 class="selected">Practicies</h2>
+                    @*<p>Юридичні практики компанії</p>*@
+                 </a>
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "Practicies")">
+                    <h2>Practicies</h2>
+                    @*<p>Юридичні практики компанії</p>*@
+                </a>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Industries")
+        {
+            <li class="selected">
+                <h2 class="selected">Industries</h2>
+                @*<p>Клієнти та історії успіху за індустріями</p>*@
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "Industries")">
+                    <h2>Industries</h2>
+                    @*<p>Клієнти та історії успіху за індустріями</p>*@
+                </a>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Projects")
+        {
+            <li class="selected">
+                <h2 class="selected">Projects</h2>
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "Projects")">
+                    <h2>Projects</h2>
+                </a>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Team")
+        {
+            <li class="selected">
+                <h2 class="selected">Team</h2>
+                @*<p>Наші професійні юристи</p>*@
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "Team")">
+                    <h2>Team</h2>
+                    @*<p>Наші професійні юристи</p>*@
+                </a>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "PressCenter")
+        {
+            <li class="selected">
+                <h2 class="selected">Press center</h2>
+                @*<p>Публікації, матеріали, прес-релізи</p>*@
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "PressCenter")">
+                    <h2>Press center</h2>
+                    @*<p>Публікації, матеріали, прес-релізи</p>*@
+                </a>
+            </li>
+        }
+    } 
+    @{
+    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Contacts")
+        {
+            <li class="selected">
+                <h2 class="selected">Contacts</h2>
+                @*<p>Як з нами зв'язатися</p>*@
+            </li>
+        } else
+        {
+            <li>
+                <a href="@Url.Action("Index", "Contacts")">
+                    <h2>Contacts</h2>
+                    @*<p>Як з нами зв'язатися</p>*@
+                </a>
+            </li>
+        }
+    } 
+</ul>

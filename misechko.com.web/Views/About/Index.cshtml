@@ -8,31 +8,31 @@
     var selectedItem = Model.CurrentMenuItemName;
 }
 
-
-
 <div id="about-triplet">
-    <div id="about-main" class="extended">
-        @Html.Raw(Model.MainMarkup)
+    <div id="about-main" class="extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+        <div class="editable-block">
+            @Html.Raw(Model.MainMarkup)
+        </div>
     </div>
-    <div id="industries-submenu">
-        <div id="industries-selector">
-            <div class="industry-item @(selectedItem == "" ? "selected" : "")">
+    <div id="about-submenu">
+        <div id="about-selector">
+            <div class="about-item @(string.IsNullOrEmpty(selectedItem) ? "selected" : "")">
                 <a href="@Url.Content("~/about/")">
                     <div class="about-submenu-text">Про фірму</div>
                 </a>
             </div>
             
-            <div class="industry-item @(selectedItem == "recognition" ? "selected" : "")">
+            <div class="about-item @(selectedItem == "recognition" ? "selected" : "")">
                 <a href="@Url.Content("~/about/recognition")">
                     <div class="about-submenu-text">Визнання</div>
                 </a>
             </div>
-            <div class="industry-item @(selectedItem == "membership" ? "selected" : "")">
+            <div class="about-item @(selectedItem == "membership" ? "selected" : "")">
                 <a href="@Url.Content("~/about/membership")">
                     <div class="about-submenu-text">Членство</div>
                 </a>
             </div>
-            <div class="industry-item @(selectedItem == "career" ? "selected" : "")">
+            <div class="about-item @(selectedItem == "career" ? "selected" : "")">
                 <a href="@Url.Content("~/about/career")">
                     <div class="about-submenu-text">Кар'эра</div>
                 </a>

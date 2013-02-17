@@ -259,7 +259,7 @@ namespace misechko.com.data.Repositories
             if (role == null)
                 return false;
 
-            return (_db.UserRoles.SingleOrDefault(r => r.Id == role.Id || r.RoleName == role.RoleName) != null);
+            return (_db.UserRoles.ToList().SingleOrDefault(r => r.Id == role.Id || r.RoleName == role.RoleName) != null);
         }
     }
 }

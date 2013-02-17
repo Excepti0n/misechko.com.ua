@@ -6,20 +6,14 @@
 }
 
 
-@Html.Hidden("RemoveRoleUrl", Url.Action("RemoveRole", "PutatyManagement"))
-@Html.Hidden("AddRoleUrl", Url.Action("AddNewRole", "PutatyManagement"))
-@Html.Hidden("GetUsersInRoleUrl", Url.Action("GetUsersInRole", "PutatyManagement"))
-@Html.Hidden("UpdateDisplayNameUrl", Url.Action("UpdateDisplayName", "PutatyManagement"))
-@Html.Hidden("UpdatePasswordUrl", Url.Action("UpdateUserPassword", "PutatyManagement"))
-@Html.Hidden("AddNewUserUrl", Url.Action("AddNewUser", "PutatyManagement"))
-@Html.Hidden("DeleteUserUrl", Url.Action("DeleteUser", "PutatyManagement"))
-@Html.Hidden("AddUserToRolesUrl", Url.Action("AddUserToRoles", "PutatyManagement"))
-@Html.Hidden("AddRolesToPermissionUrl", Url.Action("AddRolesToPermission", "PutatyManagement"))
-@Html.Hidden("AddCAToPermissionUrl", Url.Action("AddCAToPermission", "PutatyManagement"))
-@Html.Hidden("AddNewPermissionUrl", Url.Action("AddNewPermission", "PutatyManagement"))
-@Html.Hidden("RemovePermissionUrl", Url.Action("RemovePermission", "PutatyManagement"))
-@Html.Hidden("SetRoleAdminFeaturesAvailabilityUrl", Url.Action("SetRoleAdminFeaturesAvailability", "PutatyManagement"))
-
+@Html.Hidden("RemoveRoleUrl", Url.Action("RemoveRole", "MPManagement"))
+@Html.Hidden("AddRoleUrl", Url.Action("AddNewRole", "MPManagement"))
+@Html.Hidden("GetUsersInRoleUrl", Url.Action("GetUsersInRole", "MPManagement"))
+@Html.Hidden("UpdateDisplayNameUrl", Url.Action("UpdateDisplayName", "MPManagement"))
+@Html.Hidden("UpdatePasswordUrl", Url.Action("UpdateUserPassword", "MPManagement"))
+@Html.Hidden("AddNewUserUrl", Url.Action("AddNewUser", "MPManagement"))
+@Html.Hidden("DeleteUserUrl", Url.Action("DeleteUser", "MPManagement"))
+@Html.Hidden("AddUserToRolesUrl", Url.Action("AddUserToRoles", "MPManagement"))
 <div id="users-management-view">
     @Html.Hidden("initial-users-and-roles-list", (HtmlString)initValue)
     <div class="outlined" id="permissions-block-wrapper">

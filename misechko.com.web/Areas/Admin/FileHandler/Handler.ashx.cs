@@ -2,11 +2,9 @@
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
 using System.Web.Script.Serialization;
-using misechko.com.Areas.Admin.FileHandler;
 
-namespace putaty.web.Areas.SuperUser.FileHandler
+namespace misechko.com.Areas.Admin.FileHandler
 {
     public class Handler : IHttpHandler
     {

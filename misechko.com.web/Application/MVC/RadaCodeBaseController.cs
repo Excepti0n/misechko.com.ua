@@ -4,12 +4,29 @@ using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using misechko.com.Application.Filters;
 using misechko.com.Controllers;
 
 namespace RadaCode.Web.Application.MVC
 {
     public abstract class RadaCodeBaseController : Controller
     {
+        protected override void OnResultExecuting(ResultExecutingContext filterContext)
+        {
+            if (!filterContext.IsChildAction)
+            {
+                var response = filterContext.HttpContext.Response;
+                if (string.CompareOrdinal(response.ContentType, "text/html") == 0)
+                {
+                    if (filterContext.HttpContext.User.IsInRole("Administrator"))
+                    {
+                        response.Filter = new ReplaceTagsFilter(response.Filter);
+                    }
+                }
+            }
+            base.OnResultExecuting(filterContext);
+        }
+
         protected string ActionerIP
         {
             get

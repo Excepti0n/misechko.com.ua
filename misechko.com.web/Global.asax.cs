@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using RadaCode.Web.Application.MVC;
+using misechko.com.Application.Filters;
 
 namespace misechko.com
 {
@@ -15,8 +16,15 @@ namespace misechko.com
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
+            //filters.Add(new ReplaceTagsAttribute());
+        }
+
         protected void Application_Start()
         {
+            RegisterGlobalFilters(GlobalFilters.Filters);
+
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RadaCodeViewEngine());
             ControllerBuilder.Current.SetControllerFactory(new RadaCodeControllerFactory());

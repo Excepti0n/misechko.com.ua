@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Путатопульт";
+    ViewBag.Title = "Адмін панель сайту \"Місечко та партнери\"";
 
     //jQuery
     Html.RequiresJs("http://ajax.microsoft.com/ajax/jQuery.Validate/1.6/jQuery.Validate.min.js", 9);
@@ -35,13 +35,13 @@
     Html.RequiresJs("control-init-logic.js", "AreaContent", 13);
 }
 
-@Html.Hidden("FileHandlerUrl", "/Areas/SuperUser/FileHandler/Handler.ashx")
-<h1 style="text-align: center">Путатопульт приветствует тебя!</h1>
+@Html.Hidden("FileHandlerUrl", "/Areas/Admin/FileHandler/Handler.ashx")
+<h1 style="text-align: center">Адміністративна панель сайту "Місечко і партнери"</h1>
 <div id="management-area">
     <div id="control-area">
         <ul>
-            <li><a href="#content-control">Управление публикациями, проектами и новостями</a></li>
-            <li><a href="#users-control">Управление пользователями</a></li>
+            <li><a href="#content-control">Керування публикаціями, проектами то новостями</a></li>
+            <li><a href="#users-control">Керування користувачами пользователями</a></li>
         </ul>
         <div id="content-control">
             
@@ -56,7 +56,7 @@
 				<div class="fileupload-buttonbar">
 					<span class="btn btn-success fileinput-button">
 						<i class="icon-plus icon-white"></i>
-						<span>Загрузить файлы</span>
+						<span>Завантажити файли</span>
 						<input type="file" name="files[]" multiple>
 					</span>
 					<div class="fileupload-progressbar"></div>

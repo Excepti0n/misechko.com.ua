@@ -6,21 +6,83 @@
     Html.RequiresJs("home/home.js", "Content", 25);
 }
 
-<div id="main-banner">
-    <div class="in-banner-container">
-        <h2>У нас працюють кращі юристи з усієї України</h2>
-        <p>Добросовісна конкуренція є важливою запорукою ділового успіху. Саме тому фірма «Місечко та Партнери» забезпечує своїм клієнтам правову підтримку та юридичний захист у сфері конкурентного та антимонопольного права та допомагає  їм у  досягненні поставлених ними цілей, за умови неухильного дотримання вимог законодавства.</p>
+<div id="banner-block">
+    <div id="main-banner">
+        @*
+        //
+        //Banner 1
+        //
+        *@
+        <div id="banner1text" class="in-banner-container item_0 editable-wrapper" data-left="29%" data-top="16%" style="left: 29%; top: 16%;" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+            <div class="editable-block">
+                @{Html.RenderAction("Get", "Content", new { key = "#banner1text" });}
+            </div>
+        </div>
+        <img src="@Url.Content("~/Content/home/img/banner1.jpg")" class="bg item_0" data-top="0%" data-left="0%" style="top:0%; left:0%" />
+        @*
+        //
+        //Banner 2
+        //
+        *@
+        <div id="banner2text" class="in-banner-container item_1 editable-wrapper" data-left="29%" data-top="16%" style="left: 200%; top: 16%;" data-start-left="200%" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+            <div class="editable-block">
+               @{Html.RenderAction("Get", "Content", new { key = "#banner2text" });}
+            </div>
+        </div>
+        <img src="@Url.Content("~/Content/home/img/banner2.jpg")" class="bg item_1" data-top="0%" data-left="0%" data-start-left="200%" style="top:0%; left:200%" />
+        @*
+        //
+        //Banner 3
+        //
+        *@
+        <div id="banner3text" class="in-banner-container item_2 editable-wrapper" data-left="29%" data-top="16%" style="left: 200%; top: 16%;" data-start-left="200%" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+            <div class="editable-block">
+               @{Html.RenderAction("Get", "Content", new { key = "#banner3text" });}
+            </div>
+        </div>
+        <img src="@Url.Content("~/Content/home/img/banner3.jpg")" class="bg item_2" data-top="0%" data-left="0%" data-start-left="200%" style="top:0%; left:200%" />
+        @*
+        //
+        //Banner 4
+        //
+        *@
+        <div id="banner4text" class="in-banner-container item_3 editable-wrapper" data-left="29%" data-top="16%" style="left: 200%; top: 16%;" data-start-left="200%" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+            <div class="editable-block">
+               @{Html.RenderAction("Get", "Content", new { key = "#banner4text" });}
+            </div>
+        </div>
+        <img src="@Url.Content("~/Content/home/img/banner4.jpg")" class="bg item_3" data-top="0%" data-left="0%" data-start-left="200%" style="top:0%; left:200%" />
+        @*
+        //
+        //Banner 5
+        //
+        *@
+        <div id="banner5text" class="in-banner-container item_4 editable-wrapper" data-left="29%" data-top="16%" style="left: 200%; top: 16%;" data-start-left="200%" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+            <div class="editable-block">
+               @{Html.RenderAction("Get", "Content", new { key = "#banner5text" });}
+            </div>
+        </div>
+        <img src="@Url.Content("~/Content/home/img/banner5.jpg")" class="bg item_4" data-top="0%" data-left="0%" data-start-left="200%" style="top:0%; left:200%" />
     </div>
-    <img src="@Url.Content("~/Content/home/img/banner1.jpg")" class="bg" />
+    <a href="#prev" class="rotator_control left">
+        <div class="bg"></div>
+        <div class="ss-icon">&#x25C5;</div>
+    </a>
+    <a href="#next" class="rotator_control right">
+        <div class="bg"></div>
+        <div class="ss-icon">&#x25BB;</div>
+    </a>
+    @{if(User.IsInRole("Administrator"))
+      {
+          <button class="btn pause-button icon-pause" type="button"><span></span></button>
+      }
+      }
 </div>
 <div id="tri-block">
-    <div id="about-company">
-        <div class="subblock-headline">
-            <div class="light-ltr">К</div>
-            <h1>Компанія</h1>
+    <div id="about-company" class="editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+        <div class="editable-block">
+            @{Html.RenderAction("Get", "Content", new { key = "#about-company" });}
         </div>
-        <p>Misechko & partners - одна з провідних юридичних фірм України, що спеціалізується на супроводженні складних трансакцій та проектів у сфері вирішення спорів. Фірма заслужила високу репутацію серед клієнтів завдяки інноваційним юридичним рішенням в усіх основних галузях права.</p>
-        <p>Професійний досвід фірми у таких сферах, як  вирішення судових спорів, конкурентне право, корпоративне право та M&A, міжнародна торгівля, міжнародний арбітраж, нерухомість, оподаткування, реструктуризація заборгованості, трудове право, фінансове право - підтверджений найвищими позиціями у рейтингових таблицях проектів, нагородами та професійними рейтингами.</p>
     </div>
     <div id="experience">
         @Html.Partial("_Experience")

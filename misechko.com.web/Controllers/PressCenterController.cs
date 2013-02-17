@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RadaCode.Web.Application.MVC;
 
 namespace misechko.com.Controllers
 {
-    public class PressCenterController : Controller
+    public class PressCenterController : RadaCodeBaseController
     {
         //
         // GET: /PressCenter/
