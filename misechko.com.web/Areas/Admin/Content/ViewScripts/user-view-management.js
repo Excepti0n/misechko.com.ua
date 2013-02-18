@@ -408,38 +408,6 @@ function UsersManagementViewModel(initData) {
             roleModel.Selected(false);
         });
     };
-    
-    //Permissions logic code
-
-    self.Permissions = ko.observableArray([]);
-    
-    self.ControllersAndActions = ko.observableArray(initData.AllControllersAndActions);
-
-    var permissionsModelsArray = jQuery.map(initData.PermissionsModels, function (val, i) {
-        self.Permissions.push(new PermissionModel(val, self, i == 0));
-    });
-    
-    self.AddNewPermission = function () {
-        var AddNewPermissionUrl = $('#AddNewPermissionUrl').val();
-        $.ajax({
-            type: 'POST',
-            url: AddNewPermissionUrl,
-            data: {
-                permissionName: self.NewPermissionName(),
-                CAs: JSON.stringify(self.NewPermissionCAs())
-            },
-            success: function (res) {
-                if (res.status === "SPCD: PRADDED") {
-                    var prVM = new PermissionModel(res.addedModel, self, false);
-                    self.Permissions.push(prVM);
-                    self.NewPermissionName('');
-                    self.NewPermissionCAs(['']);
-                } else {
-                    alert("There was an error adding the permission: " + res.status);
-                }
-            }
-        });
-    };
 }
 
 var UsersView = {

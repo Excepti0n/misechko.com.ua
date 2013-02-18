@@ -40,11 +40,11 @@
 <div id="management-area">
     <div id="control-area">
         <ul>
-            <li><a href="#content-control">Керування публикаціями, проектами то новостями</a></li>
-            <li><a href="#users-control">Керування користувачами пользователями</a></li>
+            <li><a href="#publications-control">Публікації</a></li>
+            <li class="system"><a href="#users-control">Керування користувачами</a></li>
         </ul>
-        <div id="content-control">
-            
+        <div id="publications-control">
+            @Html.Action("GetPublicationsControl", "MPManagement")
         </div>
         <div id="users-control">
             @Html.Action("GetUsersControl", "MPManagement")

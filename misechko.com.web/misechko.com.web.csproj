@@ -133,6 +133,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="UnidecodeSharpFork">
+      <HintPath>..\Binaries\UnidecodeSharpFork.dll</HintPath>
+    </Reference>
     <Reference Include="WebActivator">
       <HintPath>..\packages\WebActivator.1.5.2\lib\net40\WebActivator.dll</HintPath>
     </Reference>
@@ -160,6 +163,7 @@
     <Compile Include="Areas\Admin\Controllers\AuthorizationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\MPManagementController.cs" />
+    <Compile Include="Areas\Admin\Models\PublicationsModel.cs" />
     <Compile Include="Areas\Admin\FileHandler\FilesStatus.cs" />
     <Compile Include="Areas\Admin\FileHandler\Handler.ashx.cs">
       <DependentUpon>Handler.ashx</DependentUpon>
@@ -1047,6 +1051,7 @@
     <Content Include="Areas\Admin\Content\jquery.tagsinput.css" />
     <Content Include="Areas\Admin\Content\jquery.tagsinput.min.js" />
     <Content Include="Areas\Admin\Content\layout.css" />
+    <Content Include="Areas\Admin\Content\ViewScripts\publications-view-management.js" />
     <Content Include="Areas\Admin\Content\ViewScripts\user-view-management.js" />
     <Content Include="Content\about\about.css" />
     <Content Include="Content\about\about.js" />
@@ -1525,6 +1530,7 @@
     <Content Include="Content\home\fonts\SSStandard\ss-standard.eot" />
     <Content Include="Content\home\fonts\SSStandard\ss-standard.ttf" />
     <Content Include="Content\home\fonts\SSStandard\ss-standard.woff" />
+    <Content Include="Areas\Admin\Views\MPManagement\_Publications.cshtml" />
     <None Include="Properties\PublishProfiles\LocalPublish.pubxml" />
     <Content Include="Content\inlineEditor\inlineEditorKO.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
@@ -1640,7 +1646,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>20237</DevelopmentServerPort>
+          <DevelopmentServerPort>7276</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

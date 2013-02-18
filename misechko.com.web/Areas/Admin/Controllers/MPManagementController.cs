@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -9,9 +11,11 @@ using System.Web.Security;
 using MP.web.Application.Membership;
 using Newtonsoft.Json;
 using RadaCode.Web.Application.MVC;
+using UnidecodeSharpFork;
 using misechko.com.Application.Membership;
 using misechko.com.Areas.Admin.Models;
 using misechko.com.data.EF;
+using misechko.com.data.Entities;
 
 namespace misechko.com.Areas.Admin.Controllers
 {
@@ -204,6 +208,106 @@ namespace misechko.com.Areas.Admin.Controllers
         }
 
         #endregion
+
+        #endregion
+
+        #region Publications Controller
+
+        public ActionResult GetPublicationsControl()
+        {
+            var pubModels = new List<PublicationModel>();
+
+            foreach (var publication in _context.Publications.ToList())
+            {
+                pubModels.Add(new PublicationModel
+                                  {
+                                      Headline = publication.Headline,
+                                      LinkPath = publication.LinkPath,
+                                      PublishDate = publication.PublishDate.ToString("yyyy-MM-dd"),
+                                      Id = publication.Id.ToString()
+                                  });
+            }
+
+            var model = new PublicationsModel
+            {
+                Publications = pubModels
+            };
+            
+            return PartialView("_Publications", model);
+        }
+
+        [HttpPost]
+        public ActionResult DeletePublication(string id)
+        {
+            var gUq = Guid.Parse(id);
+
+            var publicationToDelete = _context.Publications.FirstOrDefault(pb => pb.Id == gUq);
+
+            if (publicationToDelete == null)
+                return Json("SPCD: FAIL");
+            
+            _context.Publications.Remove(publicationToDelete);
+            _context.SaveChanges();
+            return Json("SPCD: OK");
+        }
+
+        [HttpPost]
+        public ActionResult UpdatePublication(string id, string publicationName, string dateCreated)
+        {
+            var gUq = Guid.Parse(id);
+
+            var publicationToUpdate = _context.Publications.FirstOrDefault(pb => pb.Id == gUq);
+
+            if (publicationToUpdate == null)
+                return Json("SPCD: FAIL");
+
+            char[] charsToTrim = { ' ', '\t' };
+            var transliteratedName = publicationName.Unidecode();
+            transliteratedName = transliteratedName.Trim(charsToTrim);
+            if (transliteratedName.Length > 10) transliteratedName = transliteratedName.Substring(0, 10);
+
+            publicationToUpdate.Headline = transliteratedName;
+            publicationToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERR - " + ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", pub = publicationToUpdate });
+            
+        }
+
+        [HttpPost]
+        public ActionResult AddNewPublication(string publicationName)
+        {
+            char[] charsToTrim = { ' ', '\t' };
+            var transliteratedName = publicationName.Unidecode();
+            transliteratedName = transliteratedName.Trim(charsToTrim);
+            if(transliteratedName.Length > 10) transliteratedName = transliteratedName.Substring(0, 10);
+
+            var newPublication = new Publication
+                                     {
+                                         Headline = publicationName,
+                                         PublishDate = DateTime.Now,
+                                         LinkPath = "/Publication/" + transliteratedName
+                                     };
+            try
+            {
+                _context.Publications.Add(newPublication);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERR - " + ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", pub = newPublication });
+        }
 
         #endregion
 

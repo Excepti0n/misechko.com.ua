@@ -1,0 +1,46 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("publications-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+
+@Html.Hidden("RemovePublicationUrl", Url.Action("RemovePublication", "MPManagement"))
+@Html.Hidden("AddPublicationUrl", Url.Action("AddPublication", "MPManagement"))
+@Html.Hidden("UpdatePublicationUrl", Url.Action("UpdatePublication", "MPManagement"))
+<div id="publications-management-view">
+    @Html.Hidden("initial-publications-list", (HtmlString)initValue)
+    <div class="outlined" id="publications-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Заголовок публикации</td>
+                    <td>Дата публикации</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'publication-template', foreach: Publications }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-role-block">
+        <div class="input-prepend">
+            <button class="btn add-type" type="button" data-bind="click: AddNewPublication, attr: { disabled: NewPublicationName() === '' }"><span>Добавить публикацию</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewPublicationName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="publication-template">
+    <tr data-bind="css: { success: Selected }, click: Select">
+        <td data-bind="text: PublicationName"></td>
+        <td data-bind="text: PublicationDate"></td>
+        <td>
+           <input type="text" id="inputDateStarted" placeholder="Дата публикации" data-bind="datepicker: DatePublished, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

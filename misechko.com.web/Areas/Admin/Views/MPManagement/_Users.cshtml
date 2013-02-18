@@ -16,30 +16,6 @@
 @Html.Hidden("AddUserToRolesUrl", Url.Action("AddUserToRoles", "MPManagement"))
 <div id="users-management-view">
     @Html.Hidden("initial-users-and-roles-list", (HtmlString)initValue)
-    <div class="outlined" id="permissions-block-wrapper">
-        <table class="table">
-            <thead>
-                <tr>
-                    <td>Название права доступа</td>
-                    <td>Роли, которые обладают правом</td> 
-                    <td>Метод, на которые распросраняется действие права доступа</td>
-                </tr>
-            </thead>
-            <tbody data-bind="template: { name: 'permission-template', foreach: Permissions }">
-            </tbody>
-        </table>
-    </div>
-    <pre class="prettyprint add-permission-block">
-        <div class="input-prepend">
-            <button class="btn add-permission" type="button" data-bind="click: AddNewPermission, attr: { disabled: NewPermissionName() === '' || NewPermissionCAs === '' }"><span>Добавить право доступа</span></button>
-            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewPermissionName"/>
-            <select class="chzn-select" style="width: 500px" data-bind="foreach: ControllersAndActions, selectedOptions: NewPermissionCAs, chosen: { PlaceholderText: 'Выберите метод', AddPlaceholder: true, ChosenOptions: {allow_single_deselect: true, include_group_label_in_selected: true} }">
-                <optgroup data-bind="attr: {label: ControllerName}, foreach: Actions">
-                    <option data-bind="text: $data, attr: { value: $parent.ControllerName + ';' + $data }"></option>
-                </optgroup>
-            </select> 
-        </div>
-    </pre>
     <div class="outlined" id="roles-list-wrapper">
         <table class="table">
             <thead>
