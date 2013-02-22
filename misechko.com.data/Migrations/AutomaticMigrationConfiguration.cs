@@ -14,7 +14,7 @@ namespace misechko.com.data.Migrations
         public AutomaticMigrationConfiguration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = false;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(misechko.com.data.EF.MPDataContext context)

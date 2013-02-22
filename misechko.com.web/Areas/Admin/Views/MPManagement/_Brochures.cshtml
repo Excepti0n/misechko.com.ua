@@ -1,0 +1,45 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("brochures-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+
+@Html.Hidden("RemoveBrochureUrl", Url.Action("DeleteBrochure", "MPManagement"))
+@Html.Hidden("AddBrochureUrl", Url.Action("AddNewBrochure", "MPManagement"))
+@Html.Hidden("UpdateBrochureUrl", Url.Action("UpdateBrochure", "MPManagement"))
+<div id="brochures-management-view">
+    @Html.Hidden("initial-brochures-list", (HtmlString)initValue)
+    <div class="outlined" id="brochures-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Назва брошури</td>
+                    <td>Дата</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'brochure-template', foreach: Brochures }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-brochure-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewBrochure, attr: { disabled: NewBrochureName() === '' }"><span>Додати брошуру</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewBrochureName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="brochure-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: BrochureName, attr: { href: BrochureHREF }"></a></td>
+        <td>
+           <input type="text" id="inputDateStarted" placeholder="Дата новости" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

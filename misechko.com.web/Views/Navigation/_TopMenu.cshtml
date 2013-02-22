@@ -85,7 +85,8 @@
         }
     } 
     @{
-    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "PressCenter")
+    if ((HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "PressCenter"))// ||
+        //(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Read" ))
         {
             <li class="selected">
                 <h2 class="selected">Прес-центр</h2>

@@ -1,0 +1,45 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("projects-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+
+@Html.Hidden("RemoveProjectUrl", Url.Action("DeleteProject", "MPManagement"))
+@Html.Hidden("AddProjectUrl", Url.Action("AddNewProject", "MPManagement"))
+@Html.Hidden("UpdateProjectUrl", Url.Action("UpdateProject", "MPManagement"))
+<div id="projects-management-view">
+    @Html.Hidden("initial-projects-list", (HtmlString)initValue)
+    <div class="outlined" id="projects-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Назва проекту</td>
+                    <td>Дата завершення</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'project-template', foreach: Projects }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-project-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewProject, attr: { disabled: NewProjectName() === '' }"><span>Додати проект</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewProjectName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="project-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: ProjectName, attr: { href: ProjectHREF }"></a></td>
+        <td>
+           <input type="text" id="inputDateStarted" placeholder="Дата завершення проекту" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

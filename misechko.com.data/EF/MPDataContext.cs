@@ -13,7 +13,11 @@ namespace misechko.com.data.EF
         public DbSet<Project> Projects { get; set; }
         public DbSet<Award> Awards { get; set; }
         public DbSet<Publication> Publications { get; set; }
-        public DbSet<Borchure> Brochures { get; set; } 
+        public DbSet<Brochure> Brochures { get; set; }
+        public DbSet<New> News { get; set; }
+        public DbSet<LawNew> LawNews { get; set; }
+        public DbSet<Practice> Practicies { get; set; }
+        public DbSet<Industry> Industries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

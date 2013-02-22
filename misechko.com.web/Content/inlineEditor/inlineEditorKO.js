@@ -92,10 +92,12 @@
                     { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align'] },
                     '/',
                     { name: 'misechko', items: ['misechkoH1', 'misechkoH2', 'misechkoP'] },
-                    { name: 'document' , items: ['Source', 'Preview']}
+                    { name: 'document', groups: ['mode', 'document', 'doctools'] },
+                    { name: 'styles' }
                     ];
                 });
-        });
+        });
+
 
         $(".editable-wrapper").each(function () {
             ko.applyBindings(new InlineEditorViewModel(this), this);

@@ -163,6 +163,7 @@
     <Compile Include="Areas\Admin\Controllers\AuthorizationController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\MPManagementController.cs" />
+    <Compile Include="Areas\Admin\Models\PracticiesModel.cs" />
     <Compile Include="Areas\Admin\Models\PublicationsModel.cs" />
     <Compile Include="Areas\Admin\FileHandler\FilesStatus.cs" />
     <Compile Include="Areas\Admin\FileHandler\Handler.ashx.cs">
@@ -197,7 +198,7 @@
     <Compile Include="Controllers\PressCenterController.cs" />
     <Compile Include="Controllers\PricesController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
-    <Compile Include="Controllers\PublicationsController.cs" />
+    <Compile Include="Controllers\ReadController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -207,6 +208,7 @@
     <Compile Include="Models\IndustryViewModel.cs" />
     <Compile Include="Models\LanguageBlockModel.cs" />
     <Compile Include="Models\PracticeViewModel.cs" />
+    <Compile Include="Models\PressCenterViewModel.cs" />
     <Compile Include="Models\ProjectViewModel.cs" />
     <Compile Include="Models\PublicationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1051,6 +1053,11 @@
     <Content Include="Areas\Admin\Content\jquery.tagsinput.css" />
     <Content Include="Areas\Admin\Content\jquery.tagsinput.min.js" />
     <Content Include="Areas\Admin\Content\layout.css" />
+    <Content Include="Areas\Admin\Content\ViewScripts\brochures-view-management.js" />
+    <Content Include="Areas\Admin\Content\ViewScripts\awards-view-management.js" />
+    <Content Include="Areas\Admin\Content\ViewScripts\projects-view-management.js" />
+    <Content Include="Areas\Admin\Content\ViewScripts\lawnews-view-management.js" />
+    <Content Include="Areas\Admin\Content\ViewScripts\news-view-management.js" />
     <Content Include="Areas\Admin\Content\ViewScripts\publications-view-management.js" />
     <Content Include="Areas\Admin\Content\ViewScripts\user-view-management.js" />
     <Content Include="Content\about\about.css" />
@@ -1059,6 +1066,7 @@
     <Content Include="Content\Bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="Content\Bootstrap\css\bootstrap.css" />
     <Content Include="Content\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\global\header.js" />
     <Content Include="Content\home\fonts\SSStandard\ss-standard.svg" />
     <Content Include="Content\home\img\banner2.jpg" />
     <Content Include="Content\home\img\banner5.jpg" />
@@ -1378,6 +1386,7 @@
     <Content Include="Content\practices\img\practices-taxes.png" />
     <Content Include="Content\practices\practices.js" />
     <Content Include="Content\practices\practices.css" />
+    <Content Include="Content\Press\press.css" />
     <Content Include="Content\projects\projects.css" />
     <Content Include="Content\projects\projects.js" />
     <Content Include="Content\publications\publications.css" />
@@ -1531,6 +1540,11 @@
     <Content Include="Content\home\fonts\SSStandard\ss-standard.ttf" />
     <Content Include="Content\home\fonts\SSStandard\ss-standard.woff" />
     <Content Include="Areas\Admin\Views\MPManagement\_Publications.cshtml" />
+    <Content Include="Areas\Admin\Views\MPManagement\_News.cshtml" />
+    <Content Include="Areas\Admin\Views\MPManagement\_Brochures.cshtml" />
+    <Content Include="Areas\Admin\Views\MPManagement\_Awards.cshtml" />
+    <Content Include="Areas\Admin\Views\MPManagement\_LawNews.cshtml" />
+    <Content Include="Areas\Admin\Views\MPManagement\_Projects.cshtml" />
     <None Include="Properties\PublishProfiles\LocalPublish.pubxml" />
     <Content Include="Content\inlineEditor\inlineEditorKO.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
@@ -1584,7 +1598,6 @@
     <Content Include="Views\Navigation\_LangBlock.cshtml" />
     <Content Include="Views\Practicies\Index.cshtml" />
     <Content Include="Views\Publications\Index.cshtml" />
-    <Content Include="Views\Shared\_Publications.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Industries\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
@@ -1599,6 +1612,12 @@
     <Content Include="Views\Shared\_Layout.ru.cshtml" />
     <Content Include="Views\About\Index.en.cshtml" />
     <Content Include="Views\About\Index.ru.cshtml" />
+    <Content Include="Views\PressCenter\Index.cshtml" />
+    <Content Include="Views\Shared\_PublicationsFull.cshtml" />
+    <Content Include="Views\Shared\_BrochuresFull.cshtml" />
+    <Content Include="Views\Shared\_LawNewsFull.cshtml" />
+    <Content Include="Views\Shared\_NewsFull.cshtml" />
+    <Content Include="Views\Read\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

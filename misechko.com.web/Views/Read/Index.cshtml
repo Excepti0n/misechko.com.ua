@@ -1,0 +1,10 @@
+﻿@model misechko.com.Models.SingleContentViewModel
+@{
+    ViewBag.Title = "ЮЗ \"Місечко і Партнери\"";
+}
+
+<div id="single-holder" class="single-content editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+    <div class="editable-block">
+        @Html.Raw(Model.MarkUp)
+    </div>
+</div>

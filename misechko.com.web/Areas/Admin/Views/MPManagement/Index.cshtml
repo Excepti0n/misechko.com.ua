@@ -40,11 +40,31 @@
 <div id="management-area">
     <div id="control-area">
         <ul>
+            <li><a href="#news-control">Новини компанії</a></li>
             <li><a href="#publications-control">Публікації</a></li>
+            <li><a href="#brochures-control">Брошури</a></li>
+            <li><a href="#awards-control">Нагороди</a></li>
+            <li><a href="#lawnews-control">Новини законодавства</a></li>
+            <li><a href="#projects-control">Проекти</a></li>
             <li class="system"><a href="#users-control">Керування користувачами</a></li>
         </ul>
+        <div id="news-control">
+            @Html.Action("GetNewsControl", "MPManagement")
+        </div>
         <div id="publications-control">
             @Html.Action("GetPublicationsControl", "MPManagement")
+        </div>
+        <div id="brochures-control">
+            @Html.Action("GetBrochuresControl", "MPManagement")
+        </div>
+        <div id="awards-control">
+            @Html.Action("GetAwardsControl", "MPManagement")
+        </div>
+        <div id="lawnews-control">
+            @Html.Action("GetLawNewsControl", "MPManagement")
+        </div>
+        <div id="projects-control">
+            @Html.Action("GetProjectsControl", "MPManagement")
         </div>
         <div id="users-control">
             @Html.Action("GetUsersControl", "MPManagement")

@@ -5,8 +5,8 @@
 }
 
 
-@Html.Hidden("RemovePublicationUrl", Url.Action("RemovePublication", "MPManagement"))
-@Html.Hidden("AddPublicationUrl", Url.Action("AddPublication", "MPManagement"))
+@Html.Hidden("RemovePublicationUrl", Url.Action("DeletePublication", "MPManagement"))
+@Html.Hidden("AddPublicationUrl", Url.Action("AddNewPublication", "MPManagement"))
 @Html.Hidden("UpdatePublicationUrl", Url.Action("UpdatePublication", "MPManagement"))
 <div id="publications-management-view">
     @Html.Hidden("initial-publications-list", (HtmlString)initValue)
@@ -14,28 +14,27 @@
         <table class="table">
             <thead>
                 <tr>
-                    <td>Заголовок публикации</td>
-                    <td>Дата публикации</td>
+                    <td>Заголовок публикації</td>
+                    <td>Дата публикації</td>
                 </tr>
             </thead>
             <tbody data-bind="template: { name: 'publication-template', foreach: Publications }">
             </tbody>
         </table>
     </div>
-    <pre class="prettyprint add-role-block">
+    <pre class="prettyprint add-publication-block">
         <div class="input-prepend">
-            <button class="btn add-type" type="button" data-bind="click: AddNewPublication, attr: { disabled: NewPublicationName() === '' }"><span>Добавить публикацию</span></button>
+            <button class="btn add-pub" type="button" data-bind="click: AddNewPublication, attr: { disabled: NewPublicationName() === '' }"><span>Додати публикацію</span></button>
             <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewPublicationName"/>
         </div>
     </pre>
 </div>
 
 <script type="text/html" id="publication-template">
-    <tr data-bind="css: { success: Selected }, click: Select">
-        <td data-bind="text: PublicationName"></td>
-        <td data-bind="text: PublicationDate"></td>
+    <tr>
+        <td class="pub-text"><a data-bind="text: PublicationName, attr: { href: PublicationHREF }"></a></td>
         <td>
-           <input type="text" id="inputDateStarted" placeholder="Дата публикации" data-bind="datepicker: DatePublished, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+           <input type="text" id="inputDateStarted" placeholder="Дата публикации" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
         </td>
         <td>
             <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">

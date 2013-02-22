@@ -1,0 +1,39 @@
+﻿@model misechko.com.Models.PressCenterViewModel
+@using ClientDependency.Core.Mvc
+@{
+    ViewBag.Title = "Прес центр";
+    Html.RequiresCss("press/press.css", "Content", 110);
+    Html.RequiresJs("press/press.js", "Content", 25);
+    var selectedItem = Model.CurrentMenuItemName;
+}
+
+<div id="press-triplet">
+    <div id="press-main" class="extended">
+        @Html.Raw(Model.MainMarkup)
+    </div>
+    <div id="press-submenu">
+        <div id="press-selector">
+            <div class="press-item @(string.IsNullOrEmpty(selectedItem) ? "selected" : "")">
+                <a href="@Url.Content("~/press/")">
+                    <div class="press-submenu-text">Новини</div>
+                </a>
+            </div>
+            
+            <div class="press-item @(selectedItem == "publications" ? "selected" : "")">
+                <a href="@Url.Content("~/press/publications")">
+                    <div class="press-submenu-text">Публікації</div>
+                </a>
+            </div>
+            <div class="press-item @(selectedItem == "brochures" ? "selected" : "")">
+                <a href="@Url.Content("~/press/brochures")">
+                    <div class="press-submenu-text">Брошури</div>
+                </a>
+            </div>
+            <div class="press-item @(selectedItem == "lawnes" ? "selected" : "")">
+                <a href="@Url.Content("~/press/lawnews")">
+                    <div class="press-submenu-text">Новини законодавства</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

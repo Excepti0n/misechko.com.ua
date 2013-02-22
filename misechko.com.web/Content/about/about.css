@@ -48,20 +48,20 @@
 }
 
 #about-triplet > #about-main ul {
-    padding-left: 60px;
+    padding-left: 20px;
 }
 
 #about-triplet > #about-main h2 {
     color: #4C4C4C;
     font-family: 'MyriadPro-Bold';
-    padding-left: 40px;
+    /*padding-left: 40px;*/
     margin-top: 20px;
 }
 
 #about-triplet > #about-main h3 {
     color: #4C4C4C;
     font-family: 'MyriadPro-Regular';
-    padding-left: 40px;
+    /*padding-left: 40px;*/
     margin-top: 20px;
 }
 
@@ -69,7 +69,7 @@
     color: #070003;
     font-family: Arial;
     font-size: 14px;
-    padding-left: 40px;
+    /*padding-left: 40px;*/
 }
 
 #about-triplet > #about-main li {
@@ -92,7 +92,7 @@
 
 #about-triplet > #about-submenu {
     width: 300px;
-    left: -5px;
+    left: 58px;
     position: relative;
 }
 

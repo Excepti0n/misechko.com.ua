@@ -85,12 +85,13 @@
         }
     } 
     @{
-    if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "PressCenter")
-        {
-            <li class="selected">
-                <h2 class="selected">Пресс-центр</h2>
-                @*<p>Публікації, матеріали, прес-релізи</p>*@
-            </li>
+    if ((HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "PressCenter")) //||
+            //(HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Read"))
+    {
+        <li class="selected">
+            <h2 class="selected">Пресс-центр</h2>
+            @*<p>Публікації, матеріали, прес-релізи</p>*@
+        </li>
         } else
         {
             <li>

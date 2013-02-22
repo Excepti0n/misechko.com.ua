@@ -17,7 +17,9 @@ namespace misechko.com.data.Entities
     public class Project: SinglePageInformationEntity {}
     public class Award: SinglePageInformationEntity {}
     public class Publication: SinglePageInformationEntity {}
-    public class Borchure: SinglePageInformationEntity {}
+    public class Brochure: SinglePageInformationEntity {}
+    public class New : SinglePageInformationEntity { }
+    public class LawNew : SinglePageInformationEntity { }
     
     public class Practice: SinglePageInformationEntity
     {

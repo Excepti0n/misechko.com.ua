@@ -20,9 +20,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <td>Название роли</td>
-                    <td>Количество пользователей</td>
-                    <td>Доступность специальных функций</td>
+                    <td>Назіва ролі</td>
+                    <td>Кількість Користувачів</td>
+                    <td>Спец. функції?</td>
                 </tr>
             </thead>
             <tbody data-bind="template: { name: 'role-template', foreach: Roles }">
@@ -41,8 +41,8 @@
                 <tr>
                     <td>Логин</td>
                     <td>Пароль</td>
-                    <td>Имя пользователя</td>
-                    <td>Роли</td>
+                    <td>Им'я користувача</td>
+                    <td>Ролі</td>
                     <td>FacebookId</td>
                 </tr>
             </thead>
@@ -88,7 +88,7 @@
     <div id="add-user-button">
         <button class="btn btn-success add-user" type="button" data-bind="click: ShowAddUserDialog">
             <i class="icon-user icon-white"></i>
-            <span>Добавить пользователя</span>
+            <span>Додати користувача</span>
         </button>
     </div>
 </div>

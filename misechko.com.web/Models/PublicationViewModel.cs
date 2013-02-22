@@ -5,9 +5,8 @@ using System.Web;
 
 namespace misechko.com.Models
 {
-    public class PublicationViewModel
+    public class SingleContentViewModel
     {
-        public string PublicationsListMarkUp { get; set; }
-        public string PublicationMarkUp { get; set; }
+        public string MarkUp { get; set; }
     }
 }

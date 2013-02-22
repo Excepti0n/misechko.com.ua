@@ -185,6 +185,10 @@ body
     padding-bottom: 15px;
 }
 
+.single-content p {
+    padding-left: 40px;
+}
+
 /*#lang-block #lang-top-line .addr {
     padding-top: 6px;
     vertical-align: top;
@@ -480,11 +484,12 @@ footer {
     margin-right: auto;
     font-family: Arial;
     font-size: 14px;
+    padding-top: 0px;
 }
 
 .block-headline {
     padding-top: 40px;
-    padding-left: 40px;
+    /*padding-left: 40px;*/
     display: block;
     padding-bottom: 40px;
 }

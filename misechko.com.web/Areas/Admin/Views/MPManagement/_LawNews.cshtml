@@ -1,0 +1,45 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("lawnews-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+
+@Html.Hidden("RemoveLawNewsItemUrl", Url.Action("DeleteLawNewsItem", "MPManagement"))
+@Html.Hidden("AddLawNewsItemUrl", Url.Action("AddNewLawNewsItem", "MPManagement"))
+@Html.Hidden("UpdateLawNewsItemUrl", Url.Action("UpdateLawNewsItem", "MPManagement"))
+<div id="LawNews-management-view">
+    @Html.Hidden("initial-LawNews-list", (HtmlString)initValue)
+    <div class="outlined" id="LawNews-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Заголовок новини</td>
+                    <td>Дата</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'LawNewsItem-template', foreach: LawNewsItems }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-LawNewsItem-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewLawNewsItem, attr: { disabled: NewLawNewsItemName() === '' }"><span>Додати новину</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewLawNewsItemName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="LawNewsItem-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: LawNewsItemName, attr: { href: LawNewsItemHREF }"></a></td>
+        <td>
+           <input type="text" id="inputDateStarted" placeholder="Дата новости" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

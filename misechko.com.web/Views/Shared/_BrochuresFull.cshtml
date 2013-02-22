@@ -1,0 +1,16 @@
+﻿@model List<misechko.com.data.Entities.Brochure>
+
+<div class="block-headline">
+    <div class="light-ltr">Б</div>  
+    <h1>Брошури</h1>
+</div>
+
+<div id="press-block">
+    @foreach(var brochureItem in Model)
+    {
+         <div class="brochure-item">
+            <div class="brochure-date"><span>@brochureItem.PublishDate.Date.ToString("dd/MM")</span></div>
+            <div class="brochure-link"><a href="/Read@(brochureItem.LinkPath)">@brochureItem.Headline</a></div>
+        </div>
+    }
+</div>

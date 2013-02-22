@@ -1,0 +1,45 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("news-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+
+@Html.Hidden("RemoveNewsItemUrl", Url.Action("DeleteNewsItem", "MPManagement"))
+@Html.Hidden("AddNewsItemUrl", Url.Action("AddNewNewsItem", "MPManagement"))
+@Html.Hidden("UpdateNewsItemUrl", Url.Action("UpdateNewsItem", "MPManagement"))
+<div id="news-management-view">
+    @Html.Hidden("initial-news-list", (HtmlString)initValue)
+    <div class="outlined" id="news-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Заголовок новини</td>
+                    <td>Дата</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'newsItem-template', foreach: NewsItems }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-newsItem-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewNewsItem, attr: { disabled: NewNewsItemName() === '' }"><span>Додати новину</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewNewsItemName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="newsItem-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: NewsItemName, attr: { href: NewsItemHREF }"></a></td>
+        <td>
+           <input type="text" id="inputDateStarted" placeholder="Дата новости" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

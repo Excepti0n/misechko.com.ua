@@ -1,0 +1,17 @@
+﻿@model List<misechko.com.data.Entities.LawNew>
+
+
+<div class="block-headline">
+    <div class="light-ltr">Н</div>  
+    <h1>Новини законодавства</h1>
+</div>
+
+<div id="press-block">
+    @foreach(var newItem in Model)
+    {
+         <div class="law-news-item">
+            <div class="law-news-date"><span>@newItem.PublishDate.Date.ToString("dd/MM")</span></div>
+            <div class="law-news-link"><a href="/Read@(newItem.LinkPath)">@newItem.Headline</a></div>
+        </div>
+    }
+</div>

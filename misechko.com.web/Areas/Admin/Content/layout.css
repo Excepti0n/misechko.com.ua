@@ -225,8 +225,36 @@
     font-size: 15px;
 }
 
-.btn.add-type {
-    width: 125px;
+.btn.add-pub {
+    width: 190px;
+}
+
+td.pub-text {
+    max-width: 400px;
+}
+
+.add-publication-block input {
+    width: 83%;
+}
+
+.add-LawNewsItem-block input {
+    width: 83%;
+}
+
+.add-award-block input {
+    width: 83%;    
+}
+
+.add-brochure-block input {
+    width: 83%;    
+}
+
+.add-newsItem-block input {
+    width: 83%;    
+}
+
+.add-project-block input {
+    width: 83%;    
 }
 
 .btn.add-permission {

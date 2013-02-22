@@ -1,0 +1,45 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("awards-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+
+@Html.Hidden("RemoveAwardUrl", Url.Action("DeleteAward", "MPManagement"))
+@Html.Hidden("AddAwardUrl", Url.Action("AddNewAward", "MPManagement"))
+@Html.Hidden("UpdateAwardUrl", Url.Action("UpdateAward", "MPManagement"))
+<div id="awards-management-view">
+    @Html.Hidden("initial-awards-list", (HtmlString)initValue)
+    <div class="outlined" id="awards-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Назва нагороди</td>
+                    <td>Дата</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'award-template', foreach: Awards }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-award-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewAward, attr: { disabled: NewAwardName() === '' }"><span>Додати нагороду</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewAwardName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="award-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: AwardName, attr: { href: AwardHREF }"></a></td>
+        <td>
+           <input type="text" id="inputDateStarted" placeholder="Дата новости" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

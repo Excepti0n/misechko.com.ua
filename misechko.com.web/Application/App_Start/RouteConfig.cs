@@ -14,6 +14,18 @@ namespace misechko.com
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+               name: "Read",
+               url: "Read/{*contentKey}",
+               defaults: new { controller = "Read", action = "Index", contentKey = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+               name: "PressCenter",
+               url: "Press/{submenu}",
+               defaults: new { controller = "PressCenter", action = "Index", submenu = UrlParameter.Optional }
+           );
+
+            routes.MapRoute(
                name: "About",
                url: "About/{submenu}",
                defaults: new { controller = "About", action = "Index", submenu = UrlParameter.Optional }

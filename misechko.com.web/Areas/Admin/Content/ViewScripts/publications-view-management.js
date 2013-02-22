@@ -3,16 +3,19 @@
 
     self.Id = pubData.Id;
     self.PublicationName = pubData.Headline;
-    self.PublicationPath = pubData.LinkPath
+    self.PublicationPath = pubData.LinkPath;
+    self.PublicationHREF = '/Read' + self.PublicationPath;
     self.DateCreated = pubData.PublishDate;
+    self.Type = pubData.Type;
+
     
     self.Remove = function () {
-        var removePubUrl = $('#DeletePublicationUrl').val();
+        var removePubUrl = $('#RemovePublicationUrl').val();
         $.ajax({
             type: 'POST',
             url: removePubUrl,
             data: {
-                userName: self.Id
+                id: self.Id
             },
             success: function (res) {
                 if (res === "SPCD: OK") {
