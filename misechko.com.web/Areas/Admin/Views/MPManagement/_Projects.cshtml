@@ -34,7 +34,8 @@
     <tr>
         <td class="pub-text"><a data-bind="text: ProjectName, attr: { href: ProjectHREF }"></a></td>
         <td>
-           <input type="text" id="inputDateStarted" placeholder="Дата завершення проекту" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+            <input type="text" placeholder="Дата новости" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
+            <button class="btn btn-warning" type="button" data-bind="click: UpdateProject, attr: { disabled: !(ItemChanged()) }, visible: ItemChanged"><i class="icon-ok-sign icon-white"></i></button>
         </td>
         <td>
             <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">

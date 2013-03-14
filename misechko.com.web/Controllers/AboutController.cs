@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
 using RadaCode.Web.Application.MVC;
@@ -32,8 +33,18 @@ namespace misechko.com.Controllers
             
             var model = new AboutViewModel
                             {
-                                CurrentMenuItemName = submenu
+                                CurrentMenuItemName = submenu,
+                                AboutMenus = _context.AboutMenus.Where(
+                                        i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).
+                                    ToList().Select(pr => new AboutMenuViewModel()
+                                    {
+                                        DisplayText = pr.Headline,
+                                        Slug = pr.LinkPath,
+                                        Index = pr.ListWeight
+                                    }).ToList()
                             };
+
+            model.AboutMenus.Sort((a, b) => a.Index.CompareTo(b.Index));
             
             
             var firstOrDefault = _context.ContentElements.FirstOrDefault(c => c.ContentKey == key);

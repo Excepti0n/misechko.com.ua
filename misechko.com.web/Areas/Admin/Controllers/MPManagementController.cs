@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Web;
 using System.Web.Compilation;
 using System.Web.Mvc;
@@ -15,28 +16,50 @@ using RadaCode.Web.Application.MVC;
 using UnidecodeSharpFork;
 using misechko.com.Application.Membership;
 using misechko.com.Areas.Admin.Models;
+using misechko.com.Models;
+using misechko.com.core;
 using misechko.com.data.EF;
 using misechko.com.data.Entities;
 
 namespace misechko.com.Areas.Admin.Controllers
 {
     [UrlAuthorize(Roles = "Administrator", AuthUrl = "~/Admin/Authorization/Authenticate")]
-    public class MPManagementController : Controller
+    public class MPManagementController : RadaCodeBaseController
     {
         private readonly MPDataContext _context;
         private readonly MPSiteUserMembershipProvider _membershipProvider;
         private readonly MPUserRoleProvider _roleProvider;
+        private readonly IMPSettings _settings;
 
-        public MPManagementController(MPDataContext context, MPSiteUserMembershipProvider membershipProvider, MPUserRoleProvider roleProvider)
+        public MPManagementController(MPDataContext context, MPSiteUserMembershipProvider membershipProvider, MPUserRoleProvider roleProvider, IMPSettings settings)
         {
             _context = context;
             _membershipProvider = membershipProvider;
             _roleProvider = roleProvider;
+            _settings = settings;
         }
 
         public ActionResult Index()
         {
             return View();
+        }
+
+        public PartialViewResult RenderLanguages()
+        {
+            var model = new LanguageBlockModel();
+
+            string langCookie = null;
+
+            try
+            {
+                langCookie = Request.Cookies["language"].Value;
+            }
+            catch (Exception)
+            { }
+            
+            model.CurrentLang = !string.IsNullOrEmpty(langCookie) ? langCookie : Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
+
+            return PartialView("_LangBlock", model);
         }
 
         #region Users controller
@@ -218,7 +241,7 @@ namespace misechko.com.Areas.Admin.Controllers
         {
             var pubModels = new List<PublicationModel>();
 
-            foreach (var publication in _context.Publications.ToList())
+            foreach (var publication in _context.Publications.Where(pb => pb.Culture == _curCult || String.IsNullOrEmpty(pb.Culture)).ToList())
             {
                 pubModels.Add(new PublicationModel
                                   {
@@ -263,7 +286,7 @@ namespace misechko.com.Areas.Admin.Controllers
                 return Json("SPCD: FAIL");
 
             publicationToUpdate.Headline = publicationName;
-            publicationToUpdate.LinkPath = MakeUrl(publicationName);
+            publicationToUpdate.LinkPath = "/Publication/" + MakeUrl(publicationName);
             publicationToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             try
@@ -286,11 +309,30 @@ namespace misechko.com.Areas.Admin.Controllers
                                      {
                                          Headline = publicationName,
                                          PublishDate = DateTime.Now,
-                                         LinkPath = "/Publication/" + MakeUrl(publicationName)
+                                         LinkPath = "/Publication/" + MakeUrl(publicationName),
+                                         Culture = _curCult
                                      };
             try
             {
                 _context.Publications.Add(newPublication);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new Publication
+                                          {
+                                              Headline = publicationName,
+                                              PublishDate = DateTime.Now,
+                                              LinkPath = "/Publication/" + MakeUrl(publicationName),
+                                              Culture = cult
+                                          };
+                        _context.Publications.Add(newItem);
+                    }
+                }
+
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -309,7 +351,7 @@ namespace misechko.com.Areas.Admin.Controllers
         {
             var newsItemsModels = new List<NewModel>();
 
-            foreach (var newItem in _context.News.ToList())
+            foreach (var newItem in _context.News.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
             {
                 newsItemsModels.Add(new NewModel
                 {
@@ -354,7 +396,7 @@ namespace misechko.com.Areas.Admin.Controllers
                 return Json("SPCD: FAIL");
 
             newsItemToUpdate.Headline = newsItemName;
-            newsItemToUpdate.LinkPath = MakeUrl(newsItemName); 
+            newsItemToUpdate.LinkPath = "/News/" + MakeUrl(newsItemName); 
             newsItemToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             try
@@ -377,11 +419,30 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 Headline = newsItemName,
                 PublishDate = DateTime.Now,
-                LinkPath = "/News/" + MakeUrl(newsItemName) 
+                LinkPath = "/News/" + MakeUrl(newsItemName),
+                Culture = _curCult
             };
             try
             {
                 _context.News.Add(newNewsItem);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new New
+                        {
+                            Headline = newsItemName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/News/" + MakeUrl(newsItemName),
+                            Culture = cult
+                        };
+                        _context.News.Add(newItem);
+                    }
+                }
+
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -400,7 +461,7 @@ namespace misechko.com.Areas.Admin.Controllers
         {
             var lawNewsItemsModels = new List<LawNewModel>();
 
-            foreach (var lawNewItem in _context.LawNews.ToList())
+            foreach (var lawNewItem in _context.LawNews.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
             {
                 lawNewsItemsModels.Add(new LawNewModel
                 {
@@ -445,7 +506,7 @@ namespace misechko.com.Areas.Admin.Controllers
                 return Json("SPCD: FAIL");
 
             lawNewsItemToUpdate.Headline = lawNewsItemName;
-            lawNewsItemToUpdate.LinkPath = MakeUrl(lawNewsItemName); 
+            lawNewsItemToUpdate.LinkPath = "/LawNews/" + MakeUrl(lawNewsItemName); 
             lawNewsItemToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             try
@@ -468,11 +529,30 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 Headline = lawNewsItemName,
                 PublishDate = DateTime.Now,
-                LinkPath = "/LawNews/" + MakeUrl(lawNewsItemName)
+                LinkPath = "/LawNews/" + MakeUrl(lawNewsItemName),
+                Culture = _curCult
             };
             try
             {
                 _context.LawNews.Add(newLawNewsItem);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new LawNew
+                        {
+                            Headline = lawNewsItemName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/LawNews/" + MakeUrl(lawNewsItemName),
+                            Culture = cult
+                        };
+                        _context.LawNews.Add(newItem);
+                    }
+                }
+
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -485,13 +565,235 @@ namespace misechko.com.Areas.Admin.Controllers
 
         #endregion
 
+        #region About Menu Items Controller
+
+        public ActionResult GetAboutMenuControl()
+        {
+            var aboutMenusModels = new List<AboutMenuModel>();
+
+            foreach (var aboutMenuItem in _context.AboutMenus.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
+            {
+                aboutMenusModels.Add(new AboutMenuModel
+                {
+                    Headline = aboutMenuItem.Headline,
+                    LinkPath = aboutMenuItem.LinkPath,
+                    PublishDate = aboutMenuItem.PublishDate.ToString("yyyy-MM-dd"),
+                    Id = aboutMenuItem.Id.ToString(),
+                    Index = aboutMenuItem.ListWeight
+                });
+            }
+
+            var model = new AboutMenusModel
+            {
+                AboutMenus = aboutMenusModels
+            };
+
+            return PartialView("_AboutMenu", model);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteAboutMenu(string id)
+        {
+            var gUq = Guid.Parse(id);
+
+            var ItemToDelete = _context.AboutMenus.FirstOrDefault(pb => pb.Id == gUq);
+
+            if (ItemToDelete == null)
+                return Json("SPCD: FAIL");
+
+            _context.AboutMenus.Remove(ItemToDelete);
+            _context.SaveChanges();
+            return Json("SPCD: OK");
+        }
+
+        [HttpPost]
+        public ActionResult UpdateAboutMenu(string id, string aboutMenuName, string dateCreated, int index)
+        {
+            var gUq = Guid.Parse(id);
+
+            var aboutMenuToUpdate = _context.AboutMenus.FirstOrDefault(pb => pb.Id == gUq);
+
+            if (aboutMenuToUpdate == null)
+                return Json("SPCD: FAIL");
+
+            aboutMenuToUpdate.Headline = aboutMenuName;
+            aboutMenuToUpdate.LinkPath = "/About/" + MakeUrl(aboutMenuName);
+            aboutMenuToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            aboutMenuToUpdate.ListWeight = index;
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERR - " + ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", aboutMenu = aboutMenuToUpdate });
+
+        }
+
+        [HttpPost]
+        public ActionResult AddNewAboutMenu(string aboutMenuName)
+        {
+            var newAboutMenu = new AboutMenuItem
+            {
+                Headline = aboutMenuName,
+                PublishDate = DateTime.Now,
+                LinkPath = "/About/" + MakeUrl(aboutMenuName),
+                Culture = _curCult
+            };
+            try
+            {
+                _context.AboutMenus.Add(newAboutMenu);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new AboutMenuItem
+                        {
+                            Headline = aboutMenuName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/About/" + MakeUrl(aboutMenuName),
+                            Culture = cult
+                        };
+                        _context.AboutMenus.Add(newItem);
+                    }
+                }
+
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERR - " + ex.Message });
+            }
+
+            return Json(new { status = "SPCD: AMADDED", aboutMenu = newAboutMenu });
+        }
+
+        #endregion
+
+        #region TeamMembers Controller
+
+        public ActionResult GetTeamMembersControl()
+        {
+            var teamMembersModels = new List<TeamMemberModel>();
+
+            foreach (var teamMemberItem in _context.TeamMembers.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
+            {
+                teamMembersModels.Add(new TeamMemberModel
+                {
+                    Headline = teamMemberItem.Headline,
+                    LinkPath = teamMemberItem.LinkPath,
+                    PublishDate = teamMemberItem.PublishDate.ToString("yyyy-MM-dd"),
+                    Id = teamMemberItem.Id.ToString(),
+                    Index = teamMemberItem.ListWeight
+                });
+            }
+
+            var model = new TeamMembersModel
+            {
+                TeamMembers = teamMembersModels
+            };
+
+            return PartialView("_TeamMembers", model);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteTeamMember(string id)
+        {
+            var gUq = Guid.Parse(id);
+
+            var ItemToDelete = _context.TeamMembers.FirstOrDefault(pb => pb.Id == gUq);
+
+            if (ItemToDelete == null)
+                return Json("SPCD: FAIL");
+
+            _context.TeamMembers.Remove(ItemToDelete);
+            _context.SaveChanges();
+            return Json("SPCD: OK");
+        }
+
+        [HttpPost]
+        public ActionResult UpdateTeamMember(string id, string teamMemberName, string dateCreated, int index)
+        {
+            var gUq = Guid.Parse(id);
+
+            var teamMemberToUpdate = _context.TeamMembers.FirstOrDefault(pb => pb.Id == gUq);
+
+            if (teamMemberToUpdate == null)
+                return Json("SPCD: FAIL");
+
+            teamMemberToUpdate.Headline = teamMemberName;
+            teamMemberToUpdate.LinkPath = "/Team/" + MakeUrl(teamMemberName);
+            teamMemberToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            teamMemberToUpdate.ListWeight = index;
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERR - " + ex.Message });
+            }
+
+            return Json(new { status = "SPCD: OK", teamMember = teamMemberToUpdate });
+
+        }
+
+        [HttpPost]
+        public ActionResult AddNewTeamMember(string teamMemberName)
+        {
+            var newTeamMember = new TeamMember
+            {
+                Headline = teamMemberName,
+                PublishDate = DateTime.Now,
+                LinkPath = "/Team/" + MakeUrl(teamMemberName),
+                Culture = _curCult
+            };
+            try
+            {
+                _context.TeamMembers.Add(newTeamMember);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new TeamMember
+                        {
+                            Headline = teamMemberName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/Team/" + MakeUrl(teamMemberName),
+                            Culture = cult
+                        };
+                        _context.TeamMembers.Add(newItem);
+                    }
+                }
+
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return Json(new { status = "SPCD: ERR - " + ex.Message });
+            }
+
+            return Json(new { status = "SPCD: TMADDED", teamMember = newTeamMember });
+        }
+
+        #endregion
+
         #region Awards Controller
 
         public ActionResult GetAwardsControl()
         {
             var awardsModels = new List<AwardModel>();
 
-            foreach (var awardItem in _context.Awards.ToList())
+            foreach (var awardItem in _context.Awards.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
             {
                 awardsModels.Add(new AwardModel
                 {
@@ -536,7 +838,7 @@ namespace misechko.com.Areas.Admin.Controllers
                 return Json("SPCD: FAIL");
 
             awardToUpdate.Headline = awardName;
-            awardToUpdate.LinkPath = MakeUrl(awardName);
+            awardToUpdate.LinkPath = "/Awards/" + MakeUrl(awardName);
             awardToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             try
@@ -559,11 +861,30 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 Headline = awardName,
                 PublishDate = DateTime.Now,
-                LinkPath = "/Awards/" + MakeUrl(awardName)
+                LinkPath = "/Awards/" + MakeUrl(awardName),
+                Culture = _curCult
             };
             try
             {
                 _context.Awards.Add(newAward);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new Award
+                        {
+                            Headline = awardName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/Awards/" + MakeUrl(awardName),
+                            Culture = cult
+                        };
+                        _context.Awards.Add(newItem);
+                    }
+                }
+
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -582,7 +903,7 @@ namespace misechko.com.Areas.Admin.Controllers
         {
             var brochuresModels = new List<BrochureModel>();
 
-            foreach (var brochureItem in _context.Brochures.ToList())
+            foreach (var brochureItem in _context.Brochures.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
             {
                 brochuresModels.Add(new BrochureModel
                 {
@@ -627,7 +948,7 @@ namespace misechko.com.Areas.Admin.Controllers
                 return Json("SPCD: FAIL");
 
             brochureToUpdate.Headline = brochureName;
-            brochureToUpdate.LinkPath = MakeUrl(brochureName);
+            brochureToUpdate.LinkPath = "/Brochures/" + MakeUrl(brochureName);
             brochureToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             try
@@ -650,11 +971,30 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 Headline = brochureName,
                 PublishDate = DateTime.Now,
-                LinkPath = "/Brochures/" + MakeUrl(brochureName)
+                LinkPath = "/Brochures/" + MakeUrl(brochureName),
+                Culture = _curCult
             };
             try
             {
                 _context.Brochures.Add(newBrochure);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new Brochure
+                        {
+                            Headline = brochureName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/Brochures/" + MakeUrl(brochureName),
+                            Culture = cult
+                        };
+                        _context.Brochures.Add(newItem);
+                    }
+                }
+
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -673,7 +1013,7 @@ namespace misechko.com.Areas.Admin.Controllers
         {
             var projectsModels = new List<ProjectModel>();
 
-            foreach (var projectItem in _context.Projects.ToList())
+            foreach (var projectItem in _context.Projects.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
             {
                 projectsModels.Add(new ProjectModel
                 {
@@ -718,7 +1058,7 @@ namespace misechko.com.Areas.Admin.Controllers
                 return Json("SPCD: FAIL");
 
             projectToUpdate.Headline = projectName;
-            projectToUpdate.LinkPath = MakeUrl(projectName);
+            projectToUpdate.LinkPath = "/Projects/" + MakeUrl(projectName);
             projectToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
             try
@@ -741,11 +1081,31 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 Headline = projectName,
                 PublishDate = DateTime.Now,
-                LinkPath = "/Projects/" + MakeUrl(projectName)
+                LinkPath = "/Projects/" + MakeUrl(projectName),
+                Culture = _curCult
             };
             try
             {
                 _context.Projects.Add(newProject);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new Project
+                        {
+                            Headline = projectName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/Projects/" + MakeUrl(projectName),
+                            Culture = cult
+                        };
+                        _context.Projects.Add(newItem);
+                    }
+                }
+
+
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -760,52 +1120,75 @@ namespace misechko.com.Areas.Admin.Controllers
 
         #region Practicies Controller
 
-        public ActionResult GetPracticeItemsControl()
+        public ActionResult GetPracticiesControl()
         {
             var practiceModels = new List<PracticeModel>();
 
-            foreach (var practice in _context.Practicies.ToList())
+            foreach (var practice in _context.Practicies.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
             {
                 var practiceModel = new PracticeModel
                 {
                     Headline = practice.Headline,
                     LinkPath = practice.LinkPath,
                     PublishDate = practice.PublishDate.ToString("yyyy-MM-dd"),
-                    Id = practice.Id.ToString()
+                    Id = practice.Id.ToString(),
+                    Index = practice.ListWeight
                 };
 
-                var projectsForPractice = new List<ProjectModel>();
-                var publicationsForPractice = new List<PublicationModel>();
+                var projectsForPractice = new List<string>();
+                var publicationsForPractice = new List<string>();
 
-                foreach (var publication in practice.Publications.ToList())
-                {
-                    publicationsForPractice.Add(new PublicationModel
-                                                    {
-                                                        Headline = practice.Headline,
-                                                        LinkPath = practice.LinkPath,
-                                                        PublishDate = practice.PublishDate.ToString("yyyy-MM-dd"),
-                                                        Id = practice.Id.ToString()
-                                                    });
-                }
+                if (practice.Publications != null)
+                    foreach (var publication in practice.Publications.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
+                    {
+                        publicationsForPractice.Add(publication.Headline);
+                    }
 
-                foreach (var project in practice.Projects.ToList())
-                {
-                    projectsForPractice.Add(new ProjectModel
-                                                {
-                                                    Headline = practice.Headline,
-                                                    LinkPath = practice.LinkPath,
-                                                    PublishDate = practice.PublishDate.ToString("yyyy-MM-dd"),
-                                                    Id = practice.Id.ToString()
-                                                });
-                }
+                if (practice.Projects != null)
+                    foreach (var project in practice.Projects.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
+                    {
+                        projectsForPractice.Add(project.Headline);
+                    }
 
                 practiceModel.Projects = projectsForPractice;
                 practiceModel.Publications = publicationsForPractice;
+
+                practiceModels.Add(practiceModel);
             }
+
+            var allProjects = new List<ProjectModel>();
+
+            if (_context.Projects != null)
+                foreach (var project in _context.Projects.ToList())
+                {
+                    allProjects.Add(new ProjectModel
+                    {
+                        Id = project.Id.ToString(),
+                        Headline = project.Headline,
+                        LinkPath = project.LinkPath,
+                        PublishDate = project.PublishDate.ToString("yyyy-MM-dd")
+                    });
+                }
+
+            var allPublications = new List<PublicationModel>();
+
+            if (_context.Publications != null)
+                foreach (var publication in _context.Publications.ToList())
+                {
+                    allPublications.Add(new PublicationModel
+                    {
+                        Id = publication.Id.ToString(),
+                        Headline = publication.Headline,
+                        LinkPath = publication.LinkPath,
+                        PublishDate = publication.PublishDate.ToString("yyyy-MM-dd")
+                    });
+                }
 
             var model = new PracticiesModel
             {
-                Practicies = practiceModels
+                Practicies = practiceModels,
+                AllProjects = allProjects,
+                AllPublications = allPublications
             };
 
             return PartialView("_Practicies", model);
@@ -839,29 +1222,26 @@ namespace misechko.com.Areas.Admin.Controllers
 
 
             practiceToUpdate.Headline = practiceName;
-            practiceToUpdate.LinkPath = MakeUrl(practiceName);
+            practiceToUpdate.LinkPath = "/Practicies/" + MakeUrl(practiceName);
             practiceToUpdate.PublishDate = DateTime.Now;
 
             var projectsList = JsonConvert.DeserializeObject<List<string>>(projectsInPractice);
-            foreach (var projectId in projectsList)
-            {
-                var projectIdAsGuid = Guid.Parse(projectId);
+            if (practiceToUpdate.Projects == null) practiceToUpdate.Projects = new List<Project>();
 
-                if (!practiceToUpdate.Projects.Any(pr => pr.Id != projectIdAsGuid))
-                {
-                    practiceToUpdate.Projects.Add(_context.Projects.SingleOrDefault(pr => pr.Id == projectIdAsGuid));
-                }
+            practiceToUpdate.Projects.Clear();
+            foreach (var projectName in projectsList)
+            {
+                practiceToUpdate.Projects.Add(_context.Projects.SingleOrDefault(pr => pr.Headline == projectName));
             }
 
             var publicationsList = JsonConvert.DeserializeObject<List<string>>(publicationsInPractice);
-            foreach (var publicationId in publicationsList)
-            {
-                var publicationIdAsGuid = Guid.Parse(publicationId);
+            if (practiceToUpdate.Publications == null) practiceToUpdate.Publications = new List<Publication>();
 
-                if (!practiceToUpdate.Publications.Any(pub => pub.Id != publicationIdAsGuid))
-                {
-                    practiceToUpdate.Publications.Add(_context.Publications.SingleOrDefault(pub => pub.Id == publicationIdAsGuid));
-                }
+            practiceToUpdate.Publications.Clear();
+
+            foreach (var publicationName in publicationsList)
+            {
+                practiceToUpdate.Publications.Add(_context.Publications.SingleOrDefault(pub => pub.Headline == publicationName));
             }
 
             try
@@ -885,11 +1265,30 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 Headline = practiceName,
                 PublishDate = DateTime.Now,
-                LinkPath = "/Practicies/" + MakeUrl(practiceName)
+                LinkPath = "/Practicies/" + MakeUrl(practiceName),
+                Culture = _curCult
             };
             try
             {
                 _context.Practicies.Add(newPractice);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new Practice
+                        {
+                            Headline = practiceName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/Practicies/" + MakeUrl(practiceName),
+                            Culture = cult
+                        };
+                        _context.Practicies.Add(newItem);
+                    }
+                }
+
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -904,52 +1303,75 @@ namespace misechko.com.Areas.Admin.Controllers
 
         #region Industries Controller
 
-        public ActionResult GetIndustryItemsControl()
+        public ActionResult GetIndustriesControl()
         {
             var industryModels = new List<IndustryModel>();
 
-            foreach (var industry in _context.Industries.ToList())
+            foreach (var industry in _context.Industries.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
             {
                 var industryModel = new IndustryModel
                 {
                     Headline = industry.Headline,
                     LinkPath = industry.LinkPath,
                     PublishDate = industry.PublishDate.ToString("yyyy-MM-dd"),
-                    Id = industry.Id.ToString()
+                    Id = industry.Id.ToString(),
+                    Index = industry.ListWeight
                 };
 
-                var projectsForIndustry = new List<ProjectModel>();
-                var publicationsForIndustry = new List<PublicationModel>();
+                var projectsForIndustry = new List<String>();
+                var publicationsForIndustry = new List<String>();
 
-                foreach (var publication in industry.Publications.ToList())
-                {
-                    publicationsForIndustry.Add(new PublicationModel
+                if (industry.Publications != null)
+                    foreach (var publication in industry.Publications.ToList())
                     {
-                        Headline = industry.Headline,
-                        LinkPath = industry.LinkPath,
-                        PublishDate = industry.PublishDate.ToString("yyyy-MM-dd"),
-                        Id = industry.Id.ToString()
-                    });
-                }
+                        publicationsForIndustry.Add(publication.Headline);
+                    }
 
-                foreach (var project in industry.Projects.ToList())
-                {
-                    projectsForIndustry.Add(new ProjectModel
+                if (industry.Projects != null)
+                    foreach (var project in industry.Projects.ToList())
                     {
-                        Headline = industry.Headline,
-                        LinkPath = industry.LinkPath,
-                        PublishDate = industry.PublishDate.ToString("yyyy-MM-dd"),
-                        Id = industry.Id.ToString()
-                    });
-                }
+                        projectsForIndustry.Add(project.Headline);
+                    }
 
                 industryModel.Projects = projectsForIndustry;
                 industryModel.Publications = publicationsForIndustry;
+
+                industryModels.Add(industryModel);
             }
+
+            var allProjects = new List<ProjectModel>();
+
+            if (_context.Projects != null)
+                foreach (var project in _context.Projects.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
+                {
+                    allProjects.Add(new ProjectModel
+                                        {
+                                            Id = project.Id.ToString(),
+                                            Headline = project.Headline,
+                                            LinkPath = project.LinkPath,
+                                            PublishDate = project.PublishDate.ToString("yyyy-MM-dd")
+                                        });
+                }
+
+            var allPublications = new List<PublicationModel>();
+
+            if (_context.Publications != null)
+                foreach (var publication in _context.Publications.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
+                {
+                    allPublications.Add(new PublicationModel
+                                            {
+                                                Id = publication.Id.ToString(),
+                                                Headline = publication.Headline,
+                                                LinkPath = publication.LinkPath,
+                                                PublishDate = publication.PublishDate.ToString("yyyy-MM-dd")
+                                            });
+                }
 
             var model = new IndustriesModel
             {
-                Industries = industryModels
+                Industries = industryModels,
+                AllPublications = allPublications,
+                AllProjects = allProjects
             };
 
             return PartialView("_Industries", model);
@@ -971,7 +1393,7 @@ namespace misechko.com.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateProject(string id, string industryName, string projectsInIndustry, string publicationsInIndustry)
+        public ActionResult UpdateIndustry(string id, string industryName, int index, string projectsInIndustry, string publicationsInIndustry)
         {
             var gUq = Guid.Parse(id);
 
@@ -981,29 +1403,28 @@ namespace misechko.com.Areas.Admin.Controllers
                 return Json("SPCD: FAIL");
 
             industryToUpdate.Headline = industryName;
-            industryToUpdate.LinkPath = MakeUrl(industryName);
+            industryToUpdate.LinkPath = "/Industries/" + MakeUrl(industryName);
             industryToUpdate.PublishDate = DateTime.Now;
+            industryToUpdate.ListWeight = index;
 
             var projectsList = JsonConvert.DeserializeObject<List<string>>(projectsInIndustry);
-            foreach (var projectId in projectsList)
-            {
-                var projectIdAsGuid = Guid.Parse(projectId);
+            if (industryToUpdate.Projects == null) industryToUpdate.Projects = new List<Project>();
 
-                if (!industryToUpdate.Projects.Any(pr => pr.Id != projectIdAsGuid))
-                {
-                    industryToUpdate.Projects.Add(_context.Projects.SingleOrDefault(pr => pr.Id == projectIdAsGuid));
-                }
+            industryToUpdate.Projects.Clear();
+
+            foreach (var projectName in projectsList)
+            {
+                industryToUpdate.Projects.Add(_context.Projects.SingleOrDefault(pr => pr.Headline == projectName));
             }
 
             var publicationsList = JsonConvert.DeserializeObject<List<string>>(publicationsInIndustry);
-            foreach (var publicationId in publicationsList)
-            {
-                var publicationIdAsGuid = Guid.Parse(publicationId);
+            if (industryToUpdate.Publications == null) industryToUpdate.Publications = new List<Publication>();
 
-                if (!industryToUpdate.Publications.Any(pub => pub.Id != publicationIdAsGuid))
-                {
-                    industryToUpdate.Publications.Add(_context.Publications.SingleOrDefault(pub => pub.Id == publicationIdAsGuid));
-                }
+            industryToUpdate.Publications.Clear();
+
+            foreach (var publicationName in publicationsList)
+            {
+                industryToUpdate.Publications.Add(_context.Publications.SingleOrDefault(pub => pub.Headline == publicationName));
             }
 
             try
@@ -1026,11 +1447,30 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 Headline = industryName,
                 PublishDate = DateTime.Now,
-                LinkPath = "/Industries/" + MakeUrl(industryName)
+                LinkPath = "/Industries/" + MakeUrl(industryName),
+                Culture = _curCult
             };
             try
             {
                 _context.Industries.Add(newIndustry);
+
+                if (_settings.CreateContentOnAllLanguages)
+                {
+                    var cultList = _settings.ImplementedCultures;
+                    cultList.Remove(_curCult);
+                    foreach (var cult in cultList)
+                    {
+                        var newItem = new Industry
+                        {
+                            Headline = industryName,
+                            PublishDate = DateTime.Now,
+                            LinkPath = "/Industries/" + MakeUrl(industryName),
+                            Culture = cult
+                        };
+                        _context.Industries.Add(newItem);
+                    }
+                }
+
                 _context.SaveChanges();
             }
             catch (Exception ex)
@@ -1038,7 +1478,7 @@ namespace misechko.com.Areas.Admin.Controllers
                 return Json(new { status = "SPCD: ERR - " + ex.Message });
             }
 
-            return Json(new { status = "SPCD: PRADDED", industry = newIndustry });
+            return Json(new { status = "SPCD: INADDED", industry = newIndustry });
         }
 
         #endregion

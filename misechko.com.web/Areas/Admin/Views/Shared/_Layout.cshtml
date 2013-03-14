@@ -58,7 +58,6 @@
             if (User.Identity.IsAuthenticated)
             {
                 @Html.ActionLink("Завершити сессію", "LogOff", "Authorization")
-                ;
             }
             else
             {
@@ -68,9 +67,19 @@
         |
         @Html.ActionLink("На misechko.com.ua", "Index", "Home", new { area = "" }, null)
     </div>
+    @{
+        if (User.Identity.IsAuthenticated)
+        {
+            <div id="langSelect">
+                @{ Html.RenderAction("RenderLanguages", "MPManagement"); }
+            </div>
+        }
+    }
 
-	<div id="content">
-		@RenderBody()
-	</div>
+    <div id="content">
+        @RenderBody()
+    </div>
+    
+    @{ Html.RequiresJs("global.js", "Scripts", 10); }
 </body>
 </html>

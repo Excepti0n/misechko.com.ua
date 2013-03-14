@@ -7,31 +7,31 @@
     var selectedItem = Model.CurrentMenuItemName;
 }
 
-<div id="press-triplet">
-    <div id="press-main" class="extended">
+<div id="triplet">
+    <div id="main-content" class="extended">
         @Html.Raw(Model.MainMarkup)
     </div>
-    <div id="press-submenu">
-        <div id="press-selector">
-            <div class="press-item @(string.IsNullOrEmpty(selectedItem) ? "selected" : "")">
+    <div id="submenu">
+        <div id="selector">
+            <div class="item @(string.IsNullOrEmpty(selectedItem) ? "selected" : "")">
                 <a href="@Url.Content("~/press/")">
-                    <div class="press-submenu-text">Новини</div>
+                    <div class="submenu-text">Новини</div>
                 </a>
             </div>
             
-            <div class="press-item @(selectedItem == "publications" ? "selected" : "")">
+            <div class="item @(selectedItem == "publications" ? "selected" : "")">
                 <a href="@Url.Content("~/press/publications")">
-                    <div class="press-submenu-text">Публікації</div>
+                    <div class="submenu-text">Публікації</div>
                 </a>
             </div>
-            <div class="press-item @(selectedItem == "brochures" ? "selected" : "")">
+            <div class="item @(selectedItem == "brochures" ? "selected" : "")">
                 <a href="@Url.Content("~/press/brochures")">
-                    <div class="press-submenu-text">Брошури</div>
+                    <div class="submenu-text">Брошури</div>
                 </a>
             </div>
-            <div class="press-item @(selectedItem == "lawnes" ? "selected" : "")">
+            <div class="item @(selectedItem == "lawnes" ? "selected" : "")">
                 <a href="@Url.Content("~/press/lawnews")">
-                    <div class="press-submenu-text">Новини законодавства</div>
+                    <div class="submenu-text">Новини законодавства</div>
                 </a>
             </div>
         </div>

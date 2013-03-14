@@ -46,7 +46,11 @@
             <li><a href="#awards-control">Нагороди</a></li>
             <li><a href="#lawnews-control">Новини законодавства</a></li>
             <li><a href="#projects-control">Проекти</a></li>
+            <li><a href="#industries-control">Індустрії</a></li>
+            <li><a href="#practicies-control">Практики</a></li>
             <li class="system"><a href="#users-control">Керування користувачами</a></li>
+            <li><a href="#aboutmenu-control">Меню "Про компанію"</a></li>
+            <li><a href="#teammembers-control">Команда</a></li>
         </ul>
         <div id="news-control">
             @Html.Action("GetNewsControl", "MPManagement")
@@ -66,8 +70,20 @@
         <div id="projects-control">
             @Html.Action("GetProjectsControl", "MPManagement")
         </div>
+        <div id="industries-control">
+            @Html.Action("GetIndustriesControl", "MPManagement")
+        </div>
+        <div id="practicies-control">
+            @Html.Action("GetPracticiesControl", "MPManagement")
+        </div>
         <div id="users-control">
             @Html.Action("GetUsersControl", "MPManagement")
+        </div>
+        <div id="aboutmenu-control">
+            @Html.Action("GetAboutMenuControl", "MPManagement")
+        </div>
+        <div id="teammembers-control">
+            @Html.Action("GetTeamMembersControl", "MPManagement")
         </div>
         </div>
     <div id="content-browser-area" class="collapsed clearfix">

@@ -3,47 +3,46 @@
     padding: 0px;
 }
 
-#team-triplet {
+#triplet {
     margin-right: auto;
     margin-left: auto;
     width: 1200px;
 }
 
-#team-triplet > div {
+#triplet > div {
     display: inline-block;
     vertical-align: top;
     zoom: 1;
     *display: inline;
 }
 
-#team-triplet > #team-right {
+#triplet > #team-right {
     padding-left: 20px;
     
 }
 
 
-#team-triplet #award-lines-container {
+#triplet #award-lines-container {
     padding-top: 25px;
     padding-left: 5px;
 }
 
-#team-triplet > #support-materials {
+#triplet > #support-materials {
     width: 270px;
     border-right: 1px solid #bab6b8;
 }
 
-#team-triplet > #team-main {
-    width: 580px;
+#triplet > #main-content {
+    width: 542px;
     border-right: 1px solid #BAB6B8;
-    padding-right: 20px;
 }
 
-#team-triplet > #team-main > div.team-headline {
+#triplet > #main-content > div.team-headline {
     padding-top: 50px;
     padding-left: 40px;
 }
 
-#team-triplet > #team-main > div.team-headline h1 {
+#triplet > #main-content > div.team-headline h1 {
     display: inline;
     zoom: 1;
     *display: inline;
@@ -54,11 +53,11 @@
     max-width: 585px;
 }
 
-#team-triplet > #team-main > * {
+#triplet > #main-content > * {
     padding-left: 24px;
 }
 
-#team-triplet > #team-main > div.team-headline {
+#triplet > #main-content > div.team-headline {
     padding-top: 28px;
     padding-left: 25px;
 }
@@ -67,41 +66,41 @@
     padding-top: 20px;
 }
 
-#team-triplet > #team-main .team-member-block > div {
+#triplet > #main-content .team-member-block > div {
     display: inline-block;
     zoom: 1;
     *display: inline;
     vertical-align: top;
 }
 
-#team-triplet > #team-main .team-member-block > .memeber-photo > img {
+#triplet > #main-content .team-member-block > .member-photo > img {
     width: 225px;
     height: 350px;
 }
 
-#team-triplet > #team-main .team-member-block > .memeber-data {
+#triplet > #main-content .team-member-block > .memeber-data {
     width: 300px;
     padding-left: 10px;
 }
 
-#team-triplet > #team-main .team-member-block > .memeber-data > h1 {
+#triplet > #main-content .team-member-block > .memeber-data > h1 {
     color: #7a113f;
     font-size: 22px;
 }
 
-#team-triplet > #team-main .team-member-block > .memeber-data > h2 {
+#triplet > #main-content .team-member-block > .memeber-data > h2 {
     color: #4C4C4C;
     font-family: 'MyriadPro-Regular';
     font-size: 15px;
 }
 
-#team-triplet > #team-main .team-member-block > .memeber-data > h3 {
+#triplet > #main-content .team-member-block > .memeber-data > h3 {
     color: #7a113f;
     font-family: 'MyriadPro-Regular';
     font-size: 15px;
 }
 
-#team-triplet > #team-main .team-member-block > .memeber-data > p {
+#triplet > #main-content .team-member-block > .memeber-data > p {
     color: #4C4C4C;
     font-family: Arial;
     font-size: 12px;

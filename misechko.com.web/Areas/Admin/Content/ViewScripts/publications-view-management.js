@@ -5,9 +5,14 @@
     self.PublicationName = pubData.Headline;
     self.PublicationPath = pubData.LinkPath;
     self.PublicationHREF = '/Read' + self.PublicationPath;
-    self.DateCreated = pubData.PublishDate;
+    self.DateCreated = ko.observable(pubData.PublishDate);
     self.Type = pubData.Type;
 
+    self.ItemChanged = ko.observable(false);
+
+    self.DateCreated.subscribe(function () {
+        self.ItemChanged(true);
+    });
     
     self.Remove = function () {
         var removePubUrl = $('#RemovePublicationUrl').val();

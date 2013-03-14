@@ -1,0 +1,62 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("practicies-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+@Html.Hidden("RemovePracticeUrl", Url.Action("DeletePractice", "MPManagement"))
+@Html.Hidden("AddPracticeUrl", Url.Action("AddNewPractice", "MPManagement"))
+@Html.Hidden("UpdatePracticeUrl", Url.Action("UpdatePractice", "MPManagement"))
+<div id="practicies-management-view">
+    @Html.Hidden("initial-practicies-list", (HtmlString)initValue)
+    <div class="outlined" id="practicies-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Назва практики</td>
+                    <td>Проекти</td>
+                    <td>Публікації</td>
+                    <td>Індекс</td>
+                    @*<td>Юристи</td>*@
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'practice-template', foreach: Practicies }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-practice-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewPractice, attr: { disabled: NewPracticeName() === '' }"><span>Додати практику</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewPracticeName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="practice-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: PracticeName, attr: { href: PracticeHREF }"></a></td>
+        <td>
+            <div class="input-append">
+                <select class="chzn-select" multiple="true" data-bind="options: ParentProjects, selectedOptions: PracticeProjects, chosen: { PlaceholderText: 'Оберіть проекти до практики', AddPlaceholder: true }"></select> 
+                <button class="btn btn-warning" type="button" data-bind="click: UpdatePractice, attr: { disabled: !(PracticeProjectsChanged()) }, visible: PracticeProjectsChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append">
+                <select class="chzn-select" multiple="true" data-bind="options: ParentPublications, selectedOptions: PracticePublications, chosen: { PlaceholderText: 'Оберіть публікації до практики', AddPlaceholder: true }"></select> 
+                <button class="btn btn-warning" type="button" data-bind="click: UpdatePractice, attr: { disabled: !(PracticePublicationsChanged()) }, visible: PracticePublicationsChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append">
+                <input class="span2 index" size="16" type="text" data-bind="value: ItemIndex"/>
+                <button class="btn btn-warning" type="button" data-bind="click: UpdatePractice, attr: { disabled: !(IndexChanged()) }, visible: IndexChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

@@ -15,6 +15,7 @@ namespace misechko.com.Areas.Admin.Models
         public string LinkPath { get; set; }
         public List<string> RelatesToPaths { get; set; }
         public string PublishDate { get; set; }
+        public int Index { get; set; }
     }
 
     public class LawNewsModel
@@ -29,6 +30,7 @@ namespace misechko.com.Areas.Admin.Models
         public string LinkPath { get; set; }
         public List<string> RelatesToPaths { get; set; }
         public string PublishDate { get; set; }
+        public int Index { get; set; }
     }
 
     public class NewsModel
@@ -43,6 +45,7 @@ namespace misechko.com.Areas.Admin.Models
         public string LinkPath { get; set; }
         public List<string> RelatesToPaths { get; set; }
         public string PublishDate { get; set; }
+        public int Index { get; set; }
     }
 
     public class BrochuresModel
@@ -57,6 +60,7 @@ namespace misechko.com.Areas.Admin.Models
         public string LinkPath { get; set; }
         public List<string> RelatesToPaths { get; set; }
         public string PublishDate { get; set; }
+        public int Index { get; set; }
     }
 
     public class ProjectsModel
@@ -71,6 +75,7 @@ namespace misechko.com.Areas.Admin.Models
         public string LinkPath { get; set; }
         public List<string> RelatesToPaths { get; set; }
         public string PublishDate { get; set; }
+        public int Index { get; set; }
     }
 
     public class AwardsModel
@@ -85,5 +90,36 @@ namespace misechko.com.Areas.Admin.Models
         public string LinkPath { get; set; }
         public List<string> RelatesToPaths { get; set; }
         public string PublishDate { get; set; }
+        public int Index { get; set; }
+    }
+
+    public class AboutMenusModel
+    {
+        public List<AboutMenuModel> AboutMenus { get; set; }
+    }
+
+    public class AboutMenuModel
+    {
+        public string Id { get; set; }
+        public string Headline { get; set; }
+        public string LinkPath { get; set; }
+        public List<string> RelatesToPaths { get; set; }
+        public string PublishDate { get; set; }
+        public int Index { get; set; }
+    }
+
+    public class TeamMembersModel
+    {
+        public List<TeamMemberModel> TeamMembers { get; set; }
+    }
+
+    public class TeamMemberModel
+    {
+        public string Id { get; set; }
+        public string Headline { get; set; }
+        public string LinkPath { get; set; }
+        public List<string> RelatesToPaths { get; set; }
+        public string PublishDate { get; set; }
+        public int Index { get; set; }
     }
 }

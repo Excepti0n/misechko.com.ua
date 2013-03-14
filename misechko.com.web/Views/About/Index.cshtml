@@ -5,38 +5,25 @@
     Html.RequiresCss("about/about.css", "Content", 110);
     Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
     Html.RequiresJs("about/about.js", "Content", 25);
-    var selectedItem = Model.CurrentMenuItemName;
+    var selectedItem = "/About/" + Model.CurrentMenuItemName;
 }
 
-<div id="about-triplet">
-    <div id="about-main" class="extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+<div id="triplet">
+    <div id="main-content" class="extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
         <div class="editable-block">
             @Html.Raw(Model.MainMarkup)
         </div>
     </div>
-    <div id="about-submenu">
-        <div id="about-selector">
-            <div class="about-item @(string.IsNullOrEmpty(selectedItem) ? "selected" : "")">
-                <a href="@Url.Content("~/about/")">
-                    <div class="about-submenu-text">Про фірму</div>
-                </a>
-            </div>
-            
-            <div class="about-item @(selectedItem == "recognition" ? "selected" : "")">
-                <a href="@Url.Content("~/about/recognition")">
-                    <div class="about-submenu-text">Визнання</div>
-                </a>
-            </div>
-            <div class="about-item @(selectedItem == "membership" ? "selected" : "")">
-                <a href="@Url.Content("~/about/membership")">
-                    <div class="about-submenu-text">Членство</div>
-                </a>
-            </div>
-            <div class="about-item @(selectedItem == "career" ? "selected" : "")">
-                <a href="@Url.Content("~/about/career")">
-                    <div class="about-submenu-text">Кар'эра</div>
-                </a>
-            </div>
+    <div id="submenu">
+        <div id="selector">
+            @foreach(var ind in Model.AboutMenus)
+            {
+                <div class="item @(ind.Slug == selectedItem ? "selected" : "")">
+                    <a href="@Url.Content(@ind.Slug)">
+                       <div class="submenu-text">@ind.DisplayText</div>
+                    </a>
+                </div>
+            }
         </div>
     </div>
 </div>

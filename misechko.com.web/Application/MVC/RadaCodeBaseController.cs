@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Web;
@@ -11,6 +12,8 @@ namespace RadaCode.Web.Application.MVC
 {
     public abstract class RadaCodeBaseController : Controller
     {
+        protected string _curCult;
+
         protected override void OnResultExecuting(ResultExecutingContext filterContext)
         {
             if (!filterContext.IsChildAction)
@@ -20,7 +23,11 @@ namespace RadaCode.Web.Application.MVC
                 {
                     if (filterContext.HttpContext.User.IsInRole("Administrator"))
                     {
-                        response.Filter = new ReplaceTagsFilter(response.Filter);
+                        try
+                        {
+                            response.Filter = new ReplaceTagsFilter(response.Filter);
+                        }
+                        catch (Exception) {}
                     }
                 }
             }
@@ -65,6 +72,8 @@ namespace RadaCode.Web.Application.MVC
                     Thread.CurrentThread.CurrentUICulture =
                     new CultureInfo(request.QueryString["lang"]);
             }
+
+            _curCult = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName;
         }
 
         protected string RenderRazorViewToString(string viewName, object model)

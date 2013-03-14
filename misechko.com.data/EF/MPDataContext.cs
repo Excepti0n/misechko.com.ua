@@ -18,6 +18,8 @@ namespace misechko.com.data.EF
         public DbSet<LawNew> LawNews { get; set; }
         public DbSet<Practice> Practicies { get; set; }
         public DbSet<Industry> Industries { get; set; }
+        public DbSet<TeamMember> TeamMembers { get; set; }
+        public DbSet<AboutMenuItem> AboutMenus { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

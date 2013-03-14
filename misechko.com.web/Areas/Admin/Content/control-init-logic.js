@@ -6,6 +6,10 @@
     var LawNewsViewInitialized = false;
     var AwardsViewInitialized = false;
     var BrochuresViewInitialized = false;
+    var IndustriesViewInitialized = false;
+    var PracticiesViewInitialized = false;
+    var TeamMemberViewInitialized = false;
+    var AboutMenuViewInitialized = false;
     
     var ProjectsViewInitialized = false;
 
@@ -50,9 +54,33 @@
                     }
                     break;
                 case 6:
+                    if (!IndustriesViewInitialized) {
+                        IndustriesView.Init();
+                        IndustriesViewInitialized = true;
+                    }
+                    break;
+                case 7:
+                    if (!PracticiesViewInitialized) {
+                        PracticiesView.Init();
+                        PracticiesViewInitialized = true;
+                    }
+                    break;
+                case 8:
                     if (!UsersInitialized) {
                         UsersView.Init();
                         UsersInitialized = true;
+                    }
+                    break;
+                case 9:
+                    if (!AboutMenuViewInitialized) {
+                        AboutMenuView.Init();
+                        AboutMenuViewInitialized = true;
+                    }
+                    break;
+                case 10:
+                    if (!TeamMemberViewInitialized) {
+                        TeamMemberView.Init();
+                        TeamMemberViewInitialized = true;
                     }
                     break;
                 default:

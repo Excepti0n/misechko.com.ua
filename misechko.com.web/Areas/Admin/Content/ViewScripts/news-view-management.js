@@ -5,9 +5,14 @@
     self.NewsItemName = pubData.Headline;
     self.NewsItemPath = pubData.LinkPath;
     self.NewsItemHREF = '/Read' + self.NewsItemPath;
-    self.DateCreated = pubData.PublishDate;
+    self.DateCreated = ko.observable(pubData.PublishDate);
     self.Type = pubData.Type;
 
+    self.ItemChanged = ko.observable(false);
+
+    self.DateCreated.subscribe(function () {
+        self.ItemChanged(true);
+    });
     
     self.Remove = function () {
         var removeNIUrl = $('#RemoveNewsItemUrl').val();
@@ -38,10 +43,10 @@
                 dateCreated: self.DateCreated
             },
             success: function (res) {
-                if (res === "SPCD: OK") {
-                    parent.RemoveNI(self);
+                if (res.status === "SPCD: OK") {
+                    self.ItemChanged(false);
                 } else {
-                    alert("There was an error removing the newsItem - " + res);
+                    alert("There was an error updating the newsItem - " + res.status);
                 }
             }
         });

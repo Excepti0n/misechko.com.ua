@@ -21,6 +21,31 @@
     margin-bottom: 15px;
 }
 
+#langSelect {
+    float: right;
+    margin-right: 20px;
+}
+
+#langSelect > #lang-block > #lang-top-line > div {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#lang-block > #lang-top-line > .lang-button {
+    border: solid 1px rgb(233, 229, 238);
+    width: 30px;
+    height: 20px;
+}
+
+input.index {
+    width: 40px;
+    text-align: center;
+}
+
+#lang-block > #lang-top-line > .lang-button.selected {
+    border: solid 1px rgb(99, 104, 218);
+}
+
 #login-block {
 	text-align: center;
 	border: 1px dashed #333;
@@ -255,6 +280,19 @@ td.pub-text {
 
 .add-project-block input {
     width: 83%;    
+}
+
+.add-industry-block input {
+    width: 83%;    
+}
+
+.add-practice-block input {
+    width: 83%;    
+}
+
+ul.chzn-choices li.search-choice {
+    max-width: 175px;
+    overflow: hidden
 }
 
 .btn.add-permission {

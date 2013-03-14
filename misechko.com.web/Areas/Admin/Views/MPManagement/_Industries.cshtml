@@ -1,0 +1,62 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("industries-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+@Html.Hidden("RemoveIndustryUrl", Url.Action("DeleteIndustry", "MPManagement"))
+@Html.Hidden("AddIndustryUrl", Url.Action("AddNewIndustry", "MPManagement"))
+@Html.Hidden("UpdateIndustryUrl", Url.Action("UpdateIndustry", "MPManagement"))
+<div id="industries-management-view">
+    @Html.Hidden("initial-industries-list", (HtmlString)initValue)
+    <div class="outlined" id="industries-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Назва індустрії</td>
+                    <td>Проекти</td>
+                    <td>Публікації</td>
+                     <td>Індекс</td>
+                    @*<td>Юристи</td>*@
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'industry-template', foreach: Industries }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-industry-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewIndustry, attr: { disabled: NewIndustryName() === '' }"><span>Додати індустрію</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewIndustryName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="industry-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: IndustryName, attr: { href: IndustryHREF }"></a></td>
+        <td>
+            <div class="input-append">
+                <select class="chzn-select" multiple="true" data-bind="options: ParentProjects, selectedOptions: IndustryProjects, chosen: { PlaceholderText: 'Оберіть проекти до індустрії', AddPlaceholder: true }"></select> 
+                <button class="btn btn-warning" type="button" data-bind="click: UpdateIndustry, attr: { disabled: !(IndustryProjectsChanged()) }, visible: IndustryProjectsChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append">
+                <select class="chzn-select" multiple="true" data-bind="options: ParentPublications, selectedOptions: IndustryPublications, chosen: { PlaceholderText: 'Оберіть публікації до індустрії', AddPlaceholder: true }"></select> 
+                <button class="btn btn-warning" type="button" data-bind="click: UpdateIndustry, attr: { disabled: !(IndustryPublicationsChanged()) }, visible: IndustryPublicationsChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <div class="input-append">
+                <input class="span2 index" size="16" type="text" data-bind="value: ItemIndex"/>
+                <button class="btn btn-warning" type="button" data-bind="click: UpdateIndustry, attr: { disabled: !(IndexChanged()) }, visible: IndexChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

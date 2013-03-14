@@ -44,16 +44,16 @@
             };
 
             //on a change, make sure that it is a valid value or clear out the model value
-            options.change = function (event, ui) {
+            options.change = function(event, ui) {
                 var currentValue = $(element).val();
-                var matchingItem = ko.utils.arrayFirst(unwrap(source), function (item) {
+                var matchingItem = ko.utils.arrayFirst(unwrap(source), function(item) {
                     return unwrap(inputValueProp ? item[inputValueProp] : item) === currentValue;
                 });
 
                 if (!matchingItem) {
                     writeValueToModel(null);
                 }
-            }
+            };
 
             //hold the autocomplete current response
             var currentResponse = null;
@@ -80,10 +80,10 @@
             });
 
             if (query) {
-                options.source = function (request, response) {
+                options.source = function(request, response) {
                     currentResponse = response;
                     query.call(this, request.term, mappedSource);
-                }
+                };
             } else {
                 //whenever the items that make up the source are updated, make sure that autocomplete knows it
                 mappedSource.subscribe(function (newValue) {
@@ -172,9 +172,8 @@
             //handle the field changing
             ko.utils.registerEventHandler(element, "change", function () {
                 var observable = valueAccessor();
-                var selectedDate = $(element).datepicker("getDate");
-                var formattedResult = $.datepicker.formatDate(options.dateFormat, $(this).datepicker("getDate"));
-                observable(formattedResult);
+                //observable($(element).datepicker("getDate"));
+                observable($.datepicker.formatDate(options.dateFormat, $(this).datepicker("getDate")));
             });
 
             //handle disposal (if KO removes by the template binding)
@@ -187,9 +186,9 @@
             var value = ko.utils.unwrapObservable(valueAccessor()),
                 current = $(element).datepicker("getDate");
 
-            //if (value - current !== 0) {
+            if (value - current !== 0) {
                 $(element).datepicker("setDate", value);
-            //}
+            }
         }
     };
     

@@ -1,3 +1,4 @@
+using misechko.com.core;
 using misechko.com.data;
 
 [assembly: WebActivator.PreApplicationStartMethod(typeof(misechko.com.App_Start.NinjectWebCommon), "Start")]
@@ -55,7 +56,7 @@ namespace misechko.com.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Load(new MPDataModule());
+            kernel.Load(new MPDataModule(), new MPCoreModule());
         }        
     }
 }

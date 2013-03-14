@@ -1,0 +1,47 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("about-menu-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+@Html.Hidden("RemoveAboutMenuUrl", Url.Action("DeleteAboutMenu", "MPManagement"))
+@Html.Hidden("AddAboutMenuUrl", Url.Action("AddNewAboutMenu", "MPManagement"))
+@Html.Hidden("UpdateAboutMenuUrl", Url.Action("UpdateAboutMenu", "MPManagement"))
+<div id="aboutMenu-management-view">
+    @Html.Hidden("initial-aboutMenu-list", (HtmlString)initValue)
+    <div class="outlined" id="aboutMenu-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Текст пункту меню</td>
+                    <td>Індекс</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'aboutMenu-template', foreach: AboutMenus }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-aboutMenu-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewAboutMenu, attr: { disabled: NewAboutMenuName() === '' }"><span>Додати пункт меню</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewAboutMenuName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="aboutMenu-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: AboutMenuName, attr: { href: AboutMenuHREF }"></a></td>
+        <td>
+            <div class="input-append">
+                <input class="span2 index" size="16" type="text" data-bind="value: ItemIndex"/>
+                <button class="btn btn-warning" type="button" data-bind="click: UpdateAboutMenu, attr: { disabled: !(ItemChanged()) }, visible: ItemChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

@@ -129,10 +129,151 @@ body
     font-size: 13px;
 }
 
+#triplet {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1200px;
+}
+
+#triplet > div {
+    display: inline-block;
+    vertical-align: top;
+    zoom: 1;
+    *display: inline;
+}
+
+#triplet > #support-materials {
+    width: 270px;
+    border-right: 1px solid #bab6b8;
+}
+
+#triplet > #main-content {
+    /*width: 490px;
+    border-right: 1px solid #bab6b8;
+    padding-right: 50px;*/
+}
+
+#triplet > #main-content > div.headline {
+    padding-top: 50px;
+    padding-left: 40px;
+}
+
+#triplet > #submenu {
+    width: 326px;
+    left: 58px;
+    position: relative;
+}
+
+#triplet > #submenu > #selector {
+    background-color: #7a113f;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#triplet > #submenu > #selector > .item {
+    display: block;
+    width: 100%;
+    height: 65px;
+}
+
+#triplet > #submenu > #selector > .item a {
+    text-decoration: none;
+}
+
+#triplet > #submenu > #selector > .item.selected {
+    background-color: #99182a;    
+}
+
+#triplet > #submenu > #selector > .item:hover {
+    background-color: #99182a;    
+}    
+
+#triplet > #submenu > #selector > .item div {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+#triplet > #submenu > #selector > .item .icon {
+    width: 40px;
+    padding-left: 20px;
+    padding-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#triplet > #submenu > #selector > .item .submenu-text {
+    /*color: #E9E4E4;*/
+    color: white;
+    font-size: 16px;
+    font-family: Tahoma;
+    padding-top: 15px;
+    vertical-align: middle;
+    padding-left: 35px;
+    padding-right: 10px;
+}
+
 #lang-block #lang-top-line > * {
     display: inline-block;
     vertical-align: top;
+}
 
+#triplet > #main-content > div.headline h1 {
+    display: inline;
+    zoom: 1;
+    *display: inline;
+    color: #020001;
+    font-size: 30px;
+    font-family: 'MyriadPro-Bold';
+    padding-left: 10px;
+    max-width: 585px;
+}
+
+#triplet > #main-content > * {
+    /*padding-left: 24px;*/
+}
+
+#triplet > #main-content ul {
+    padding-left: 20px;
+}
+
+#triplet > #main-content h2 {
+    color: #4C4C4C;
+    font-family: 'MyriadPro-Bold';
+    /*padding-left: 40px;*/
+    margin-top: 20px;
+}
+
+#triplet > #main-content h3 {
+    color: #4C4C4C;
+    font-family: 'MyriadPro-Regular';
+    /*padding-left: 40px;*/
+    margin-top: 20px;
+}
+
+#triplet > #main-content p {
+    color: #070003;
+    font-family: Arial;
+    font-size: 14px;
+    /*padding-left: 40px;*/
+}
+
+#triplet > #main-content li {
+    color: #070003;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#triplet > #main-content p:last-child {
+    padding-bottom: 30px;
+}
+
+#triplet > #main-content div.headline + p {
+    padding-top: 30px;
+}
+
+#triplet > #main-content.extended {
+    width: 811px;
 }
 
 .ie7 #lang-block #lang-top-line > * {
@@ -163,8 +304,9 @@ body
     padding-top: 6px;
     vertical-align: top;
     color: #7a113f;
-    font-family: 'vegur_lightregular';
-    font-size: 15px;
+    /*font-family: 'vegur_lightregular';*/
+    font-family: Tahoma;
+    font-size: 16px;
     padding-right: 15px;
 }
 
@@ -186,7 +328,7 @@ body
 }
 
 .single-content p {
-    padding-left: 40px;
+    /*padding-left: 40px;*/
 }
 
 /*#lang-block #lang-top-line .addr {
@@ -257,8 +399,8 @@ body
 
 #logo {
     float: left;
-    margin: 25px -60px 0 0;
-    width: 12%;
+    margin: 10px -60px 0 -20px;
+    width: 14%;
 }
 
 #logo a {
@@ -292,9 +434,9 @@ header {
 }
 
 menu {
-    float: left;
     width: 93%;
-    margin-top: 10px;
+    margin-top: 12px;
+    margin-left: 8%;
 }
 
 .ie7 menu {
@@ -313,14 +455,13 @@ ul#menu {
 ul#menu li {
     display: inline-block;
     height: 50px;
-    width: 82px;
+    width: 95px;
     text-align: left;
     padding-left: 30px;
     padding-right: 20px;
     padding-top: 50px;
     padding-bottom: 26px;
     vertical-align: top;
-    margin-right: 10px;
 }
 
 .ie7 ul#menu li {
@@ -373,8 +514,8 @@ ul#menu li:hover > a > p {
 }
 
 ul#menu li h2 {
-    font-family: 'MyriadPro-Bold';
-    font-size: 15px;
+    font-family: Tahoma;
+    font-size: 16px;
     color: #7a113f;
     cursor: pointer;
 }
@@ -498,7 +639,8 @@ footer {
     display: inline-block;
     margin-left: 15px;
     font-size: 30px;
-    font-family: 'MyriadPro-Bold';    
+    font-family: 'MyriadPro-Bold'; 
+    margin-top: -5px;   
 }
 
 .subblock-headline {
@@ -615,7 +757,59 @@ footer {
 #singler {
     margin-right: auto;
     margin-left: auto;
-    width: 1145px;
+    width: 1200px;
+    padding-top: 0px;
+}
+
+.red-select {
+   width: 320px;
+   height: 34px;
+   overflow: hidden;
+   background: url(img/down_arrow_select.png) no-repeat right #ddd;
+   border: 1px solid #ccc;
+}
+
+.red-input {
+   width: 320px;
+   height: 34px;
+   overflow: hidden;
+   background: #ddd;
+   border: 1px solid #ccc;
+}
+
+.project-item {
+    padding-left: 40px;
+    background: url(img/bookmark.png) no-repeat left;
+}
+
+ul.projects-list {
+    list-style: none;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+.red-input input {
+background: transparent;
+width: 320px;
+padding: 5px;
+border: 0;
+border-radius: 0;
+font-size: 16px;
+line-height: 1;
+height: 34px;
+-webkit-appearance: none;
+}
+
+.red-select select {
+background: transparent;
+width: 320px;
+padding: 5px;
+border: 0;
+border-radius: 0;
+font-size: 16px;
+line-height: 1;
+height: 34px;
+-webkit-appearance: none;
 }
 
 .global-headline {

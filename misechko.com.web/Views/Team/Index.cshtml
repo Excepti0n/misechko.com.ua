@@ -1,44 +1,29 @@
-﻿@using ClientDependency.Core.Mvc
+﻿@model misechko.com.Models.TeamViewModel
+@using ClientDependency.Core.Mvc
 @{
     ViewBag.Title = "Наша команда | «Місечко та Партнери»";
     Html.RequiresCss("team/team.css", "Content", 110);
+    var selectedEmployee = "/Team/" + Model.CurrentEmployeeName;
 }
 
-<div id="team-triplet">
-    <div id="support-materials">
-           @Html.Partial("_Publications")
-           @Html.Partial("_Experience")
-    </div>
+<div id="triplet">
     
-    <div id="team-main">
-        <div class="team-headline">
-            <div class="dark-ltr">К</div>
-            <h1>Команда</h1>
-        </div>
-        <div id="team-members-container">
-            <div class="team-member-block">
-                <div class="memeber-photo"><img src="@Url.Content("~/Content/team/img/Misechko_Volodymyr.jpg")"/></div>
-                <div class="memeber-data">
-                    <h1>Володимир Місечко</h1>
-                    <h2>Керуючий партнер, адвокат</h2>
-                    <h3>Освіта:</h3>
-                    <p>Національна юридична академія України ім. Ярослава Мудрого, диплом з відзнакою</p>
-                    <h3>Спеціалізація:</h3>
-                    <p>Антимонопольне та конкурентне право, банківське та фінансове право, земля/нерухомість, судова практика</p>
-                    <h3>Досвід:</h3>
-                    <p>Провідні компанії та юридичні фірми України</p>
-                    <h3>Членство:</h3>
-                    <p>Асоціація правників України (АПУ), Асоціація адвокатів України (ААУ)</p>
-                    <h3>Робочі мови:</h3>
-                    <p>Українська, російська та англійська/p>
-                    <h3>Email:</h3>
-                    <p>vm@misechko.com.ua</p>
-                </div>
-            </div>
+    <div id="main-content" class="extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+        <div class="editable-block">
+            @Html.Raw(Model.MainMarkup)
         </div>
     </div>
-    <div id="team-right">
-        @Html.Partial("_Awards")
+    <div id="submenu">
+        <div id="selector">
+            @foreach(var ind in Model.AllEmployees)
+            {
+                <div class="item @(ind.Slug == selectedEmployee ? "selected" : "")">
+                    <a href="@Url.Content(@ind.Slug)">
+                       <div class="submenu-text">@ind.DisplayText</div>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
 </div>
 

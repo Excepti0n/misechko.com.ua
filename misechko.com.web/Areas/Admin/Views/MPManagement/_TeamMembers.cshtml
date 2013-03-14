@@ -1,0 +1,47 @@
+﻿@using System.Web.Script.Serialization
+@{
+    Html.RequiresJs("team-member-view-management.js", "ViewScripts", 10);
+	var initValue = @Html.Raw(new JavaScriptSerializer().Serialize(Model));
+}
+
+@Html.Hidden("RemoveTeamMemberUrl", Url.Action("DeleteTeamMember", "MPManagement"))
+@Html.Hidden("AddTeamMemberUrl", Url.Action("AddNewTeamMember", "MPManagement"))
+@Html.Hidden("UpdateTeamMemberUrl", Url.Action("UpdateTeamMember", "MPManagement"))
+<div id="teamMember-management-view">
+    @Html.Hidden("initial-teamMember-list", (HtmlString)initValue)
+    <div class="outlined" id="teamMember-list-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>ПІБ співробітника</td>
+                    <td>Індекс</td>
+                </tr>
+            </thead>
+            <tbody data-bind="template: { name: 'teamMember-template', foreach: TeamMembers }">
+            </tbody>
+        </table>
+    </div>
+    <pre class="prettyprint add-teamMember-block">
+        <div class="input-prepend">
+            <button class="btn add-pub" type="button" data-bind="click: AddNewTeamMember, attr: { disabled: NewTeamMemberName() === '' }"><span>Додати члена команди</span></button>
+            <input class="span2" id="appendedInputButton" size="16" type="text" data-bind="value: NewTeamMemberName"/>
+        </div>
+    </pre>
+</div>
+
+<script type="text/html" id="teamMember-template">
+    <tr>
+        <td class="pub-text"><a data-bind="text: TeamMemberName, attr: { href: TeamMemberHREF }"></a></td>
+        <td>
+            <div class="input-append">
+                <input class="span2 index" size="16" type="text" data-bind="value: ItemIndex"/>
+                <button class="btn btn-warning" type="button" data-bind="click: UpdateTeamMember, attr: { disabled: !(ItemChanged()) }, visible: ItemChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
+            <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
+                <i class="icon-remove icon-white"></i>
+            </button>
+        </td>
+    </tr>
+</script>

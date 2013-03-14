@@ -1,0 +1,19 @@
+﻿@using ClientDependency.Core.Mvc
+@model List<misechko.com.Areas.Admin.Models.ProjectModel>
+
+
+<div class="subblock-headline">
+    <div class="light-ltr">П</div>
+    <h1>Проекти</h1>
+</div>
+<div id="project-lines-container">
+    @foreach(var pr in Model)
+    {
+        <div class="project-item">
+            <div class="project-icon"><img src="@Url.Content("~/Content/home/img/award1.png")"/></div>
+            <div class="project-slug">
+                pr.Headline
+            </div>
+        </div>
+    }
+</div>

@@ -39,59 +39,37 @@
     padding-top: 0px;
 }
 
-.in-banner-container.item_0 {
-    width: 460px;
-    height: 260px;
+.in-banner-container {
+    width: 480px;
+    height: 190px;
     text-align: left;
     background-color: white;
     background-image: url(img/bookmark.png);
     background-repeat: no-repeat;
     background-position: -3px 27px;
     z-index: 2;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.in-banner-container.item_0 {
+
 }
 
 .in-banner-container.item_1 {
-    width: 460px;
-    height: 260px;
-    text-align: left;
-    background-color: white;
-    background-image: url(img/bookmark.png);
-    background-repeat: no-repeat;
-    background-position: -3px 27px;
-    z-index: 2;
+
 }
 
 .in-banner-container.item_2 {
-    width: 460px;
-    height: 260px;
-    text-align: left;
-    background-color: white;
-    background-image: url(img/bookmark.png);
-    background-repeat: no-repeat;
-    background-position: -3px 27px;
-    z-index: 2;
+
 }
 
 .in-banner-container.item_3 {
-    width: 460px;
-    height: 260px;
-    text-align: left;
-    background-color: white;
-    background-image: url(img/bookmark.png);
-    background-repeat: no-repeat;
-    background-position: -3px 27px;
-    z-index: 2;
+
 }
 
 .in-banner-container.item_4 {
-    width: 460px;
-    height: 260px;
-    text-align: left;
-    background-color: white;
-    background-image: url(img/bookmark.png);
-    background-repeat: no-repeat;
-    background-position: -3px 27px;
-    z-index: 2;
+
 }
 
 .pause-button {
@@ -128,17 +106,17 @@
  
 
 .in-banner-container h2 {
-    padding-top: 20px;
-    padding-left: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
     font-family: 'MyriadPro-Bold';
     color: #7a113f;
     font-size: 30px;
 }
 
 .in-banner-container p {
-    padding-top: 15px;
-    padding-left: 50px;
-    padding-right: 40px;
+    padding-top: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
     font-family: 'MyriadPro-Regular';
     font-size: 12px;
     color: #020004;

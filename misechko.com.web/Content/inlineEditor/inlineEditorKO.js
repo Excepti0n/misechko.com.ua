@@ -77,6 +77,8 @@
 
                 editor.config.language = 'uk';
 
+                editor.config.font_names = editor.config.font_names + ';MyriadPro/MyriadPro-Regular;' + 'MyriadPro Bold/MyriadPro-Bold';
+
                 // Remove unnecessary plugins to make the editor simpler.
                 //editor.config.removePlugins = 'colorbutton,find,flash,font,' +
                 //    'forms,iframe,image,newpage,removeformat,' +

@@ -5,8 +5,14 @@
     self.AwardName = pubData.Headline;
     self.AwardPath = pubData.LinkPath;
     self.AwardHREF = '/Read' + self.AwardPath;
-    self.DateCreated = pubData.PublishDate;
+    self.DateCreated = ko.observable(pubData.PublishDate);
     self.Type = pubData.Type;
+    
+    self.ItemChanged = ko.observable(false);
+
+    self.DateCreated.subscribe(function () {
+        self.ItemChanged(true);
+    });
 
     
     self.Remove = function () {
@@ -35,13 +41,13 @@
             data: {
                 id: self.Id,
                 awardName: self.AwardName,
-                dateCreated: self.DateCreated
+                dateCreated: self.DateCreated()
             },
             success: function (res) {
-                if (res === "SPCD: OK") {
-                    parent.RemovePub(self);
+                if (res.status === "SPCD: OK") {
+                    self.ItemChanged(false);
                 } else {
-                    alert("There was an error removing the award - " + res);
+                    alert("There was an error updating the award - " + res.status);
                 }
             }
         });

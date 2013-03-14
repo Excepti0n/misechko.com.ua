@@ -1,10 +1,12 @@
+using System.Collections.Generic;
+using misechko.com.Areas.Admin.Models;
+
 namespace misechko.com.Models
 {
     public class ProjectViewModel
     {
         public bool HasSupportMaterials { get; set; }
-        public string IndustryMarkup { get; set; }
-        public string SupportMaterialsMarkup { get; set; }
-        public string CurrentIndustryName { get; set; }
+        public string ProjectMarkup { get; set; }
+        public string CurrentProjectName { get; set; }
     }
 }

@@ -20,16 +20,28 @@ namespace misechko.com
             );
 
             routes.MapRoute(
+                name: "Projects",
+                url: "Projects/{action}",
+                defaults: new { controller = "Projects", action = "Index", project = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                name: "PressCenter",
                url: "Press/{submenu}",
                defaults: new { controller = "PressCenter", action = "Index", submenu = UrlParameter.Optional }
-           );
+            );
+
+            routes.MapRoute(
+               name: "Team",
+               url: "Team/{employee}",
+               defaults: new { controller = "Team", action = "Index", employee = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                name: "About",
                url: "About/{submenu}",
                defaults: new { controller = "About", action = "Index", submenu = UrlParameter.Optional }
-           );
+            );
 
             routes.MapRoute(
                 name: "Practicies",

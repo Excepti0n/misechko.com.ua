@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
 using RadaCode.Web.Application.MVC;
@@ -21,7 +22,17 @@ namespace misechko.com.Controllers
 
         public ActionResult Index(string practice)
         {
-            PracticeViewModel model;
+            var model = new PracticeViewModel
+                            {
+                                AllPracticies =
+                                    _context.Practicies.Where(
+                                        i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).
+                                    ToList().Select(pr => new PracticeMenuViewModel()
+                                                            {
+                                                                DisplayText = pr.Headline,
+                                                                Slug = pr.LinkPath
+                                                            }).ToList()
+                            };
 
             var key = Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName + "/Practicies";
 
@@ -30,12 +41,9 @@ namespace misechko.com.Controllers
                 key += "/" + practice;
             }
 
-            key += "#practice-main";
+            key += "#main-content";
 
-            model = new PracticeViewModel
-            {
-                CurrentPracticeName = practice
-            };
+            model.CurrentPracticeName = practice;
 
             var firstOrDefault = _context.ContentElements.FirstOrDefault(c => c.ContentKey == key);
             if (firstOrDefault != null)

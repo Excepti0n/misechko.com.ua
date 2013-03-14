@@ -1,5 +1,8 @@
 ﻿@model List<misechko.com.data.Entities.LawNew>
 
+@{
+    Model.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+}
 
 <div class="block-headline">
     <div class="light-ltr">Н</div>  
