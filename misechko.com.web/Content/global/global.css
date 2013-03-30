@@ -148,20 +148,32 @@ body
 }
 
 #triplet > #main-content {
-    /*width: 490px;
-    border-right: 1px solid #bab6b8;
-    padding-right: 50px;*/
+    width: 537px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#support-materials .subblock-headline h1 {
+color: #020001;
+font-size: 20px;
+font-family: 'MyriadPro-Bold';
+margin-bottom: 30px;
+padding-top: 4px;
+}
+
+#triplet > #submenu {
+    width: 326px;
+    left: 29px;
+    position: relative;
+}
+
+#support-materials #exp-lines-container {
+    padding-top: 0px;
 }
 
 #triplet > #main-content > div.headline {
     padding-top: 50px;
     padding-left: 40px;
-}
-
-#triplet > #submenu {
-    width: 326px;
-    left: 58px;
-    position: relative;
 }
 
 #triplet > #submenu > #selector {
@@ -725,14 +737,42 @@ footer {
 
 .exp-item .exp-slug {
     margin-left: 15px;
-    width: 180px;
+    width: 225px;
     color: #070003;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'MyriadPro-Regular';
+}
+
+.exp-item .exp-slug a {
+    text-decoration: none;
+    color: #070003;
 }
 
 .award-item {
     margin-bottom: 20px;
+}
+
+.new-item {
+    margin-bottom: 20px;
+}
+
+.new-item .new-date {
+    width: 180px;
+    color: #7a113f;
+    font-size: 14px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.new-item .new-slug {
+    width: 300px;
+    color: #070003;
+    font-size: 14px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.new-item .new-slug a {
+    text-decoration: none;
+    color: #070003;
 }
 
 .award-item > div {
@@ -780,6 +820,7 @@ footer {
 .project-item {
     padding-left: 40px;
     background: url(img/bookmark.png) no-repeat left;
+    margin-bottom: 20px;
 }
 
 ul.projects-list {

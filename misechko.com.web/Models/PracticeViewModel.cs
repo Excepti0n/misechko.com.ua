@@ -17,5 +17,6 @@ namespace misechko.com.Models
     {
         public string Slug { get; set; }
         public string DisplayText { get; set; }
+        public int Index { get; set; }
     }
 }

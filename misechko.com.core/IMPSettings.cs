@@ -10,6 +10,7 @@ namespace misechko.com.core
     {
         List<string> ImplementedCultures { get; }
         bool CreateContentOnAllLanguages { get; }
+        bool ShouldGoToFirstMenuItem { get; }
     }
 
     public class ProductionMPSettings : IMPSettings
@@ -23,5 +24,6 @@ namespace misechko.com.core
         }
 
         public bool CreateContentOnAllLanguages { get { return true; } }
+        public bool ShouldGoToFirstMenuItem { get { return true; } }
     }
 }

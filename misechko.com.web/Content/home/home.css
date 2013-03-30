@@ -36,7 +36,7 @@
 }
 
 #exp-lines-container {
-    padding-top: 0px;
+    padding-top: 5px;
 }
 
 .in-banner-container {
@@ -218,7 +218,7 @@ html.cssgradients .bg {display:none;}*/
     padding-top: 4px;
 }
 
-#tri-block #achievements {
+#tri-block #news {
     width: 300px;
     padding-left: 40px;
 }

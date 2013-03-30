@@ -12,9 +12,12 @@
 <div id="press-block">
     @foreach(var newItem in Model)
     {
-         <div class="news-item">
-            <div class="news-date"><span>@newItem.PublishDate.Date.ToString("dd/MM")</span></div>
-            <div class="news-link"><a href="/Read@(newItem.LinkPath)">@newItem.Headline</a></div>
+        <div class="news-item">
+            <div class="news-year">@newItem.PublishDate.Year</div>
+            <div class="news-block">
+                <div class="news-date"><span>@newItem.PublishDate.Date.ToString("dd/MM")</span></div>
+                <div class="news-link"><a href="/Read@(newItem.LinkPath)">@newItem.Headline</a></div>
+            </div>
         </div>
     }
 </div>

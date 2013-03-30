@@ -1,0 +1,18 @@
+﻿@using ClientDependency.Core.Mvc
+@model List<misechko.com.Areas.Admin.Models.NewModel>
+
+<div class="subblock-headline">
+    <div class="light-ltr">Н</div>
+    <h1>Новини</h1>
+</div>
+<div id="news-lines-container">
+    @foreach(var nw in Model)
+    {
+       <div class="new-item">
+        <div class="new-date">@DateTime.ParseExact(nw.PublishDate, "yyyy-MM-dd", null).ToString("dd'/'MM'/'yyyy")</div>
+        <div class="new-slug">
+            <a href="@nw.LinkPath">@nw.Headline</a>
+        </div>
+      </div>
+    }
+</div>

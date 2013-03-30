@@ -14,8 +14,14 @@
     @if(Model.HasSupportMaterials)
     {
         <div id="support-materials">
-            @Html.Partial("_Projects", Model.Projects)
-            @Html.Partial("_Publications", Model.Publications)
+            @if(Model.Projects.Count > 0)
+            {
+                @Html.Partial("_Projects", Model.Projects)
+            }
+            @if(Model.Publications.Count > 0)
+            {
+                @Html.Partial("_Publications", Model.Publications)
+            }
         </div>
     }
     <div id="main-content" class="@extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">

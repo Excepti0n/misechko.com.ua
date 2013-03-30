@@ -51,6 +51,11 @@
     padding-left: 60px;
 }
 
+.exp-item .exp-slug {
+    margin-left: 15px;
+    width: 215px;
+}
+
 #practices-triplet > #practice-main h2 {
     color: #4C4C4C;
     font-family: 'MyriadPro-Bold';

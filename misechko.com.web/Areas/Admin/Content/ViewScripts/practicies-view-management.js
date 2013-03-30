@@ -29,13 +29,13 @@
 
     self.ParentProjects = ko.computed(function () {
         return jQuery.map(parent.AllProjects(), function (val, i) {
-            return val.ProjectName;
+            return val;
         });
     });
     
     self.ParentPublications = ko.computed(function () {
         return jQuery.map(parent.AllPublications(), function (val, i) {
-            return val.PublicationName;
+            return val;
         });
     });
     
@@ -67,12 +67,14 @@
                 PracticeName: self.PracticeName,
                 projectsInPractice: JSON.stringify(self.PracticeProjects()),
                 publicationsInPractice: JSON.stringify(self.PracticePublications()),
-                dateCreated: self.DateCreated
+                dateCreated: self.DateCreated,
+                index: self.ItemIndex()
             },
             success: function (res) {
                 if (res.status === "SPCD: OK") {
                     self.PracticePublicationsChanged(false);
                     self.PracticeProjectsChanged(false);
+                    self.IndexChanged(false);
                 } else {
                     alert("There was an error updating the Practice - " + res.status);
                 }
@@ -81,16 +83,16 @@
     };
 }
 
-function PorjectModel(modelData, parent) {
+function PracticeProjectModel(modelData, parent) {
     var self = this;
 
-    self.ProjectName = modelData.Name;
+    self.ProjectName = modelData.Headline;
 }
 
-function PublicationModel(modelData, parent) {
+function PracticePublicationModel(modelData, parent) {
     var self = this;
 
-    self.PublicationName = modelData.Name;
+    self.PublicationName = modelData.Headline;
 }
 
 function PracticiesManagementViewModel(initData) {
@@ -105,13 +107,13 @@ function PracticiesManagementViewModel(initData) {
     self.AllProjects = ko.observableArray([]);
 
     var ProjectsArray = jQuery.map(initData.AllProjects, function (val, i) {
-        self.AllProjects.push(new ProjectModel(val, self));
+        self.AllProjects.push(new PracticeProjectModel(val, self));
     });
 
     self.AllPublications = ko.observableArray([]);
 
     var PublicationsArray = jQuery.map(initData.AllPublications, function (val, i) {
-        self.AllPublications.push(new PublicationModel(val, self));
+        self.AllPublications.push(new PracticePublicationModel(val, self));
     });
     
     self.Practicies = ko.observableArray([]);

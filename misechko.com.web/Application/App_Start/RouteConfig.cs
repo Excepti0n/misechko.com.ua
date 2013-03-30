@@ -32,6 +32,12 @@ namespace misechko.com
             );
 
             routes.MapRoute(
+               name: "Publication",
+               url: "Publication/{submenu}",
+               defaults: new { controller = "PressCenter", action = "Index", submenu = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                name: "Team",
                url: "Team/{employee}",
                defaults: new { controller = "Team", action = "Index", employee = UrlParameter.Optional }

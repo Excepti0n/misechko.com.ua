@@ -46,8 +46,10 @@
 		Html.RequiresJs("jqueryui/1.9.2/jquery-ui.min.js", "googleCDN", 2);
 		Html.RequiresJs("modernizr-2.6.2.js", "Scripts", 5);
 		Html.RequiresJs("jquery.cookie.js", "Scripts", 9);
-		
-		
+
+        Html.RequiresJs("historyjs/history.js", "Scripts", 3);
+        Html.RequiresJs("historyjs/history.adapter.jquery.js", "Scripts", 4);
+        
 		@RenderSection("ViewScripts", false)
 		}
 

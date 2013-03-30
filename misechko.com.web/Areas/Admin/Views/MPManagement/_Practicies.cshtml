@@ -37,13 +37,17 @@
         <td class="pub-text"><a data-bind="text: PracticeName, attr: { href: PracticeHREF }"></a></td>
         <td>
             <div class="input-append">
-                <select class="chzn-select" multiple="true" data-bind="options: ParentProjects, selectedOptions: PracticeProjects, chosen: { PlaceholderText: 'Оберіть проекти до практики', AddPlaceholder: true }"></select> 
+                <select class="chzn-select" multiple="true" data-bind="foreach: ParentProjects, selectedOptions: PracticeProjects, chosen: { PlaceholderText: 'Оберіть проекти до практики', AddPlaceholder: true }">
+                    <option data-bind="text: ProjectName, attr: { value: ProjectName, title: ProjectName }"></option>
+                </select> 
                 <button class="btn btn-warning" type="button" data-bind="click: UpdatePractice, attr: { disabled: !(PracticeProjectsChanged()) }, visible: PracticeProjectsChanged"><i class="icon-ok-sign icon-white"></i></button>
             </div>
         </td>
         <td>
             <div class="input-append">
-                <select class="chzn-select" multiple="true" data-bind="options: ParentPublications, selectedOptions: PracticePublications, chosen: { PlaceholderText: 'Оберіть публікації до практики', AddPlaceholder: true }"></select> 
+                <select class="chzn-select" multiple="true" data-bind="foreach: ParentPublications, selectedOptions: PracticePublications, chosen: { PlaceholderText: 'Оберіть публікації до практики', AddPlaceholder: true }">
+                    <option data-bind="text: PublicationName, attr: { value: PublicationName, title: PublicationName }"></option>
+                </select> 
                 <button class="btn btn-warning" type="button" data-bind="click: UpdatePractice, attr: { disabled: !(PracticePublicationsChanged()) }, visible: PracticePublicationsChanged"><i class="icon-ok-sign icon-white"></i></button>
             </div>
         </td>

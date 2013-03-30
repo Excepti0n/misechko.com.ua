@@ -1159,7 +1159,7 @@ namespace misechko.com.Areas.Admin.Controllers
             var allProjects = new List<ProjectModel>();
 
             if (_context.Projects != null)
-                foreach (var project in _context.Projects.ToList())
+                foreach (var project in _context.Projects.Where(pr => pr.Culture == _curCult).ToList())
                 {
                     allProjects.Add(new ProjectModel
                     {
@@ -1173,7 +1173,7 @@ namespace misechko.com.Areas.Admin.Controllers
             var allPublications = new List<PublicationModel>();
 
             if (_context.Publications != null)
-                foreach (var publication in _context.Publications.ToList())
+                foreach (var publication in _context.Publications.Where(pr => pr.Culture == _curCult).ToList())
                 {
                     allPublications.Add(new PublicationModel
                     {
@@ -1210,7 +1210,7 @@ namespace misechko.com.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdatePractice(string id, string practiceName, string projectsInPractice, string publicationsInPractice)
+        public ActionResult UpdatePractice(string id, string practiceName, int index, string projectsInPractice, string publicationsInPractice)
         {
             var gUq = Guid.Parse(id);
 
@@ -1219,11 +1219,10 @@ namespace misechko.com.Areas.Admin.Controllers
             if (practiceToUpdate == null)
                 return Json("SPCD: FAIL");
 
-
-
             practiceToUpdate.Headline = practiceName;
             practiceToUpdate.LinkPath = "/Practicies/" + MakeUrl(practiceName);
             practiceToUpdate.PublishDate = DateTime.Now;
+            practiceToUpdate.ListWeight = index;
 
             var projectsList = JsonConvert.DeserializeObject<List<string>>(projectsInPractice);
             if (practiceToUpdate.Projects == null) practiceToUpdate.Projects = new List<Project>();
@@ -1231,7 +1230,7 @@ namespace misechko.com.Areas.Admin.Controllers
             practiceToUpdate.Projects.Clear();
             foreach (var projectName in projectsList)
             {
-                practiceToUpdate.Projects.Add(_context.Projects.SingleOrDefault(pr => pr.Headline == projectName));
+                practiceToUpdate.Projects.Add(_context.Projects.SingleOrDefault(pr => pr.Headline == projectName && pr.Culture == _curCult));
             }
 
             var publicationsList = JsonConvert.DeserializeObject<List<string>>(publicationsInPractice);
@@ -1241,7 +1240,7 @@ namespace misechko.com.Areas.Admin.Controllers
 
             foreach (var publicationName in publicationsList)
             {
-                practiceToUpdate.Publications.Add(_context.Publications.SingleOrDefault(pub => pub.Headline == publicationName));
+                practiceToUpdate.Publications.Add(_context.Publications.SingleOrDefault(pub => pub.Headline == publicationName && pub.Culture == _curCult));
             }
 
             try
@@ -1322,13 +1321,13 @@ namespace misechko.com.Areas.Admin.Controllers
                 var publicationsForIndustry = new List<String>();
 
                 if (industry.Publications != null)
-                    foreach (var publication in industry.Publications.ToList())
+                    foreach (var publication in industry.Publications.Where(pr => pr.Culture == _curCult).ToList())
                     {
                         publicationsForIndustry.Add(publication.Headline);
                     }
 
                 if (industry.Projects != null)
-                    foreach (var project in industry.Projects.ToList())
+                    foreach (var project in industry.Projects.Where(pr => pr.Culture == _curCult).ToList())
                     {
                         projectsForIndustry.Add(project.Headline);
                     }
@@ -1414,7 +1413,7 @@ namespace misechko.com.Areas.Admin.Controllers
 
             foreach (var projectName in projectsList)
             {
-                industryToUpdate.Projects.Add(_context.Projects.SingleOrDefault(pr => pr.Headline == projectName));
+                industryToUpdate.Projects.Add(_context.Projects.SingleOrDefault(pr => pr.Headline == projectName && pr.Culture == _curCult));
             }
 
             var publicationsList = JsonConvert.DeserializeObject<List<string>>(publicationsInIndustry);
@@ -1424,7 +1423,7 @@ namespace misechko.com.Areas.Admin.Controllers
 
             foreach (var publicationName in publicationsList)
             {
-                industryToUpdate.Publications.Add(_context.Publications.SingleOrDefault(pub => pub.Headline == publicationName));
+                industryToUpdate.Publications.Add(_context.Publications.SingleOrDefault(pub => pub.Headline == publicationName && pub.Culture == _curCult));
             }
 
             try
@@ -1487,7 +1486,7 @@ namespace misechko.com.Areas.Admin.Controllers
 
         private string MakeUrl(String incoming)
         {
-            if (incoming.Length > 40) incoming = incoming.Substring(0, 40);
+            //if (incoming.Length > 90) incoming = incoming.Substring(0, 90);
             incoming = incoming.Unidecode();
             incoming = incoming.Replace(" ", "_");
             var alphaNum = Regex.Replace(incoming, @"[^A-Za-z0-9_]+", "");

@@ -40,7 +40,7 @@
             url: updateNIUrl,
             data: {
                 id: self.Id,
-                newsItemName: self.LawNewsItemName,
+                lawNewsItemName: self.LawNewsItemName,
                 dateCreated: self.DateCreated
             },
             success: function (res) {

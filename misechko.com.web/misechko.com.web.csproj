@@ -164,6 +164,7 @@
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\MPManagementController.cs" />
     <Compile Include="Areas\Admin\Models\PracticiesModel.cs" />
+    <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\ProjectsViewViewModel.cs" />
     <Compile Include="Areas\Admin\Models\PublicationsModel.cs" />
     <Compile Include="Areas\Admin\FileHandler\FilesStatus.cs" />
@@ -236,6 +237,7 @@
     <Content Include="Areas\Admin\Content\Chosen\chosen.css" />
     <Content Include="Areas\Admin\Content\Chosen\chosen.jquery.min.js" />
     <Content Include="Areas\Admin\Content\Chosen\chosen.jquery.optgroup.min.js" />
+    <Content Include="Areas\Admin\Content\Chosen\chosen.jquery.js" />
     <Content Include="Areas\Admin\Content\ckeditor\adapters\jquery.js" />
     <Content Include="Areas\Admin\Content\ckeditor\ckeditor.js" />
     <Content Include="Areas\Admin\Content\ckeditor\ckeditor_basic.js" />
@@ -1632,6 +1634,7 @@
     <Content Include="Views\Shared\_Projects.cshtml" />
     <Content Include="Views\Shared\_Publications.cshtml" />
     <Content Include="Views\Shared\_ProjectsSearch.cshtml" />
+    <Content Include="Views\Shared\_News.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -89,9 +89,29 @@
             return true;
         }
     });
-    
-    if (!NewsViewInitialized) {
-        NewsView.Init();
-        NewsViewInitialized = true;
+
+    $("#control-area").bind("tabsshow", function (event, ui) {
+        history.pushState(null, null, ui.tab.hash);
+    });
+
+    switch (location.hash) {
+        case '#industries-control':
+            if (!IndustriesViewInitialized) {
+                IndustriesView.Init();
+                IndustriesViewInitialized = true;
+            }
+            break;
+        case '#practicies-control':
+            if (!PracticiesViewInitialized) {
+                PracticiesView.Init();
+                PracticiesViewInitialized = true;
+            }
+            break;
+        default:
+            if (!NewsViewInitialized) {
+                NewsView.Init();
+                NewsViewInitialized = true;
+            }
+            break;
     }
 })

@@ -4,6 +4,7 @@ using System.Threading;
 using System.Web.Mvc;
 using RadaCode.Web.Application.MVC;
 using misechko.com.Models;
+using misechko.com.core;
 using misechko.com.data.EF;
 
 namespace misechko.com.Controllers
@@ -11,9 +12,11 @@ namespace misechko.com.Controllers
     public class AboutController : RadaCodeBaseController
     {
         private readonly MPDataContext _context;
+        private readonly IMPSettings _settings;
 
-        public AboutController(MPDataContext context)
+        public AboutController(MPDataContext context, IMPSettings settings)
         {
+            _settings = settings;
             _context = context;
         }
 
@@ -29,7 +32,7 @@ namespace misechko.com.Controllers
                 key += "/" + submenu;
             }
 
-            key += "#about-main";
+            key += "#main-content";
             
             var model = new AboutViewModel
                             {
@@ -45,6 +48,11 @@ namespace misechko.com.Controllers
                             };
 
             model.AboutMenus.Sort((a, b) => a.Index.CompareTo(b.Index));
+
+            if (_settings.ShouldGoToFirstMenuItem && model.AboutMenus.Count > 0 && string.IsNullOrEmpty(submenu))
+            {
+                return Redirect(model.AboutMenus.First().Slug);
+            }
             
             
             var firstOrDefault = _context.ContentElements.FirstOrDefault(c => c.ContentKey == key);

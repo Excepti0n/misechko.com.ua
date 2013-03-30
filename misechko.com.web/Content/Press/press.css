@@ -58,6 +58,23 @@ div.news-item {
     margin-bottom: 20px;
 }
 
+.news-item > .news-year {
+    color: #7a113f;
+    font-size: 15px;
+    font-family: 'MyriadPro-Bold';
+    display: inline-block;
+    vertical-align: top;
+}
+
+.news-item > .news-block {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.news-item .news-date {
+    margin-left: 20px;
+}
+
 .news-item .news-link {
     max-width: 685px;
     margin-left: 20px;
