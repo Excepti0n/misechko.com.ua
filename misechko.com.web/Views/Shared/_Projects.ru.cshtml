@@ -1,0 +1,19 @@
+﻿@using ClientDependency.Core.Mvc
+@model List<misechko.com.Areas.Admin.Models.ProjectModel>
+
+<div class="subblock-headline">
+    <div class="light-ltr">П</div>
+    <h1>Проекти</h1>
+</div>
+<div id="exp-lines-container">
+    @foreach(var pr in Model)
+    {
+       <div class="exp-item">
+        <div class="exp-year">@DateTime.ParseExact(pr.PublishDate, "yyyy-MM-dd",null).Year</div>
+        <div class="exp-slug">
+            @*<a href="@pr.LinkPath">@pr.Headline</a>*@
+            <span>@pr.Headline</span>
+        </div>
+      </div>
+    }
+</div>

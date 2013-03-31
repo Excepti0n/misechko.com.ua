@@ -1275,7 +1275,8 @@ namespace misechko.com.Areas.Admin.Controllers
                             LinkPath = "/Practicies/" + MakeUrl(practiceName),
                             Culture = cult
                         };
-                        _context.Practicies.Add(newItem);
+
+                        if (!_context.Practicies.Any(itm => itm.Culture == newItem.Culture && itm.LinkPath == newItem.LinkPath)) _context.Practicies.Add(newItem);
                     }
                 }
 
@@ -1457,7 +1458,7 @@ namespace misechko.com.Areas.Admin.Controllers
                             LinkPath = "/Industries/" + MakeUrl(industryName),
                             Culture = cult
                         };
-                        _context.Industries.Add(newItem);
+                        if (!_context.Industries.Any(ind => ind.Culture == newItem.Culture && ind.LinkPath == newItem.LinkPath)) _context.Industries.Add(newItem);
                     }
                 }
 

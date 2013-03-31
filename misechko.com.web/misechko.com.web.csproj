@@ -1635,6 +1635,12 @@
     <Content Include="Views\Shared\_Publications.cshtml" />
     <Content Include="Views\Shared\_ProjectsSearch.cshtml" />
     <Content Include="Views\Shared\_News.cshtml" />
+    <Content Include="Views\Home\Index.ru.cshtml" />
+    <Content Include="Views\Home\Index.en.cshtml" />
+    <Content Include="Views\Shared\_Projects.ru.cshtml" />
+    <Content Include="Views\Shared\_Projects.en.cshtml" />
+    <Content Include="Views\Shared\_News.en.cshtml" />
+    <Content Include="Views\Shared\_News.ru.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
