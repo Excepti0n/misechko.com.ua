@@ -3,11 +3,28 @@
 
     self.Id = pubData.Id;
     self.BrochureName = pubData.Headline;
+    self.Url = ko.observable(pubData.BrochureUrl);
     self.BrochurePath = pubData.LinkPath;
     self.BrochureHREF = '/Read' + self.BrochurePath;
-    self.DateCreated = pubData.PublishDate;
+    self.DateCreated = ko.observable(pubData.PublishDate);
     self.Type = pubData.Type;
 
+    self.ItemChanged = ko.observable(false);
+
+    self.IndexChanged = ko.observable(false);
+
+    self.ItemIndex = ko.observable(pubData.Index);
+    self.ItemIndex.subscribe(function () {
+        self.ItemChanged(true);
+    });
+    
+    self.Url.subscribe(function () {
+        self.ItemChanged(true);
+    });
+
+    self.DateCreated.subscribe(function () {
+        self.ItemChanged(true);
+    });
     
     self.Remove = function () {
         var removePubUrl = $('#RemoveBrochureUrl').val();
@@ -35,13 +52,15 @@
             data: {
                 id: self.Id,
                 brochureName: self.BrochureName,
-                dateCreated: self.DateCreated
+                dateCreated: self.DateCreated,
+                url: self.Url(),
+                index: self.ItemIndex()
             },
             success: function (res) {
-                if (res === "SPCD: OK") {
-                    parent.RemovePub(self);
+                if (res.status === "SPCD: OK") {
+                    self.ItemChanged(false);
                 } else {
-                    alert("There was an error removing the brochure - " + res);
+                    alert("There was an error updating the brochure - " + res.status);
                 }
             }
         });

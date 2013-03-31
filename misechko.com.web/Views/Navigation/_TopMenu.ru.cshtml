@@ -71,14 +71,14 @@
     if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Team")
         {
             <li class="selected">
-                <h2 class="selected">Комманда</h2>
+                <h2 class="selected">Команда</h2>
                 @*<p>Наші професійні юристи</p>*@
             </li>
         } else
         {
             <li>
                 <a href="@Url.Action("Index", "Team")">
-                    <h2>Комманда</h2>
+                    <h2>Команда</h2>
                     @*<p>Наші професійні юристи</p>*@
                 </a>
             </li>

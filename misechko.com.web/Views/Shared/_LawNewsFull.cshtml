@@ -1,7 +1,7 @@
 ﻿@model List<misechko.com.data.Entities.LawNew>
 
 @{
-    Model.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+    Model.Sort((a, b) => a.ListWeight.CompareTo(b.ListWeight));
 }
 
 <div class="block-headline">
@@ -13,8 +13,8 @@
     @foreach(var newItem in Model)
     {
          <div class="law-news-item">
-            <div class="law-news-date"><span>@newItem.PublishDate.Date.ToString("dd/MM")</span></div>
-            <div class="law-news-link"><a href="/Read@(newItem.LinkPath)">@newItem.Headline</a></div>
+            @*<div class="law-news-date"><span>@newItem.PublishDate.Date.ToString("dd/MM")</span></div>*@
+            <div class="law-news-link"><a target="_blank" href="@newItem.Url">@newItem.Headline</a></div>
         </div>
     }
 </div>

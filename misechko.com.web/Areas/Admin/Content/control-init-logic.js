@@ -95,6 +95,12 @@
     });
 
     switch (location.hash) {
+        case '#lawnews-control':
+            if (!LawNewsViewInitialized) {
+                LawNewsView.Init();
+                LawNewsViewInitialized = true;
+            }
+            break;
         case '#industries-control':
             if (!IndustriesViewInitialized) {
                 IndustriesView.Init();
@@ -105,6 +111,12 @@
             if (!PracticiesViewInitialized) {
                 PracticiesView.Init();
                 PracticiesViewInitialized = true;
+            }
+            break;
+        case '#brochures-control':
+            if (!BrochuresViewInitialized) {
+                BrochuresView.Init();
+                BrochuresViewInitialized = true;
             }
             break;
         default:

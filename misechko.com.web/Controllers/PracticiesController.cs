@@ -7,6 +7,7 @@ using RadaCode.Web.Application.MVC;
 using misechko.com.Areas.Admin.Models;
 using misechko.com.Content;
 using misechko.com.Models;
+using misechko.com.core;
 using misechko.com.data.EF;
 
 namespace misechko.com.Controllers
@@ -14,11 +15,14 @@ namespace misechko.com.Controllers
     public class PracticiesController : RadaCodeBaseController
     {
         private readonly MPDataContext _context;
+        private readonly IMPSettings _settings;
 
-        public PracticiesController(MPDataContext context)
+        public PracticiesController(MPDataContext context, IMPSettings settings)
         {
             _context = context;
+            _settings = settings;
         }
+
         //
         // GET: /Practicies/
 
@@ -47,6 +51,11 @@ namespace misechko.com.Controllers
             }
 
             key += "#main-content";
+
+            if (_settings.ShouldGoToFirstMenuItem && model.AllPracticies.Count > 0 && string.IsNullOrEmpty(practice))
+            {
+                return Redirect(model.AllPracticies.First().Slug);
+            }
 
             model.CurrentPracticeName = practice;
 

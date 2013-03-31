@@ -261,7 +261,7 @@ namespace misechko.com.Areas.Admin.FileHandler
                 new DirectoryInfo(CustomContentFolder)
                     .GetFiles("*", SearchOption.TopDirectoryOnly)
                     .Where(f => !f.Attributes.HasFlag(FileAttributes.Hidden))
-                    .Select(f => new FilesStatus(f))
+                    .Select(f => new FilesStatus(f, true))
                     .ToArray();
 
             string jsonObj = _js.Serialize(files);

@@ -641,10 +641,10 @@ footer {
 }
 
 .block-headline {
-    padding-top: 40px;
+    padding-top: 30px;
     /*padding-left: 40px;*/
     display: block;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .block-headline > h1 {
@@ -706,11 +706,31 @@ footer {
     margin-bottom: 30px;
 }
 
+.pub-item .pub-year {
+    color: #7a113f;
+    font-size: 15px;
+    font-family: 'MyriadPro-Bold';
+}
+
+.pub-item > div {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    vertical-align: top;
+}
+
 .pub-item .pub-slug {
-    margin-left: 15px;
-    width: 180px;
+    margin-left: 25px;
+    width: 200px;
     color: #070003;
-    font-size: 12px;
+    font-size: 14px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.pub-item .pub-date {
+    margin-left: 25px;
+    color: #070003;
+    font-size: 14px;
     font-family: 'MyriadPro-Regular';
 }
 
@@ -737,10 +757,11 @@ footer {
 
 .exp-item .exp-slug {
     margin-left: 15px;
-    width: 225px;
+    width: 200px;
     color: #070003;
     font-size: 14px;
     font-family: 'MyriadPro-Regular';
+    padding-right: 18px;
 }
 
 .exp-item .exp-slug a {

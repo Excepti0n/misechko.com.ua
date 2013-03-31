@@ -31,6 +31,7 @@ namespace misechko.com.Areas.Admin.Models
         public List<string> RelatesToPaths { get; set; }
         public string PublishDate { get; set; }
         public int Index { get; set; }
+        public string Url { get; set; }
     }
 
     public class NewsModel
@@ -61,6 +62,7 @@ namespace misechko.com.Areas.Admin.Models
         public List<string> RelatesToPaths { get; set; }
         public string PublishDate { get; set; }
         public int Index { get; set; }
+        public string BrochureUrl { get; set; }
     }
 
     public class ProjectsModel

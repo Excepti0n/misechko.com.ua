@@ -11,7 +11,8 @@
        <div class="exp-item">
         <div class="exp-year">@DateTime.ParseExact(pr.PublishDate, "yyyy-MM-dd",null).Year</div>
         <div class="exp-slug">
-            <a href="@pr.LinkPath">@pr.Headline</a>
+            @*<a href="@pr.LinkPath">@pr.Headline</a>*@
+            <span>@pr.Headline</span>
         </div>
       </div>
     }

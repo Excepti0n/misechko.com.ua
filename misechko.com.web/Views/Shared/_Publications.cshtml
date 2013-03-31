@@ -8,11 +8,15 @@
 <div id="publication-lines-container">
     @foreach(var pub in Model)
     {
-       <div class="publication-item">
-        <div class="publication-date">@DateTime.ParseExact(pub.PublishDate, "yyyy-MM-dd", null).ToString("dd'/'MM'/'yyyy")</div>
-        <div class="publication-slug">
-            <a href="@pub.LinkPath">@pub.Headline</a>
+        <div class="pub-item">
+            @*<div class="pub-year">@DateTime.ParseExact(pub.PublishDate, "yyyy-MM-dd",null).Year</div>*@
+            <div>
+                <div class="pub-date">@DateTime.ParseExact(pub.PublishDate, "yyyy-MM-dd", null).ToString("dd'/'MM'/'yyyy")</div>
+                <div class="pub-slug">
+                    <a href="@pub.LinkPath">@pub.Headline</a>
+                </div>
+            </div>
+
         </div>
-      </div>
     }
 </div>

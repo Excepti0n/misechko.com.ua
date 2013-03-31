@@ -468,7 +468,9 @@ namespace misechko.com.Areas.Admin.Controllers
                     Headline = lawNewItem.Headline,
                     LinkPath = lawNewItem.LinkPath,
                     PublishDate = lawNewItem.PublishDate.ToString("yyyy-MM-dd"),
-                    Id = lawNewItem.Id.ToString()
+                    Id = lawNewItem.Id.ToString(),
+                    Index = lawNewItem.ListWeight,
+                    Url = lawNewItem.Url
                 });
             }
 
@@ -496,7 +498,7 @@ namespace misechko.com.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateLawNewsItem(string id, string lawNewsItemName, string dateCreated)
+        public ActionResult UpdateLawNewsItem(string id, string lawNewsItemName, string dateCreated, int index, string url)
         {
             var gUq = Guid.Parse(id);
 
@@ -508,6 +510,8 @@ namespace misechko.com.Areas.Admin.Controllers
             lawNewsItemToUpdate.Headline = lawNewsItemName;
             lawNewsItemToUpdate.LinkPath = "/LawNews/" + MakeUrl(lawNewsItemName); 
             lawNewsItemToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            lawNewsItemToUpdate.Url = url;
+            lawNewsItemToUpdate.ListWeight = index;
 
             try
             {
@@ -536,22 +540,22 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 _context.LawNews.Add(newLawNewsItem);
 
-                if (_settings.CreateContentOnAllLanguages)
-                {
-                    var cultList = _settings.ImplementedCultures;
-                    cultList.Remove(_curCult);
-                    foreach (var cult in cultList)
-                    {
-                        var newItem = new LawNew
-                        {
-                            Headline = lawNewsItemName,
-                            PublishDate = DateTime.Now,
-                            LinkPath = "/LawNews/" + MakeUrl(lawNewsItemName),
-                            Culture = cult
-                        };
-                        _context.LawNews.Add(newItem);
-                    }
-                }
+                //if (_settings.CreateContentOnAllLanguages)
+                //{
+                //    var cultList = _settings.ImplementedCultures;
+                //    cultList.Remove(_curCult);
+                //    foreach (var cult in cultList)
+                //    {
+                //        var newItem = new LawNew
+                //        {
+                //            Headline = lawNewsItemName,
+                //            PublishDate = DateTime.Now,
+                //            LinkPath = "/LawNews/" + MakeUrl(lawNewsItemName),
+                //            Culture = cult
+                //        };
+                //        _context.LawNews.Add(newItem);
+                //    }
+                //}
 
                 _context.SaveChanges();
             }
@@ -910,6 +914,8 @@ namespace misechko.com.Areas.Admin.Controllers
                     Headline = brochureItem.Headline,
                     LinkPath = brochureItem.LinkPath,
                     PublishDate = brochureItem.PublishDate.ToString("yyyy-MM-dd"),
+                    BrochureUrl = brochureItem.BrochureUrl,
+                    Index = brochureItem.ListWeight,
                     Id = brochureItem.Id.ToString()
                 });
             }
@@ -938,7 +944,7 @@ namespace misechko.com.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult UpdateBrochure(string id, string brochureName, string dateCreated)
+        public ActionResult UpdateBrochure(string id, string brochureName, string dateCreated, int index, string url)
         {
             var gUq = Guid.Parse(id);
 
@@ -950,6 +956,8 @@ namespace misechko.com.Areas.Admin.Controllers
             brochureToUpdate.Headline = brochureName;
             brochureToUpdate.LinkPath = "/Brochures/" + MakeUrl(brochureName);
             brochureToUpdate.PublishDate = DateTime.ParseExact(dateCreated, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            brochureToUpdate.BrochureUrl = url;
+            brochureToUpdate.ListWeight = index;
 
             try
             {
@@ -977,23 +985,6 @@ namespace misechko.com.Areas.Admin.Controllers
             try
             {
                 _context.Brochures.Add(newBrochure);
-
-                if (_settings.CreateContentOnAllLanguages)
-                {
-                    var cultList = _settings.ImplementedCultures;
-                    cultList.Remove(_curCult);
-                    foreach (var cult in cultList)
-                    {
-                        var newItem = new Brochure
-                        {
-                            Headline = brochureName,
-                            PublishDate = DateTime.Now,
-                            LinkPath = "/Brochures/" + MakeUrl(brochureName),
-                            Culture = cult
-                        };
-                        _context.Brochures.Add(newItem);
-                    }
-                }
 
                 _context.SaveChanges();
             }

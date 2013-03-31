@@ -7,6 +7,7 @@ using RadaCode.Web.Application.MVC;
 using misechko.com.Areas.Admin.Models;
 using misechko.com.Content;
 using misechko.com.Models;
+using misechko.com.core;
 using misechko.com.data.EF;
 
 namespace misechko.com.Controllers
@@ -14,11 +15,14 @@ namespace misechko.com.Controllers
     public class IndustriesController : RadaCodeBaseController
     {
         private readonly MPDataContext _context;
+        private readonly IMPSettings _settings;
 
-        public IndustriesController(MPDataContext context)
+        public IndustriesController(MPDataContext context, IMPSettings settings)
         {
             _context = context;
+            _settings = settings;
         }
+
         //
         // GET: /Industries/
 
@@ -47,6 +51,11 @@ namespace misechko.com.Controllers
             }
 
             key += "#main-content";
+
+            if (_settings.ShouldGoToFirstMenuItem && model.AllIndustries.Count > 0 && string.IsNullOrEmpty(industry))
+            {
+                return Redirect(model.AllIndustries.First().Slug);
+            }
 
             model.CurrentIndustryName = industry;
 

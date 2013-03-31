@@ -54,7 +54,6 @@ namespace misechko.com.Controllers
                 return Redirect(model.AboutMenus.First().Slug);
             }
             
-            
             var firstOrDefault = _context.ContentElements.FirstOrDefault(c => c.ContentKey == key);
             if (firstOrDefault != null)
             {

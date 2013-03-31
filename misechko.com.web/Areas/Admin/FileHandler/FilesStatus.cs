@@ -6,6 +6,7 @@ namespace misechko.com.Areas.Admin.FileHandler
     public class FilesStatus
     {
         public const string HandlerPath = "/Areas/Admin/FileHandler/";
+        private const string ObligWebPath = "/Content/ObligContent/";
 
         public string group { get; set; }
         public string name { get; set; }
@@ -30,7 +31,15 @@ namespace misechko.com.Areas.Admin.FileHandler
 
         public FilesStatus() { }
 
-        public FilesStatus(FileInfo fileInfo) { SetValues(fileInfo.Name, (int)fileInfo.Length, fileInfo.FullName, false); }
+        public FilesStatus(FileInfo fileInfo)
+        {
+            SetValues(fileInfo.Name, (int)fileInfo.Length, fileInfo.FullName, false);
+        }
+
+        public FilesStatus(FileInfo fileInfo, bool webPath)
+        {
+            SetValues(fileInfo.Name, (int)fileInfo.Length, fileInfo.FullName, webPath);
+        }
 
         public FilesStatus(string fileName, int fileLength, string fullPath, bool webPath) { SetValues(fileName, fileLength, fullPath, webPath); }
 
@@ -40,7 +49,7 @@ namespace misechko.com.Areas.Admin.FileHandler
             type = "image/png";
             size = fileLength;
             progress = "1.0";
-            if (webPath) url = fullPath; else url = HandlerPath + "Handler.ashx?f=" + fileName;
+            if (webPath) url = ObligWebPath + fileName; else url = HandlerPath + "Handler.ashx?f=" + fileName;
             delete_url = HandlerPath + "Handler.ashx?f=" + fileName;
             delete_type = "DELETE";
 

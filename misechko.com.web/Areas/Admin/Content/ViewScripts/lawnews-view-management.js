@@ -4,11 +4,23 @@
     self.Id = pubData.Id;
     self.LawNewsItemName = pubData.Headline;
     self.LawNewsItemPath = pubData.LinkPath;
+    self.Url = ko.observable(pubData.Url);
     self.LawNewsItemHREF = '/Read' + self.LawNewsItemPath;
     self.DateCreated = ko.observable(pubData.PublishDate);
     self.Type = pubData.Type;
 
     self.ItemChanged = ko.observable(false);
+    
+    self.IndexChanged = ko.observable(false);
+
+    self.ItemIndex = ko.observable(pubData.Index);
+    self.ItemIndex.subscribe(function () {
+        self.ItemChanged(true);
+    });
+
+    self.Url.subscribe(function () {
+        self.ItemChanged(true);
+    });
 
     self.DateCreated.subscribe(function () {
         self.ItemChanged(true);
@@ -41,7 +53,9 @@
             data: {
                 id: self.Id,
                 lawNewsItemName: self.LawNewsItemName,
-                dateCreated: self.DateCreated
+                dateCreated: self.DateCreated,
+                url: self.Url(),
+                index: self.ItemIndex()
             },
             success: function (res) {
                 if (res.status === "SPCD: OK") {

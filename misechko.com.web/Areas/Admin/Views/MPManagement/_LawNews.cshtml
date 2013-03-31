@@ -15,7 +15,9 @@
             <thead>
                 <tr>
                     <td>Заголовок новини</td>
+                    <td>Посилання на новину</td>
                     <td>Дата</td>
+                    <td>Індекс</td>
                 </tr>
             </thead>
             <tbody data-bind="template: { name: 'LawNewsItem-template', foreach: LawNewsItems }">
@@ -29,13 +31,24 @@
         </div>
     </pre>
 </div>
-
 <script type="text/html" id="LawNewsItem-template">
     <tr>
         <td class="pub-text"><a data-bind="text: LawNewsItemName, attr: { href: LawNewsItemHREF }"></a></td>
         <td>
+            <div class="input-append">
+                <input class="span2 url" size="90" type="text" data-bind="value: Url"/>
+                <button class="btn btn-warning" type="button" data-bind="click: UpdateLawNewsItem, attr: { disabled: !(ItemChanged()) }, visible: ItemChanged"><i class="icon-ok-sign icon-white"></i></button>
+            </div>
+        </td>
+        <td>
             <input type="text" placeholder="Дата новости" data-bind="datepicker: DateCreated, datepickerOptions: { dateFormat: 'yy-mm-dd' }">
             <button class="btn btn-warning" type="button" data-bind="click: UpdateLawNewsItem, attr: { disabled: !(ItemChanged()) }, visible: ItemChanged"><i class="icon-ok-sign icon-white"></i></button>
+        </td>
+        <td>
+        <div class="input-append">
+            <input class="span2 index" size="16" type="text" data-bind="value: ItemIndex"/>
+            <button class="btn btn-warning" type="button" data-bind="click: UpdateLawNewsItem, attr: { disabled: !(IndexChanged()) }, visible: IndexChanged"><i class="icon-ok-sign icon-white"></i></button>
+        </div>
         </td>
         <td>
             <button class="btn btn-danger" data-bind="click: Remove, clickBubble: false">
