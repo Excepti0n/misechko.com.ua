@@ -11,10 +11,21 @@ namespace misechko.com.core
         List<string> ImplementedCultures { get; }
         bool CreateContentOnAllLanguages { get; }
         bool ShouldGoToFirstMenuItem { get; }
+        bool AllProtected { get; }
     }
 
     public class ProductionMPSettings : IMPSettings
     {
+        private bool _allProtected;
+
+        public ProductionMPSettings()
+        {
+            var rootWebConfig = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("~/");
+
+            var allProtected = rootWebConfig.AppSettings.Settings["Locked"];
+            _allProtected = allProtected != null && bool.Parse(allProtected.Value);
+        }
+
         public List<string> ImplementedCultures
         {
             get
@@ -25,5 +36,6 @@ namespace misechko.com.core
 
         public bool CreateContentOnAllLanguages { get { return true; } }
         public bool ShouldGoToFirstMenuItem { get { return true; } }
+        public bool AllProtected { get; private set; }
     }
 }
