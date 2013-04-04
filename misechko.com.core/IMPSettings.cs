@@ -36,6 +36,6 @@ namespace misechko.com.core
 
         public bool CreateContentOnAllLanguages { get { return true; } }
         public bool ShouldGoToFirstMenuItem { get { return true; } }
-        public bool AllProtected { get; private set; }
+        public bool AllProtected { get { return _allProtected; } }
     }
 }

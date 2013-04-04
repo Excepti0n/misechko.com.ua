@@ -145,6 +145,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Filters\GlobalSecurityActionFilter.cs" />
     <Compile Include="Application\Filters\ReplaceTagsFilter.cs" />
     <Compile Include="Application\Membership\MPIdentity.cs" />
     <Compile Include="Application\Membership\MPMembershipUser.cs" />
@@ -1068,6 +1069,7 @@
     <Content Include="Areas\Admin\Content\ViewScripts\news-view-management.js" />
     <Content Include="Areas\Admin\Content\ViewScripts\publications-view-management.js" />
     <Content Include="Areas\Admin\Content\ViewScripts\user-view-management.js" />
+    <Content Include="construction.html" />
     <Content Include="Content\about\about.css" />
     <Content Include="Content\about\about.js" />
     <Content Include="Content\Bootstrap\css\bootstrap-responsive.css" />
