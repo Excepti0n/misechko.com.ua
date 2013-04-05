@@ -1076,6 +1076,7 @@
     <Content Include="Content\Bootstrap\css\bootstrap-responsive.min.css" />
     <Content Include="Content\Bootstrap\css\bootstrap.css" />
     <Content Include="Content\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\construction.css" />
     <Content Include="Content\global\header.js" />
     <Content Include="Content\global\img\bookmark.png" />
     <Content Include="Content\global\img\down_arrow_select.png" />
