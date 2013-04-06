@@ -200,7 +200,7 @@ Copyright (c) 2011 by Harvest
                     classes.push(option.classes);
                 }
                 style = option.style.cssText !== "" ? " style=\"" + option.style + "\"" : "";
-                return '<li id="' + option.dom_id + '" class="' + classes.join(' ') + '"' + style + '>' + option.html + '</li>';
+                return '<li id="' + option.dom_id + '" class="' + classes.join(' ') + '"' + style + 'title="' + option.text + '"' + '>' + option.html + '</li>';
             } else {
                 return "";
             }

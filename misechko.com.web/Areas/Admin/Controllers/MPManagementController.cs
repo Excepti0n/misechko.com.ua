@@ -1020,6 +1020,8 @@ namespace misechko.com.Areas.Admin.Controllers
                 Projects = projectsModels
             };
 
+            model.Projects.Sort((a,b) => b.PublishDate.CompareTo(a.PublishDate));
+
             return PartialView("_Projects", model);
         }
 
@@ -1135,11 +1137,15 @@ namespace misechko.com.Areas.Admin.Controllers
                         publicationsForPractice.Add(publication.Headline);
                     }
 
+                practice.Publications.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+
                 if (practice.Projects != null)
                     foreach (var project in practice.Projects.Where(i => i.Culture == _curCult || String.IsNullOrEmpty(i.Culture)).ToList())
                     {
                         projectsForPractice.Add(project.Headline);
                     }
+
+                practice.Projects.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
 
                 practiceModel.Projects = projectsForPractice;
                 practiceModel.Publications = publicationsForPractice;
@@ -1181,6 +1187,9 @@ namespace misechko.com.Areas.Admin.Controllers
                 AllProjects = allProjects,
                 AllPublications = allPublications
             };
+
+            model.AllProjects.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+            model.AllPublications.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
 
             return PartialView("_Practicies", model);
         }
@@ -1318,11 +1327,15 @@ namespace misechko.com.Areas.Admin.Controllers
                         publicationsForIndustry.Add(publication.Headline);
                     }
 
+                industry.Publications.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+
                 if (industry.Projects != null)
                     foreach (var project in industry.Projects.Where(pr => pr.Culture == _curCult).ToList())
                     {
                         projectsForIndustry.Add(project.Headline);
                     }
+
+                industry.Projects.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
 
                 industryModel.Projects = projectsForIndustry;
                 industryModel.Publications = publicationsForIndustry;
@@ -1364,6 +1377,9 @@ namespace misechko.com.Areas.Admin.Controllers
                 AllPublications = allPublications,
                 AllProjects = allProjects
             };
+
+            model.AllProjects.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+            model.AllPublications.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
 
             return PartialView("_Industries", model);
         }
