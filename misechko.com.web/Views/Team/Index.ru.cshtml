@@ -1,14 +1,13 @@
-﻿@model misechko.com.Models.AboutViewModel
+﻿@model misechko.com.Models.TeamViewModel
 @using ClientDependency.Core.Mvc
 @{
-    ViewBag.Title = "Про юридичну фірму «Місечко та Партнери»";
-    Html.RequiresCss("about/about.css", "Content", 110);
-    Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
-    Html.RequiresJs("about/about.js", "Content", 25);
-    var selectedItem = "/About/" + Model.CurrentMenuItemName;
+    ViewBag.Title = "Наша команда | «Мисечко и Партнёры»";
+    Html.RequiresCss("team/team.css", "Content", 110);
+    var selectedEmployee = "/Team/" + Model.CurrentEmployeeName;
 }
 
 <div id="triplet">
+    
     <div id="main-content" class="extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
         <div class="editable-block">
             @Html.Raw(Model.MainMarkup)
@@ -16,9 +15,9 @@
     </div>
     <div id="submenu">
         <div id="selector">
-            @foreach(var ind in Model.AboutMenus)
+            @foreach(var ind in Model.AllEmployees)
             {
-                <div class="item @(ind.Slug == selectedItem ? "selected" : "")">
+                <div class="item @(ind.Slug == selectedEmployee ? "selected" : "")">
                     <a href="@Url.Content(@ind.Slug)">
                        <div class="submenu-text">@ind.DisplayText</div>
                     </a>

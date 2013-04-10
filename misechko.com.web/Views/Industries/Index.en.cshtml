@@ -1,0 +1,44 @@
+﻿@using ClientDependency.Core.Mvc
+@model misechko.com.Models.IndustryViewModel
+
+@{
+    ViewBag.Title = "Industries | «Misechko & Partners»";
+    Html.RequiresCss("industries/industries.css", "Content", 110);
+    Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
+    Html.RequiresJs("industries/idustries.js", "Content", 25);
+    var extended = !Model.HasSupportMaterials ? "extended" : null;
+    var industry = "/Industries/" + Model.CurrentIndustryName;
+}
+
+<div id="triplet">
+    @if(Model.HasSupportMaterials)
+    {
+         <div id="support-materials">
+            @if(Model.Projects.Count > 0)
+            {
+                @Html.Partial("_Projects", Model.Projects)
+            }
+            @if(Model.Publications.Count > 0)
+            {
+                @Html.Partial("_Publications", Model.Publications)
+            }
+        </div>
+    }
+    <div id="main-content" class="@extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+        <div class="editable-block">
+            @Html.Raw(Model.IndustryMarkup)
+        </div>
+    </div>
+    <div id="submenu">
+        <div id="selector">
+            @foreach(var ind in Model.AllIndustries)
+            {
+                <div class="item @(ind.Slug == industry ? "selected" : "")">
+                    <a href="@Url.Content(@ind.Slug)">
+                       <div class="submenu-text">@ind.DisplayText</div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model misechko.com.Models.AboutViewModel
+@using ClientDependency.Core.Mvc
+@{
+    ViewBag.Title = "About «Misechko and Partners» Law Firm";
+    Html.RequiresCss("about/about.css", "Content", 110);
+    Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
+    Html.RequiresJs("about/about.js", "Content", 25);
+    var selectedItem = "/About/" + Model.CurrentMenuItemName;
+}
+
+<div id="triplet">
+    <div id="main-content" class="extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+        <div class="editable-block">
+            @Html.Raw(Model.MainMarkup)
+        </div>
+    </div>
+    <div id="submenu">
+        <div id="selector">
+            @foreach(var ind in Model.AboutMenus)
+            {
+                <div class="item @(ind.Slug == selectedItem ? "selected" : "")">
+                    <a href="@Url.Content(@ind.Slug)">
+                       <div class="submenu-text">@ind.DisplayText</div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

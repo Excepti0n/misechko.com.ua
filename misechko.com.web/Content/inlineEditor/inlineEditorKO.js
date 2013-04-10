@@ -66,6 +66,9 @@
     }
 
     var init = function () {
+
+        window.CKEDITOR_BASEPATH = "/Content/inlineEditor/ckeditor";
+
         CKEDITOR.on('instanceReady', function (event) {
             event.editor.focus();
         });
@@ -84,7 +87,7 @@
                 //    'forms,iframe,image,newpage,removeformat,' +
                 //    'smiley,specialchar,stylescombo,templates';
 
-                editor.config.extraPlugins = 'misechkoH1,misechkoH2,misechkoP';
+                editor.config.extraPlugins = 'misechkoH1,misechkoH2,misechkoP,radaImg,fastimage';
 
                 // Rearrange the layout of the toolbar.
                 editor.config.toolbarGroups = [
@@ -95,7 +98,8 @@
                     '/',
                     { name: 'misechko', items: ['misechkoH1', 'misechkoH2', 'misechkoP'] },
                     { name: 'document', groups: ['mode', 'document', 'doctools'] },
-                    { name: 'styles' }
+                    { name: 'styles' },
+                    { name: 'radacode', items: ['fastimage'] }
                     ];
                 });
         });

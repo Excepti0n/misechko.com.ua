@@ -1203,6 +1203,11 @@
     <Content Include="Content\inlineEditor\ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\clipboard\dialogs\paste.js" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="Content\inlineEditor\ckeditor\plugins\fastimage\dialogs\fastimage.js" />
+    <Content Include="Content\inlineEditor\ckeditor\plugins\fastimage\icons\fastimage.png" />
+    <Content Include="Content\inlineEditor\ckeditor\plugins\fastimage\images\noimage.png" />
+    <Content Include="Content\inlineEditor\ckeditor\plugins\fastimage\lang\en.js" />
+    <Content Include="Content\inlineEditor\ckeditor\plugins\fastimage\plugin.js" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\misechkoP\plugin.js" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\misechkoH2\plugin.js" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\dialog\dialogDefinition.js" />
@@ -1234,6 +1239,7 @@
     <Content Include="Content\inlineEditor\ckeditor\plugins\pagebreak\images\pagebreak.gif" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\pastefromword\filter\default.js" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\preview\preview.html" />
+    <Content Include="Content\inlineEditor\ckeditor\plugins\radaImg\plugin.js" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\scayt\dialogs\options.js" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\scayt\dialogs\toolbar.css" />
     <Content Include="Content\inlineEditor\ckeditor\plugins\showblocks\images\block_address.png" />
@@ -1663,6 +1669,14 @@
     <Content Include="Views\Shared\_Publications.en.cshtml" />
     <Content Include="Views\Shared\_PublicationsFull.ru.cshtml" />
     <Content Include="Views\Shared\_PublicationsFull.en.cshtml" />
+    <Content Include="Views\About\Index.en.cshtml" />
+    <Content Include="Views\About\Index.ru.cshtml" />
+    <Content Include="Views\Industries\Index.ru.cshtml" />
+    <Content Include="Views\Industries\Index.en.cshtml" />
+    <Content Include="Views\Practicies\Index.en.cshtml" />
+    <Content Include="Views\Practicies\Index.ru.cshtml" />
+    <Content Include="Views\Team\Index.ru.cshtml" />
+    <Content Include="Views\Team\Index.en.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,88 @@
+﻿@using ClientDependency.Core.Mvc
+@model misechko.com.Models.PracticeViewModel
+
+@{
+    ViewBag.Title = "Practicies | «Misechko & Partners»";
+    Html.RequiresCss("practices/practices.css", "Content", 110);
+    Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
+    Html.RequiresJs("practices/practices.js", "Content", 25);
+    var extended = !Model.HasSupportMaterials ? "extended" : null;
+    var practice = "/Practicies/" + Model.CurrentPracticeName;
+}
+
+<div id="triplet">
+    @if(Model.HasSupportMaterials)
+    {
+        <div id="support-materials">
+            @if(Model.Projects.Count > 0)
+            {
+                @Html.Partial("_Projects", Model.Projects)
+            }
+            @if(Model.Publications.Count > 0)
+            {
+                @Html.Partial("_Publications", Model.Publications)
+            }
+        </div>
+    }
+    <div id="main-content" class="@extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+        <div class="editable-block">
+            @Html.Raw(Model.PracticeMarkup)
+        </div>
+    </div>
+    <div id="submenu">
+        <div id="selector">
+            @foreach(var prm in Model.AllPracticies)
+            {
+                <div class="item @(prm.Slug == practice ? "selected" : "")">
+                    <a href="@Url.Content(@prm.Slug)">
+                       <div class="submenu-text">@prm.DisplayText</div>
+                    </a>
+                </div>
+            }
+
+            @*
+            <div class="practice-item @(practice == "diligence" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/diligence")">
+                    <div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-due-diligence.png")"/></div>
+                    <div class="practice-submenu-text">Due Diligence</div>
+                </a>
+            </div>
+            <div class="practice-item @(practice == "bancrupt" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/bancrupt")">
+                    @*<div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practices-bankrupcy.png")"/></div>
+                    <div class="practice-submenu-text">Банкрутство</div>
+                </a>
+            </div>
+            <div class="practice-item @(practice == "papers" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/papers")">
+                    @*<div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practices-special-papers.png")"/></div>
+                    <div class="practice-submenu-text">Цінні папери</div>
+                </a>
+            </div>
+            <div class="practice-item @(practice == "taxes" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/taxes")">
+                    @*<div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practices-taxes.png")"/></div>
+                    <div class="practice-submenu-text">Податки</div>
+                </a>
+            </div>
+            <div class="practice-item @(practice == "esate" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/esate")">
+                    @*<div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-land.png")"/></div>
+                    <div class="practice-submenu-text">Земля та нерухомість</div>
+                </a>
+            </div>
+            <div class="practice-item @(practice == "finances" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/finances")">
+                    @*<div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-financial-right.png")"/></div>
+                    <div class="practice-submenu-text">Фінансове право</div>
+                </a>
+            </div>
+            <div class="practice-item @(practice == "intellect" ? "selected" : "")">
+                <a href="@Url.Content("~/practicies/intellect")">
+                    @*<div class="practice-icon"><img src="@Url.Content("~/Content/Practices/img/practice-intellect.png")"/></div>
+                    <div class="practice-submenu-text">Право інтелектуальної власності</div>
+                </a>
+            </div>*@
+        </div>
+    </div>
+</div>

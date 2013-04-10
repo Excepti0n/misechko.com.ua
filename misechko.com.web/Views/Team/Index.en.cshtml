@@ -1,0 +1,29 @@
+﻿@model misechko.com.Models.TeamViewModel
+@using ClientDependency.Core.Mvc
+@{
+    ViewBag.Title = "Our team | «Misechko & Partners»";
+    Html.RequiresCss("team/team.css", "Content", 110);
+    var selectedEmployee = "/Team/" + Model.CurrentEmployeeName;
+}
+
+<div id="triplet">
+    
+    <div id="main-content" class="extended editable-wrapper" data-bind="event: { mouseover: ShowEditButton, mouseleave: HideEditButton }">
+        <div class="editable-block">
+            @Html.Raw(Model.MainMarkup)
+        </div>
+    </div>
+    <div id="submenu">
+        <div id="selector">
+            @foreach(var ind in Model.AllEmployees)
+            {
+                <div class="item @(ind.Slug == selectedEmployee ? "selected" : "")">
+                    <a href="@Url.Content(@ind.Slug)">
+                       <div class="submenu-text">@ind.DisplayText</div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

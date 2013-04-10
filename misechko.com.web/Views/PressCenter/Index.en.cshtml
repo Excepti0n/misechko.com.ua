@@ -1,7 +1,7 @@
 ﻿@model misechko.com.Models.PressCenterViewModel
 @using ClientDependency.Core.Mvc
 @{
-    ViewBag.Title = "Прес центр";
+    ViewBag.Title = "Press Center";
     Html.RequiresCss("press/press.css", "Content", 110);
     Html.RequiresJs("press/press.js", "Content", 25);
     var selectedItem = Model.CurrentMenuItemName;
@@ -15,23 +15,23 @@
         <div id="selector">
             <div class="item @(string.IsNullOrEmpty(selectedItem) ? "selected" : "")">
                 <a href="@Url.Content("~/press/")">
-                    <div class="submenu-text">Новини</div>
+                    <div class="submenu-text">News</div>
                 </a>
             </div>
             
             <div class="item @(selectedItem == "publications" ? "selected" : "")">
                 <a href="@Url.Content("~/press/publications")">
-                    <div class="submenu-text">Публікації</div>
+                    <div class="submenu-text">Publications</div>
                 </a>
             </div>
             <div class="item @(selectedItem == "brochures" ? "selected" : "")">
                 <a href="@Url.Content("~/press/brochures")">
-                    <div class="submenu-text">Брошури</div>
+                    <div class="submenu-text">Brochures</div>
                 </a>
             </div>
             <div class="item @(selectedItem == "lawnes" ? "selected" : "")">
                 <a href="@Url.Content("~/press/lawnews")">
-                    <div class="submenu-text">Новини законодавства</div>
+                    <div class="submenu-text">Law News</div>
                 </a>
             </div>
         </div>

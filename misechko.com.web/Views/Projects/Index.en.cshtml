@@ -3,7 +3,7 @@
 @model misechko.com.Models.ProjectsViewViewModel
 
 @{
-    ViewBag.Title = "Проекти | «Місечко та Партнери»";
+    ViewBag.Title = "Projects | «Misechko & Partners»";
     Html.RequiresCss("projects/projects.css", "Content", 110);
     Html.RequiresJs("global/eh/jQuery.equalHeights.js", "Content", 20);
     Html.RequiresJs("projects/projects.js", "Content", 25);
@@ -21,7 +21,7 @@
         @Html.Hidden("initial-projects-data", (HtmlString)initValue)
         @Html.Partial("_ProjectsSearch")
         
-        <h3>Знайдені проекти:</h3>
+        <h3>Projects:</h3>
         <ul class="projects-list" data-bind="foreach: DisplayedProjects">
             <li><div class="project-item">
                     @*<a href="#" data-bind="text: ProjectName, attr: {href: ProjectHREF}"></a>*@
