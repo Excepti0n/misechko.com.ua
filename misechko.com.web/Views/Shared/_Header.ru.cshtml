@@ -1,0 +1,46 @@
+﻿<script>document.createElement("header");</script>
+<script>document.createElement("menu");</script>
+<header>
+    @Html.Hidden("menu-string", "МЕНЮ")
+    @Html.Hidden("close-string", "ЗГОРНУТИ")
+    <div class="header-container">
+        @{
+            if (User.IsInRole("Administrator"))
+            {
+                <div id="admin-links">
+                    @Html.ActionLink("Вийти", "LogOff", "Authorization")
+                </div>
+            }
+        }
+        <div id="langSelect">
+            @{Html.RenderAction("RenderLanguages", "Navigation");}
+        </div>
+        <div class="clear"></div>
+        <div id="logo">
+            @{ if (@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString() == "Home")
+               {
+                   <div>
+                       <img src="@Url.Content("/Content/global/img/logo.png")"/>
+                   </div>
+               
+               } else
+               {
+                   <a href="@Url.Action("Index", "Home")">
+                       <img src="@Url.Content("/Content/global/img/logo.png")"/>
+                   </a>
+               } 
+            }
+        </div>
+        <span id="mobile_menu_link">
+            <span class="ss-icon">+</span>
+            МЕНЮ
+        </span>	
+        <menu>
+            @{Html.RenderAction("RenderTopMenu", "Navigation");}
+        </menu>
+			
+
+		
+        <div class="clear"></div>
+    </div>
+</header>

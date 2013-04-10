@@ -1,0 +1,26 @@
+﻿<div class="block-headline">
+    <div class="light-ltr">П</div>  
+    <h1>Поиск проектов</h1>
+</div>
+
+<p>
+   Поиск по практикам:
+    <div class="red-select"> 
+        <select data-bind="options: AllPracticies, optionsText: 'Name', optionsValue: 'Id', value: SelectedPractice, optionsCaption: 'Выберите практику'"></select>
+    </div>
+
+</p>
+
+<p>
+    Поиск по индустрии: 
+    <div class="red-select">
+        <select data-bind="options: AllIndustries, optionsText: 'Name',  optionsValue: 'Id', value: SelectedIndustry, optionsCaption: 'Выберите индустрию'"></select>
+    </div>
+</p>
+
+<p>
+   Поиск по ключевому слову: 
+    <div class="red-input">
+        <input type="text" data-bind="value: SearchKeyword, valueUpdate: 'keydown', executeOnEnter: FilterProjects"></input>
+    </div>
+</p>

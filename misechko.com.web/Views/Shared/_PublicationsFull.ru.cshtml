@@ -1,0 +1,21 @@
+﻿@model List<misechko.com.data.Entities.Publication>
+
+@{
+    Model.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+}
+
+<div class="block-headline">
+    <div class="light-ltr">П</div>  
+    <h1>Публикации</h1>
+</div>
+
+
+<div id="press-block">
+    @foreach (var publicationItem in Model)
+    {
+        <div class="publication-item">
+            <div class="publication-date"><span>@publicationItem.PublishDate.Date.ToString("dd/MM")</span></div>
+            <div class="publication-link"><a href="/Read@(publicationItem.LinkPath)">@publicationItem.Headline</a></div>
+        </div>
+    }
+</div>

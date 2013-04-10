@@ -1,0 +1,22 @@
+﻿@using ClientDependency.Core.Mvc
+@model List<misechko.com.Areas.Admin.Models.PublicationModel>
+
+<div class="subblock-headline">
+    <div class="light-ltr">П</div>
+    <h1>Публикації</h1>
+</div>
+<div id="publication-lines-container">
+    @foreach(var pub in Model)
+    {
+        <div class="pub-item">
+            @*<div class="pub-year">@DateTime.ParseExact(pub.PublishDate, "yyyy-MM-dd",null).Year</div>*@
+            <div>
+                <div class="pub-date">@DateTime.ParseExact(pub.PublishDate, "yyyy-MM-dd", null).ToString("dd'/'MM'/'yyyy")</div>
+                <div class="pub-slug">
+                    <a href="@pub.LinkPath">@pub.Headline</a>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

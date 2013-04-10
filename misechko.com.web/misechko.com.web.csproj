@@ -1647,6 +1647,22 @@
     <Content Include="Views\Shared\_News.ru.cshtml" />
     <Content Include="Views\Contacts\Index.ru.cshtml" />
     <Content Include="Views\Contacts\Index.en.cshtml" />
+    <Content Include="Views\PressCenter\Index.ru.cshtml" />
+    <Content Include="Views\PressCenter\Index.en.cshtml" />
+    <Content Include="Views\Projects\Index.ru.cshtml" />
+    <Content Include="Views\Projects\Index.en.cshtml" />
+    <Content Include="Views\Shared\_Awards.ru.cshtml" />
+    <Content Include="Views\Shared\_Awards.en.cshtml" />
+    <Content Include="Views\Shared\_Experience.ru.cshtml" />
+    <Content Include="Views\Shared\_Experience.en.cshtml" />
+    <Content Include="Views\Shared\_Header.ru.cshtml" />
+    <Content Include="Views\Shared\_Header.en.cshtml" />
+    <Content Include="Views\Shared\_ProjectsSearch.ru.cshtml" />
+    <Content Include="Views\Shared\_ProjectsSearch.en.cshtml" />
+    <Content Include="Views\Shared\_Publications.ru.cshtml" />
+    <Content Include="Views\Shared\_Publications.en.cshtml" />
+    <Content Include="Views\Shared\_PublicationsFull.ru.cshtml" />
+    <Content Include="Views\Shared\_PublicationsFull.en.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
