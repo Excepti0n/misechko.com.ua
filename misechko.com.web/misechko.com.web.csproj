@@ -1677,6 +1677,12 @@
     <Content Include="Views\Practicies\Index.ru.cshtml" />
     <Content Include="Views\Team\Index.ru.cshtml" />
     <Content Include="Views\Team\Index.en.cshtml" />
+    <Content Include="Views\Shared\_NewsFull.ru.cshtml" />
+    <Content Include="Views\Shared\_NewsFull.en.cshtml" />
+    <Content Include="Views\Shared\_BrochuresFull.ru.cshtml" />
+    <Content Include="Views\Shared\_BrochuresFull.en.cshtml" />
+    <Content Include="Views\Shared\_LawNewsFull.ru.cshtml" />
+    <Content Include="Views\Shared\_LawNewsFull.en.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

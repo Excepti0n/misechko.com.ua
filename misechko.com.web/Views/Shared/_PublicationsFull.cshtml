@@ -14,8 +14,11 @@
     @foreach (var publicationItem in Model)
     {
         <div class="publication-item">
-            <div class="publication-date"><span>@publicationItem.PublishDate.Date.ToString("dd/MM")</span></div>
-            <div class="publication-link"><a href="/Read@(publicationItem.LinkPath)">@publicationItem.Headline</a></div>
+            <div class="year">@publicationItem.PublishDate.Year</div>
+            <div class="publication-block">
+                <div class="date"><span>@publicationItem.PublishDate.Date.ToString("dd/MM")</span></div>
+                <div class="publication-link"><a href="/Read@(publicationItem.LinkPath)">@publicationItem.Headline</a></div>
+            </div>
         </div>
     }
 </div>

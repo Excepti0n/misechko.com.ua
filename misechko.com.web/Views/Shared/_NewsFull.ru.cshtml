@@ -1,0 +1,23 @@
+﻿@model List<misechko.com.data.Entities.New>
+
+@{
+    Model.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+}
+
+<div class="block-headline">
+    <div class="light-ltr">Н</div>  
+    <h1>Новости</h1>
+</div>
+
+<div id="press-block">
+    @foreach(var newItem in Model)
+    {
+        <div class="news-item">
+            <div class="news-year">@newItem.PublishDate.Year</div>
+            <div class="news-block">
+                <div class="news-date"><span>@newItem.PublishDate.Date.ToString("dd/MM")</span></div>
+                <div class="news-link"><a href="/Read@(newItem.LinkPath)">@newItem.Headline</a></div>
+            </div>
+        </div>
+    }
+</div>

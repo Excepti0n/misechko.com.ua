@@ -77,7 +77,7 @@ namespace misechko.com.Controllers
                                                                                  prj.PublishDate.ToString("yyyy-MM-dd"),
                                                                              RelatesToPaths = prj.RelatesToPaths
 
-                                                                         }).Take(3).ToList();
+                                                                         }).ToList();
 
                 model.Publications = practiceItem.Publications.Select(pub => new PublicationModel
                 {
@@ -89,10 +89,12 @@ namespace misechko.com.Controllers
                         pub.PublishDate.ToString("yyyy-MM-dd"),
                     RelatesToPaths = pub.RelatesToPaths
 
-                }).Take(3).ToList();
+                }).ToList();
 
                 model.Projects.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+                model.Projects = model.Projects.Take(3).ToList();
                 model.Publications.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
+                model.Publications = model.Publications.Take(3).ToList();
             }
 
             var firstOrDefault = _context.ContentElements.FirstOrDefault(c => c.ContentKey == key);

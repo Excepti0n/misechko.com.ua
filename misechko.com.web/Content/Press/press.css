@@ -35,6 +35,12 @@ div.publication-item {
     margin-left: 20px;
 }
 
+#press-block > div > div > .link
+{
+    max-width: 685px;
+    margin-left: 20px;
+}
+
 div.law-news-item > div {
     display: inline-block;
     vertical-align: top;
@@ -63,6 +69,18 @@ div.news-item {
     font-family: 'MyriadPro-Bold';
     display: inline-block;
     vertical-align: top;
+}
+
+#press-block > div > .year {
+    color: #7a113f;
+    font-size: 15px;
+    font-family: 'MyriadPro-Bold';
+    display: inline-block;
+    vertical-align: top;
+}
+
+#press-block > div > div > .date {
+    margin-left: 20px;
 }
 
 .news-item > .news-block {

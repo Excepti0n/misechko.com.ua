@@ -256,6 +256,8 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 Publications = pubModels
             };
+
+            model.Publications.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
             
             return PartialView("_Publications", model);
         }
@@ -366,6 +368,8 @@ namespace misechko.com.Areas.Admin.Controllers
             {
                 News = newsItemsModels
             };
+
+            model.News.Sort((a, b) => b.PublishDate.CompareTo(a.PublishDate));
 
             return PartialView("_News", model);
         }

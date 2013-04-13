@@ -31,7 +31,7 @@ namespace misechko.com.Controllers
 
             var smtp = new SmtpClient
             {
-                Host = "mail.test.hvosting.ua",
+                Host = "mail.misechko.com.ua",
                 Port = 25,
                 EnableSsl = false,
                 DeliveryMethod = SmtpDeliveryMethod.Network,

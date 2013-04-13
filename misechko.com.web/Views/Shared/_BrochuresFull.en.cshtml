@@ -1,0 +1,23 @@
+﻿@model List<misechko.com.data.Entities.Brochure>
+
+@{
+    Model.Sort((a, b) => a.ListWeight.CompareTo(b.ListWeight));
+}
+
+<div class="block-headline">
+    <div class="light-ltr">B</div>  
+    <h1>Brochures</h1>
+</div>
+
+<div id="press-block">
+    @foreach(var brochureItem in Model)
+    {
+        <div class="brochure-item">
+            <div class="year">@brochureItem.PublishDate.Year</div>
+                <div class="brochure-block">
+                    <div class="date"><span>@brochureItem.PublishDate.Date.ToString("dd/MM/yyyy")</span></div>
+                    <div class="link"><a target="_blank" href="@brochureItem.BrochureUrl">@brochureItem.Headline</a></div>
+                </div>
+            </div>
+    }
+</div>
